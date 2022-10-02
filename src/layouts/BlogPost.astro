@@ -1,0 +1,63 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { COMMENTS } from "../config";
+
+export interface Props {
+	content: {
+		title: string;
+		description: string;
+		pubDate?: string;
+		updatedDate?: string;
+		heroImage?: string;
+	};
+}
+
+const {
+	content: { title, description, pubDate, updatedDate, heroImage },
+} = Astro.props;
+---
+
+<html>
+	<head>
+		<BaseHead title={title} description={description} />
+		<style>
+			.title {
+				font-size: 2em;
+				margin: 0.25em 0 0;
+			}
+			hr {
+  				border-top: 1px solid #DDD;
+				margin: 1rem 0;
+			}
+		</style>
+		<script data-isso={COMMENTS}
+        src={COMMENTS + "js/embed.min.js"}></script>
+	</head>
+
+	<body>
+		<Header />
+		<main>
+			<article>
+				{heroImage && (
+					<img
+						width={720}
+						height={360}
+						src={heroImage}
+						alt=""
+					/>
+				)}
+				<h1 class="title">{title}</h1>
+				{pubDate && <time>{pubDate}</time>}
+				{updatedDate && <div>Last updated on <time>{updatedDate}</time></div>}
+				<hr/>
+				<slot />
+			</article>
+			<section id="isso-thread">
+				<noscript>JavaScript needs to be activated to view comments.</noscript>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

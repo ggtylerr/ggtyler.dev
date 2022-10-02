@@ -1,0 +1,69 @@
+---
+// Import the global.css file here so that it is included on
+// all pages through the use of the <BaseHead /> component.
+import '../styles/global.css';
+
+export interface Props {
+	title: string;
+	description: string;
+	image?: string;
+}
+
+const { title, description, image = '/placeholder-social.jpg', color = '#006BFF' } = Astro.props;
+
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- Discord -->
+<meta name="theme-color" content={color} />
+
+<!-- Google Fonts -->
+<GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400;1,700&display=swap"></GoogleFontsOptimizer>
+<GoogleFontsOptimizer url="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap"></GoogleFontsOptimizer>
+
+<!-- Theme -->
+<!-- (This is here and in ThemeSwitcher since for some reason module scripts are only executed once) -->
+<script>
+	const theme = localStorage.getItem("theme");
+	if (theme) document.body.className = theme;
+	let c = {
+		bg:     localStorage.getItem("custom-bg"),
+		soft:   localStorage.getItem("custom-bg-soft"),
+		mute:   localStorage.getItem("custom-bg-mute"),
+		extra:  localStorage.getItem("custom-bg-extra"),
+		accent: localStorage.getItem("custom-accent"),
+		text:   localStorage.getItem("custom-text"),
+	}
+	let style = document.body.style;
+	if (c.bg)     style.setProperty("--clr-custom-bg", c.bg, "important");
+	if (c.soft)   style.setProperty("--clr-custom-bg-soft", c.soft, "important");
+	if (c.mute)   style.setProperty("--clr-custom-bg-mute", c.mute, "important");
+	if (c.extra)  style.setProperty("--clr-custom-bg-extra", c.extra, "important");
+	if (c.accent) style.setProperty("--clr-custom-accent", c.accent, "important");
+	if (c.text)   style.setProperty("--clr-custom-text", c.text, "important");
+</script>

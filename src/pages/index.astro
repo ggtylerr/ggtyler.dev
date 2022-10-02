@@ -1,0 +1,44 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+---
+
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header title={SITE_TITLE} />
+		<div 
+			class="flex items-center justify-center h-56 font-bold -z-10 relative" 
+			style="font-size: 3em; color: var(--clr-accent)">
+			<p>gg<span class="prlgm"><span>tyler</span></span></p>
+		</div>
+
+		<div class="text-center">
+			This site is currently in <span class="prlgm" style="background: var(--clr-error)"><span><b>ALPHA</b></span></span> so expect missing pages and bugs.
+		</div>
+
+		<section>
+			<p class="text-center text-xl"><b>Full-stack and app developer</b></p>
+			<p>
+				Hi, I'm Tyler. I've been developing programs for 3 years now,
+				and I dabble in everything from TUIs to full server software.
+			</p>
+			<p>
+				This site acts as both a portfolio and a blog, plus some miscellaneous
+				things.
+			</p>
+		</section>
+		<section>
+			<p>If you want to see my previous work, head on to <a href="/projects">my project showcase.</a></p>
+			<p>If you want to see my posts, go to <a href="/blog">my blog.</a></p>
+			<p>If you want to get in contact, check out <a href="/social">my socials.</a></p>
+			<p>If you want something else, go to <a href="/other">the miscellaneous section.</a></p>
+		</section>
+		<Footer />
+	</body>
+</html>
