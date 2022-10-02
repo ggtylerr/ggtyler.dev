@@ -8,6 +8,6 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://revive.ggtyler.dev',
+  site: 'https://www.ggtyler.dev',
   integrations: [mdx(), sitemap(), tailwind(), compress(), react()]
 });
