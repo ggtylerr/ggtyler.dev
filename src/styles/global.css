@@ -241,46 +241,46 @@ nav * {
 }
 /* Comments */
 
-h4.isso-thread-heading { color: inherit }
-#isso-thread { padding: 10px; }
-.isso-auth-section { padding: 0; margin: 0; }
-.isso-postbox { margin: 0; }
+h4.isso-thread-heading { color: inherit !important; }
+#isso-thread { padding: 10px !important; }
+.isso-auth-section { padding: 0 !important; margin: 0 !important; }
+.isso-postbox { margin: 0 !important; }
 .isso-textarea { 
-	background: var(--clr-bg-mute); 
-	border: 0; 
-	box-shadow: none; 
+	background: var(--clr-bg-mute) !important; 
+	border: 0 !important; 
+	box-shadow: none !important; 
 }
 .isso-input-wrapper { 
-	max-width: calc(25% - 10px); 
-	margin: 5px; 
+	max-width: calc(25% - 10px) !important; 
+	margin: 5px !important; 
 }
 .isso-input-wrapper input { 
-	background: var(--clr-bg-mute); 
-	border: 0; 
-	box-shadow: none; 
+	background: var(--clr-bg-mute) !important; 
+	border: 0 !important; 
+	box-shadow: none !important; 
 }
 .isso-post-action input { 
-	background: var(--clr-accent); 
-	color: var(--clr-bg-soft); 
-	border: 0; 
-	box-shadow: none; 
+	background: var(--clr-accent) !important; 
+	color: var(--clr-bg-soft) !important; 
+	border: 0 !important; 
+	box-shadow: none !important; 
 }
-.isso-post-action input:hover { background: var(--clr-accent); }
+.isso-post-action input:hover { background: var(--clr-accent) !important; }
 .isso-preview { 
-	background-color: var(--clr-bg-extra); 
+	background-color: var(--clr-bg-extra) !important; 
 	background: repeating-linear-gradient( 
 		-45deg, var(--clr-bg-mute), 
 		var(--clr-bg-mute) 10px, 
 		var(--clr-bg-extra) 10px, 
 		var(--clr-bg-extra) 20px 
-	); 
-	border: 0; 
-	box-shadow: none; 
+	) !important; 
+	border: 0 !important; 
+	box-shadow: none !important; 
 }
-.isso-comment-footer * { display: inline; }
-.isso-upvote { padding: 4.5px; }
-.isso-comment-footer .isso-spacer { display: none; }
+.isso-comment-footer * { display: inline !important; }
+.isso-upvote { padding: 4.5px !important; }
+.isso-comment-footer .isso-spacer { display: none !important; }
 .isso-feedlink:hover, .isso-comment-footer a:hover { 
-	color: var(--clr-accent); 
-	text-shadow: none; 
+	color: var(--clr-accent) !important; 
+	text-shadow: none !important; 
 }
