@@ -43,17 +43,25 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 				<ul>
 					{posts.map((post) => (
 						<li>
-							<time datetime={post.frontmatter.pubDate}>
-								{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
-									year: 'numeric',
-									month: 'short',
-									day: '2-digit',
-								})} —
-							</time>
-							<a href={post.url}>{post.frontmatter.title}</a>
+							<a href={post.url}>
+								<time datetime={post.frontmatter.pubDate}>
+									{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
+										year: 'numeric',
+										month: 'short',
+										day: '2-digit',
+									})} —
+								</time>
+								{post.frontmatter.title}
+							</a>
 						</li>
 						<li>{post.frontmatter.description}</li>
 					))}
+					<li>
+						<a href="https://tylersdump.wordpress.com">
+							<time>??? ??, ???? — </time>Tyler's Dump
+						</a>
+					</li>
+					<li>All the previous blog posts from my sh!thole.</li>
 				</ul>
 			</section>
 			<Footer />
