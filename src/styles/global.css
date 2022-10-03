@@ -91,6 +91,7 @@ html {
 	--clr-text: var(--clr-custom-text);
 }
 
+/* Main content */
 body {
 	font-family: "Rubik", Verdana, sans-serif;
 	margin: auto;
@@ -112,6 +113,7 @@ section {
 a, a:visited {
 	color: var(--clr-accent);
 }
+/* Header */
 header {
 	padding: 0.5em;
 	margin: 0;
@@ -125,6 +127,7 @@ header {
 header > nav {
 	transform: skew(-8.13010235415596deg);
 }
+/* Theme Selector */
 .Popover {
 	background-color: var(--clr-bg-mute);
 	border-radius: 5px;
@@ -185,6 +188,7 @@ header > nav {
 #custom-bg-extra-color 	{ background-color: var(--clr-custom-bg-extra); color: var(--clr-custom-bg-extra); }
 #custom-accent-color 	{ background-color: var(--clr-custom-accent); 	color: var(--clr-custom-accent); }
 #custom-text-color 		{ background-color: var(--clr-custom-bg); 		color: var(--clr-custom-text); }
+/* Blog content */
 img {
 	max-width: 100%;
 	height: auto;
@@ -213,6 +217,7 @@ blockquote {
 blockquote > code {
 	background-color: var(--clr-bg-extra);
 }
+/* Parallelogram */
 .prlgm {
 	display: inline-block !important;
 	background: var(--clr-accent);
@@ -233,4 +238,49 @@ blockquote > code {
 }
 nav * {
 	padding: 0 5px;
+}
+/* Comments */
+
+h4.isso-thread-heading { color: inherit }
+#isso-thread { padding: 10px; }
+.isso-auth-section { padding: 0; margin: 0; }
+.isso-postbox { margin: 0; }
+.isso-textarea { 
+	background: var(--clr-bg-mute); 
+	border: 0; 
+	box-shadow: none; 
+}
+.isso-input-wrapper { 
+	max-width: calc(25% - 10px); 
+	margin: 5px; 
+}
+.isso-input-wrapper input { 
+	background: var(--clr-bg-mute); 
+	border: 0; 
+	box-shadow: none; 
+}
+.isso-post-action input { 
+	background: var(--clr-accent); 
+	color: var(--clr-bg-soft); 
+	border: 0; 
+	box-shadow: none; 
+}
+.isso-post-action input:hover { background: var(--clr-accent); }
+.isso-preview { 
+	background-color: var(--clr-bg-extra); 
+	background: repeating-linear-gradient( 
+		-45deg, var(--clr-bg-mute), 
+		var(--clr-bg-mute) 10px, 
+		var(--clr-bg-extra) 10px, 
+		var(--clr-bg-extra) 20px 
+	); 
+	border: 0; 
+	box-shadow: none; 
+}
+.isso-comment-footer * { display: inline; }
+.isso-upvote { padding: 4.5px; }
+.isso-comment-footer .isso-spacer { display: none; }
+.isso-feedlink:hover, .isso-comment-footer a:hover { 
+	color: var(--clr-accent); 
+	text-shadow: none; 
 }
