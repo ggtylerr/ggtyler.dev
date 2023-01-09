@@ -44,6 +44,9 @@ html {
 	--clr-custom-text: #000B1A;
 
 	--clr-error: #c63838;
+	--clr-error-text: #FFF;
+	--clr-gray: #424242;
+	--clr-gray-text: #FFF;
 }
 
 .flash {
@@ -91,6 +94,32 @@ html {
 	--clr-text: var(--clr-custom-text);
 }
 
+/* Icons */
+@font-face {
+	font-family: 'icomoon';
+	src:  url('/icomoon.eot?bxe5ms');
+	src:  url('/icomoon.eot?bxe5ms#iefix') format('embedded-opentype'),
+		url('/icomoon.ttf?bxe5ms') format('truetype'),
+		url('/icomoon.woff?bxe5ms') format('woff'),
+		url('/icomoon.svg?bxe5ms#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+icon {
+	font-family: 'icomoon' !important;
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 /* Main content */
 body {
 	font-family: "Rubik", Verdana, sans-serif;
@@ -132,7 +161,7 @@ header > nav {
 	background-color: var(--clr-bg-mute);
 	border-radius: 5px;
 	padding: 5px;
-	width: 10em;
+	width: 10.5em;
 	z-index: 9999999999999999999999999999999;
 }
 .theme-btn {
@@ -218,7 +247,7 @@ blockquote > code {
 	background-color: var(--clr-bg-extra);
 }
 /* Parallelogram */
-.prlgm {
+prlgm, .prlgm {
 	display: inline-block !important;
 	background: var(--clr-accent);
 	color: var(--clr-bg);
@@ -227,20 +256,54 @@ blockquote > code {
 	width: -webkit-fit-content;
 	width: -moz-fit-content;
 	width: fit-content;
-	height: 1.6em;
+	height: 1.5em;
 	margin: 0 0 0 0.1em;
 }
-.prlgm > span {
+prlgm > span, .prlgm > span {
 	display: inline-block;
 	transform: skew(-8.13010235415596deg);
 	padding-left: 0.1em;
 	padding-right: 0.1em;
 }
+.error {
+	background-color: var(--clr-error);
+	color: var(--clr-error-text);
+}
+.gray { 
+	background-color: var(--clr-gray); 
+	color: var(--clr-gray-text);
+}
 nav * {
 	padding: 0 5px;
 }
+/* Cards */
+cards {
+	display: grid;
+	grid-gap: 5px;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	align-items: center;
+	justify-items: center;
+}
+card {
+	background-color: var(--clr-bg-soft);
+	height: 200px;
+	width: 200px;
+	display: inline-block;
+	border-radius: 5px;
+	padding: 5px;
+	position: relative;
+}
+cards.small {
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+cards.small card {
+	height: 150px; 
+	width: 150px;
+}
+/* Lists */
+ol { list-style-position: inside; list-style-type: decimal; }
+ul { list-style-position: inside; list-style-type: disc; }
 /* Comments */
-
 h4.isso-thread-heading { color: inherit !important; }
 #isso-thread { padding: 10px !important; }
 .isso-auth-section { padding: 0 !important; margin: 0 !important; }
