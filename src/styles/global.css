@@ -303,6 +303,9 @@ cards.small card {
 /* Lists */
 ol { list-style-position: inside; list-style-type: decimal; }
 ul { list-style-position: inside; list-style-type: disc; }
+li ul, li ol { margin: 0 0 0 1em; }
+li ul { list-style-type: circle; }
+li ol { list-style-type: upper-roman; }
 /* Comments */
 h4.isso-thread-heading { color: inherit !important; }
 #isso-thread { padding: 10px !important; }
