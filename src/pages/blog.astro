@@ -14,23 +14,6 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 <html lang="en-us">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			ul {
-				list-style-type: none;
-				padding: unset;
-			}
-			ul li {
-				display: flex;
-			}
-			ul li time {
-				flex: 0 0 9.2em;
-				font-family: 'PT Mono', monospace;
-				font-style: italic;
-				color: var(--clr-accent);
-				padding-right: 0;
-			}
-			ul li a { padding: 0; }
-		</style>
 	</head>
 	<body>
 		<Header />
@@ -39,30 +22,26 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 				<p>Want to use an RSS reader? <a href="/rss.xml">Here's the <b>rss.xml</b> file.</a></p>
 				<p>Newsletter soon™ if there's enough interest.</p>
 			</section>
+			{posts.map((post) => (
+				<section>
+					<a href={post.url}>
+						<time datetime={post.frontmatter.pubDate}>
+							{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
+								year: 'numeric',
+								month: 'short',
+								day: '2-digit',
+							})} —
+						</time>
+						{post.frontmatter.title}
+					</a>
+					<p>{post.frontmatter.description}</p>
+				</section>
+			))}
 			<section>
-				<ul>
-					{posts.map((post) => (
-						<li>
-							<a href={post.url}>
-								<time datetime={post.frontmatter.pubDate}>
-									{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
-										year: 'numeric',
-										month: 'short',
-										day: '2-digit',
-									})} —
-								</time>
-								{post.frontmatter.title}
-							</a>
-						</li>
-						<li>{post.frontmatter.description}</li>
-					))}
-					<li>
-						<a href="https://tylersdump.wordpress.com">
-							<time>??? ??, ???? — </time>Tyler's Dump
-						</a>
-					</li>
-					<li>All the previous blog posts from my sh!thole.</li>
-				</ul>
+				<a href="https://tylersdump.wordpress.com">
+					??? ??, ???? — Tyler's Dump
+				</a>
+				<p>All the previous blog posts from my sh!thole.</p>
 			</section>
 			<Footer />
 		</main>
