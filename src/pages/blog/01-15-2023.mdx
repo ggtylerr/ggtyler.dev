@@ -18,10 +18,10 @@ pubDate: "Jan 15 2023"
     Along with this, I've also started hosting open-source frontends,
     starting with Invidious. My main instance 
     [*(iv.ggtyler.dev)*](https://iv.ggtyler.dev) went public on the
-    6th, and since then, 50 users have registered. (Keep in mind
-    most people don't register.) I may host more in the future, so
-    stay tuned. Also, if you're from one of those instances, thanks
-    for checking this site out!
+    6th, and since then, nearly 50 users have registered. (Keep in 
+    mind most people don't register.) I may host more in the future, 
+    so stay tuned. Also, if you're from one of those instances, 
+    thanks for checking this site out!
 </section>
 <section>
     Anyways, on to the main topic. If you've used any modern app,
@@ -34,7 +34,7 @@ pubDate: "Jan 15 2023"
     memory:
     ![Screenshot showing Firefox using 2GB, Visual Studio Code using 
     1.3GB, Discord using 900MB, Steam using 500MB, and 
-    Thunderbird using 300MB.](/blog/01122023-taskmgr.png)
+    Thunderbird using 300MB.](/res/blog/01122023-taskmgr.png)
     Combined, all of these apps use **5 GB**, over 30% of [a regular
     gaming system's RAM (16GB),](https://store.steampowered.com/hwsurvey) 
     and over half of an average PC's RAM (8GB)!
@@ -58,7 +58,71 @@ pubDate: "Jan 15 2023"
     With Python, non-versatility. With C#, Microsoft.
 
     With JS, the most you'll have to deal with is async functionality.
-    After that, you can do just about anything and *easily.*
+    After that, you can do just about anything and *easily.* Oh, and
+    there's also cross-platform and the fact that you don't have to
+    remake your web app for desktop / mobile. That's...probably the
+    main reason to be honest.
 </section>
 <section>
+    But obviously, there's downsides to JS. So what if we just...
+    *don't* use it? Like, at all?
+
+    This is the mentality behind 
+    [crazy sites like this.](pigeonsnest.co.uk/stuff/webshite/javascript.html)
+    Reader beware - there's pretty much no CSS so you might have
+    trouble viewing it.
+
+    Anyways, there are a few valid points he makes, but I think the 
+    biggest issue is that *it's heavily outdated.* A pretty obvious 
+    question arises when you don't use JS - what alternatives are 
+    there?
+
+    The closest one would be Flash, but not only does it require JS 
+    to be used at all, it also no longer exists. Maybe you can use 
+    PHP? But if you do that, you're purposely gimping yourself since 
+    JS is objectively better, especially since you'd only be doing it 
+    server side. 
+    [Just take a look at benchmarks between the two.](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/php.html)
+</section> 
+<section>
+    This is what makes the argument against it so interesting - 
+    The modern web is built on the three major languages, HTML, CSS, 
+    and JS. If you leave one of them out, you get a significantly
+    worse site.
+
+    But I think we can all agree that using too much of one can
+    be detrimental. So for any devs - try and find a balance between
+    having too little or too much.
+
+    Take this website for example. The one you're reading this on.
+    It's [built on Astro,](https://astro.build/) which strips all
+    unnecessary scripts. And for the ones that do need JS, if
+    it can't run, the whole website isn't affected by it.
+
+    As of writing, the only two elements that need client-side JS
+    is the theme selector and comment section *(comments are
+    handled by a different library which is why it needs JS.)*
+    These two are not necessary for the whole website, so if you
+    can't use JS, no worries! Any other scripts that might need
+    running (like Tailwind or the rss.xml generator) are done 
+    server-side.
+
+    As for Desktop and Mobile apps, it's obvious the best option
+    is to go fully native. But if you can't do that, try
+    something like [Tauri](https://tauri.app/),
+    [Neutralino](https://neutralino.js.org/), or 
+    [NodeGui](https://github.com/nodegui/nodegui). These utilize
+    native frameworks (such as Qt or WebKit) to boost performance -
+    meaning you can still (mostly) use your old code from Electron
+    or a website. It's not perfect, web browser libraries on OS's
+    generally offload the resources into a different program, and
+    NodeGui isn't really for website ports, but it's a far better
+    option than rewriting everything. If you're interested, [here's
+    a comparison between multiple frameworks.](https://github.com/Elanis/web-to-desktop-framework-comparison)
+</section>
+<section>
+    That's it for this post. I'll try and make these a bit more
+    fleshed out in the future. Thank you for reading, and take care.
+
+    *~ ggtyler*
 </section>
