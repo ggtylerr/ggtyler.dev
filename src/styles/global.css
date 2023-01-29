@@ -320,8 +320,8 @@ cards.small card {
 	width: 150px;
 }
 /* Lists */
-ol { list-style-position: inside; list-style-type: decimal; }
-ul { list-style-position: inside; list-style-type: disc; }
+ol { list-style-position: inside !important; list-style-type: decimal !important; }
+ul { list-style-position: inside !important; list-style-type: disc !important; }
 li ul, li ol { margin: 0 0 0 1em; }
 li ul { list-style-type: circle; }
 li ol { list-style-type: upper-roman; }
