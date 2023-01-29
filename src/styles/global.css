@@ -141,9 +141,12 @@ section {
 }
 a, a:visited {
 	color: var(--clr-accent) !important;
+	text-decoration: underline !important;
+	text-decoration-color: transparent;
+	transition: 0.2s ease-out;
 }
 a:hover {
-	text-decoration: underline !important;
+	text-decoration-color: var(--clr-accent);
 }
 /* Header */
 header {
@@ -278,11 +281,39 @@ prlgm, .prlgm {
 	height: 1.5em;
 	margin: 0 0 0 0.1em;
 }
-prlgm > span, .prlgm > span {
+prlgm > *, .prlgm > * {
 	display: inline-block;
 	transform: skew(-8.13010235415596deg);
 	padding-left: 0.1em;
 	padding-right: 0.1em;
+}
+prlgm.input-text, .prlgm.input-text {
+	background-color: var(--clr-bg-extra);
+	border: solid 1px var(--clr-bg-extra);
+	border-bottom-color: var(--clr-accent);
+	transition: 0.2s ease-out;
+}
+prlgm.input-text:hover, prlgm.input-text:active,
+prlgm.input-text:focus, .prlgm.input-text:hover, 
+.prlgm.input-text:active, .prlgm.input-text:focus {
+	border-color: var(--clr-accent);
+}
+prlgm > input, .prlgm > input {
+	outline: none;
+	background: none;
+	color: var(--clr-text);
+}
+button.prlgm {
+	background: linear-gradient(to right, var(--clr-accent) 50%, var(--clr-bg-mute) 0);
+	background-size: 200% 100%;
+	background-position: right;
+	color: inherit;
+	border: 1px solid var(--clr-accent);
+	transition: .2s ease-out;
+}
+button.prlgm:hover {
+	background-position: left;
+	color: var(--clr-bg);
 }
 .error {
 	background-color: var(--clr-error);
