@@ -142,6 +142,9 @@ section {
 a, a:visited {
 	color: var(--clr-accent) !important;
 }
+a:hover {
+	text-decoration: underline !important;
+}
 /* Header */
 header {
 	padding: 0.5em;
