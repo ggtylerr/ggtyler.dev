@@ -307,6 +307,9 @@ prlgm > input, .prlgm > input {
 	background: none;
 	color: var(--clr-text);
 }
+prlgm > input:focus, .prlgm > input:focus {
+	outline: none;
+}
 button.prlgm {
 	background: linear-gradient(to right, var(--clr-accent) 50%, var(--clr-bg-mute) 0);
 	background-size: 200% 100%;
