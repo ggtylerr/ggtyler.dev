@@ -132,6 +132,7 @@ body {
 	overflow-wrap: break-word;
 	line-height: 1.5;
 	color: var(--clr-text);
+	transition: 0.2s ease-out;
 }
 section {
 	background-color: var(--clr-bg-soft);
@@ -158,6 +159,7 @@ header {
 	transform: skew(8.13010235415596deg);
 	width: 100%;
 	border-radius: 5px;
+	transition: 0.2s ease-out;
 }
 header > nav {
 	transform: skew(-8.13010235415596deg);
@@ -295,7 +297,9 @@ prlgm.input-text, .prlgm.input-text {
 }
 prlgm.input-text:hover, prlgm.input-text:active,
 prlgm.input-text:focus, .prlgm.input-text:hover, 
-.prlgm.input-text:active, .prlgm.input-text:focus {
+.prlgm.input-text:active, .prlgm.input-text:focus,
+prlgm.input-text:focus-within, 
+.prlgm.input-text:focus-within {
 	border-color: var(--clr-accent);
 }
 prlgm > input, .prlgm > input {
