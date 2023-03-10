@@ -26,8 +26,45 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
                 <prlgm class="text-xl"><span>Title</span></prlgm>
                 <button class="prlgm text-xl"><span>Button</span></button>
                 <prlgm class="input-text"><input type="text" placeholder="Text Field"/></prlgm>
+                <prlgm class="input-text">
+                    <select>
+                        <option>Example 1</option>
+                        <option>Example 2</option>
+                        <option>Example 3</option>
+                    </select>
+                </prlgm>
             </cards>
         </section>
+        <div class="text-2xl flex flex-col items-center justify-center py-2">
+            <prlgm><span>Color Schemes</span></prlgm>
+            <h1 class="text-xl">Seaview (Light)</h1>
+        </div>
+        <cards>
+            <card class="text-center" style="background-color: var(--clr-light-bg); color: black;">
+                <h1 class="text-xl">Background</h1>
+                #BFDBFF
+            </card>
+            <card class="text-center" style="background-color: var(--clr-light-bg-soft); color: black;">
+                <h1 class="text-xl">Background (Soft)</h1>
+                #B6D0F2
+            </card>
+            <card class="text-center" style="background-color: var(--clr-light-bg-mute); color: black;">
+                <h1 class="text-xl">Background (Mute)</h1>
+                #A3BAD9
+            </card>
+            <card class="text-center" style="background-color: var(--clr-light-bg-extra); color: black;">
+                <h1 class="text-xl">Background (Extra)</h1>
+                #99AFCC
+            </card>
+            <card class="text-center" style="background-color: var(--clr-light-accent); color: black;">
+                <h1 class="text-xl">Accent</h1>
+                #006BFF
+            </card>
+            <card class="text-center" style="background-color: var(--clr-light-text); color: white;">
+                <h1 class="text-xl">Text</h1>
+                #000B1A
+            </card>
+        </cards>
         <Footer />
     </body>
 </html>
