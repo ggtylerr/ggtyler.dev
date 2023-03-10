@@ -132,7 +132,7 @@ body {
 	overflow-wrap: break-word;
 	line-height: 1.5;
 	color: var(--clr-text);
-	transition: 0.2s ease-out;
+	transition: color 0.2s ease-out, background-color 0.2s ease-out;
 }
 section {
 	background-color: var(--clr-bg-soft);
@@ -142,9 +142,11 @@ section {
 }
 a, a:visited {
 	color: var(--clr-accent) !important;
-	text-decoration: underline !important;
 	text-decoration-color: transparent;
-	transition: 0.2s ease-out;
+	transition: color 0.2s ease-out;
+}
+a:not(.nounder), a:visited:not(.nounder) {
+	text-decoration: underline !important;
 }
 a:hover {
 	text-decoration-color: var(--clr-accent);
@@ -159,7 +161,7 @@ header {
 	transform: skew(8.13010235415596deg);
 	width: 100%;
 	border-radius: 5px;
-	transition: 0.2s ease-out;
+	transition: color 0.2s ease-out, background-color 0.2s ease-out;
 }
 header > nav {
 	transform: skew(-8.13010235415596deg);
@@ -293,7 +295,7 @@ prlgm.input-text, .prlgm.input-text {
 	background-color: var(--clr-bg-extra);
 	border: solid 1px var(--clr-bg-extra);
 	border-bottom-color: var(--clr-accent);
-	transition: 0.2s ease-out;
+	transition: color 0.2s ease-out, background-color 0.2s ease-out;
 }
 prlgm.input-text:hover, prlgm.input-text:active,
 prlgm.input-text:focus, .prlgm.input-text:hover, 
@@ -361,8 +363,8 @@ cards.small card {
 ol { list-style-position: inside !important; list-style-type: decimal !important; }
 ul { list-style-position: inside !important; list-style-type: disc !important; }
 li ul, li ol { margin: 0 0 0 1em; }
-li ul { list-style-type: circle; }
-li ol { list-style-type: upper-roman; }
+li ul { list-style-type: circle !important; }
+li ol { list-style-type: upper-roman !important; }
 /* Comments */
 h4.isso-thread-heading { color: inherit !important; }
 #isso-thread { padding: 10px !important; }

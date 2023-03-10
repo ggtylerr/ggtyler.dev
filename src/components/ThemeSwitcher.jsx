@@ -105,7 +105,7 @@ export default function ThemeSwitcher() {
           </>
         )}
       >
-        <button className="px-1">Theme</button>
+        <button className="px-1 prlgm"><span>Theme</span></button>
       </Popover>
     </>
   );

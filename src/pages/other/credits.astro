@@ -1,0 +1,76 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
+---
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+    <body>
+        <Header />
+        <section>
+            <div class="flex flex-col items-center justify-center gap-2">
+                <prlgm class="text-2xl"><span>Resources</span></prlgm>
+                <p>The following were used in this site, either directly or indirectly.</p>
+                <ul>
+                    <li><a href="https://astro.build/">Astro 2</a>
+                        <ul>
+                            <li><a href="https://github.com/withastro/astro/tree/main/examples/blog">Based off of Blog Template</a></li>
+                            <li><a href="https://github.com/astro-community/astro-compress">Compress plugin</a></li>
+                            <li><a href="https://github.com/sebholstein/astro-google-fonts-optimizer">Google Fonts Optimizer plugin</a></li>
+                            <li><a href="https://www.npmjs.com/package/@astrojs/mdx">MDX support</a></li>
+                            <li><a href="https://www.npmjs.com/package/@astrojs/react">React support</a></li>
+                            <li><a href="https://www.npmjs.com/package/@astrojs/rss">RSS plugin</a></li>
+                            <li><a href="https://www.npmjs.com/package/@astrojs/sitemap">Sitemap plugin</a></li>
+                            <li><a href="https://github.com/RafidMuhymin/astro-spa">SPA (Single Page App) plugin</a></li>
+                            <li><a href="https://www.npmjs.com/package/@astrojs/tailwind">Tailwind support</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://reactjs.org/">React</a></li>
+                    <li><a href="https://tailwindcss.com/">Tailwind</a></li>
+                    <li><a href="https://floating-ui.com/">Floating UI</a></li>
+                    <li><a href="https://icomoon.io/">Icomoon</a>
+                        <ul>
+                            <li><a href="https://discord.com/branding">Discord Icon from official Brand Kit</a></li>
+                            <li><a href="https://icons8.com/icon/Se2xx0k3ZBsB/minecraft-grass-cube">Minecraft Icon from Icons8</a></li>
+                            <li><a href="https://github.com/simple-icons/simple-icons/blob/develop/icons/myanimelist.svg">MyAnimeList Icon from Simple Icons</a></li>
+                            <li><a href="https://icons8.com/icon/wyDwTHivnDXd/osu">osu! Icon from Icons8</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://code.visualstudio.com/">Visual Studio Code</a>
+                        <ul>
+                            <li><a href="https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode">Astro support</a></li>
+                            <li><a href="https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx">MDX support</a></li>
+                            <li><a href="https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets">React support</a></li>
+                            <li><a href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss">Tailwind support</a></li>
+                            <li><a href="https://doki-theme.unthrottled.io/">Doki Theme <i>(on top)</i></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <div class="flex flex-col items-center justify-center gap-2">
+                <prlgm class="text-2xl"><span>People</span></prlgm>
+                <p>Thank you to the following people:</p>
+                <ul>
+                    <li>My freshman Robotics Club teacher, who first got me into programming.</li>
+                    <li>My Graphic Design teacher, who's helped me with the design aspects in some of my projects, even if it might be outside his comfort zone.</li>
+                    <li>My Dad, who gave me encouragement on the rewrite and in future projects.</li>
+                    <li>Everyone who's supported me over the years, either financially, emotionally, or just by sticking around.</li>
+                    <li>You, for checking this place out and being a really cool person :)</li>
+                </ul>
+                <p>
+                    As cheesy as it sounds, without them none of this wouldn't be possible, so thank you all. Seriously, thank you :D
+                </p>
+                <p class="w-full">
+                    ~ <span style="color: var(--clr-accent)">gg</span><prlgm><span>tyler</span></prlgm>
+                </p>
+            </div>
+        </section>
+        <Footer />
+    </body>
+</html>
