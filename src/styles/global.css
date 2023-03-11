@@ -45,8 +45,8 @@ html {
 
 	--clr-error: #c63838;
 	--clr-error-text: #FFF;
-	--clr-gray: #424242;
-	--clr-gray-text: #FFF;
+	--clr-graey: #424242;
+	--clr-graey-text: #FFF;
 }
 
 .flash {
@@ -82,7 +82,7 @@ html {
 	--clr-bg-mute: var(--clr-amoled-bg-mute);
 	--clr-bg-extra: var(--clr-amoled-bg-extra);
 	--clr-accent: var(--clr-amoled-accent);
-	--clr-text: var(--clr-amoled-text);
+	--clr-text: var(--clr-amoled-text); 
 }
 
 .custom {
@@ -171,7 +171,7 @@ header > nav {
 	background-color: var(--clr-bg-mute);
 	border-radius: 5px;
 	padding: 5px;
-	width: 10.5em;
+	width: 11em;
 	z-index: 9999999999999999999999999999999;
 }
 .theme-btn {
@@ -197,29 +197,9 @@ header > nav {
 	);
 	border-color: black;
 }
-.theme-input {
-	background-color: var(--clr-bg-extra);
-	color: var(--clr-text);
-	border: 0;
-	width: 7em;
-	padding: 5px;
-	margin-bottom: 5px;
-	display: inline-block;
-}
-.theme-input::placeholder {
-	color: var(--clr-text);
-	opacity: 0.5;
-}
-.theme-input:focus {
-	outline: 0;
-}
 .theme-color {
 	display: inline-block;
-	border: 2px solid black;
-	border-radius: 5px;
-	padding-left: 5px;
-	padding-right: 5px;
-	margin-left: 5px;
+	border: solid 1px black;
 }
 #custom-bg-color 		{ background-color: var(--clr-custom-bg); 		color: var(--clr-custom-bg); }
 #custom-bg-soft-color 	{ background-color: var(--clr-custom-bg-soft); 	color: var(--clr-custom-bg-soft); }
@@ -304,6 +284,18 @@ prlgm.input-text:focus-within,
 .prlgm.input-text:focus-within {
 	border-color: var(--clr-accent);
 }
+input::placeholder {
+	color: var(--clr-text);
+	opacity: 0.5;
+}
+input:-ms-input-placeholder {
+	color: var(--clr-text);
+	opacity: 0.5;
+} 
+input::-ms-input-placeholder {
+	color: var(--clr-text);
+	opacity: 0.5;
+}
 prlgm > input, .prlgm > input, prlgm > select, .prlgm > select {
 	outline: none;
 	background: none;
@@ -337,8 +329,8 @@ button.prlgm:hover {
 	color: var(--clr-error-text);
 }
 .gray { 
-	background-color: var(--clr-gray); 
-	color: var(--clr-gray-text);
+	background-color: var(--clr-graey); 
+	color: var(--clr-graey-text);
 }
 nav * {
 	padding: 0 5px;
