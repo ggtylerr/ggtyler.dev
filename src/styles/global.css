@@ -283,7 +283,7 @@ prlgm, .prlgm {
 	width: -moz-fit-content;
 	width: fit-content;
 	height: 1.5em;
-	margin: 0 0 0 0.1em;
+	margin: 0 0.1em;
 }
 prlgm > *, .prlgm > * {
 	display: inline-block;

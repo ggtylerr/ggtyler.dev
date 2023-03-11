@@ -11,8 +11,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
 	</head>
     <body>
         <Header />
-        <h1 class="text-center text-3xl"><prlgm class="error h-[1.2em]"><span>TODO</span></prlgm></h1>
-        <br/>
         <h1 class="text-center text-2xl"><prlgm><span>Backslash</span></prlgm> Design</h1>
         <section>
             <p>
@@ -40,29 +38,137 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
             <h1 class="text-xl">Seaview (Light)</h1>
         </div>
         <cards>
-            <card class="text-center" style="background-color: var(--clr-light-bg); color: black;">
+            <card class="text-center" style="background-color: var(--clr-light-bg); color: var(--clr-light-text);">
                 <h1 class="text-xl">Background</h1>
                 #BFDBFF
             </card>
-            <card class="text-center" style="background-color: var(--clr-light-bg-soft); color: black;">
+            <card class="text-center" style="background-color: var(--clr-light-bg-soft); color: var(--clr-light-text);">
                 <h1 class="text-xl">Background (Soft)</h1>
                 #B6D0F2
             </card>
-            <card class="text-center" style="background-color: var(--clr-light-bg-mute); color: black;">
+            <card class="text-center" style="background-color: var(--clr-light-bg-mute); color: var(--clr-light-text);">
                 <h1 class="text-xl">Background (Mute)</h1>
                 #A3BAD9
             </card>
-            <card class="text-center" style="background-color: var(--clr-light-bg-extra); color: black;">
+            <card class="text-center" style="background-color: var(--clr-light-bg-extra); color: var(--clr-light-text);">
                 <h1 class="text-xl">Background (Extra)</h1>
                 #99AFCC
             </card>
-            <card class="text-center" style="background-color: var(--clr-light-accent); color: black;">
+            <card class="text-center" style="background-color: var(--clr-light-accent); color: var(--clr-light-text);">
                 <h1 class="text-xl">Accent</h1>
                 #006BFF
             </card>
-            <card class="text-center" style="background-color: var(--clr-light-text); color: white;">
+            <card class="text-center" style="background-color: var(--clr-light-text); color: var(--clr-dark-text);">
                 <h1 class="text-xl">Text</h1>
                 #000B1A
+            </card>
+        </cards>
+        <div class="text-2xl flex items-center justify-center py-2">
+            <h1 class="text-xl">Seaview (Dark)</h1>
+        </div>
+        <cards>
+            <card class="text-center" style="background-color: var(--clr-dark-bg); color: var(--clr-dark-text);">
+                <h1 class="text-xl">Background</h1>
+                #001B40
+            </card>
+            <card class="text-center" style="background-color: var(--clr-dark-bg-soft); color: var(--clr-dark-text);">
+                <h1 class="text-xl">Background (Soft)</h1>
+                #00204D
+            </card>
+            <card class="text-center" style="background-color: var(--clr-dark-bg-mute); color: var(--clr-dark-text);">
+                <h1 class="text-xl">Background (Mute)</h1>
+                #002354
+            </card>
+            <card class="text-center" style="background-color: var(--clr-dark-bg-extra); color: var(--clr-dark-text);">
+                <h1 class="text-xl">Background (Extra)</h1>
+                #003175
+            </card>
+            <card class="text-center" style="background-color: var(--clr-dark-accent); color: var(--clr-light-text);">
+                <h1 class="text-xl">Accent</h1>
+                #00DBFF
+            </card>
+            <card class="text-center" style="background-color: var(--clr-dark-text); color: var(--clr-light-text);">
+                <h1 class="text-xl">Text</h1>
+                #FFFFFF
+            </card>
+        </cards>
+        <div class="text-2xl flex items-center justify-center py-2">
+            <h1 class="text-xl">Flashbang</h1>
+        </div>
+        <cards>
+            <card class="text-center" style="background-color: var(--clr-flash-bg); color: var(--clr-flash-text);">
+                <h1 class="text-xl">Background</h1>
+                #DFDFDF
+            </card>
+            <card class="text-center" style="background-color: var(--clr-flash-bg-soft); color: var(--clr-flash-text);">
+                <h1 class="text-xl">Background (Soft)</h1>
+                #D5D5D5
+            </card>
+            <card class="text-center" style="background-color: var(--clr-flash-bg-mute); color: var(--clr-flash-text);">
+                <h1 class="text-xl">Background (Mute)</h1>
+                #BEBEBE
+            </card>
+            <card class="text-center" style="background-color: var(--clr-flash-bg-extra); color: var(--clr-flash-text);">
+                <h1 class="text-xl">Background (Extra)</h1>
+                #B3B3B3
+            </card>
+            <card class="text-center" style="background-color: var(--clr-flash-accent); color: var(--clr-flash-text);">
+                <h1 class="text-xl">Accent</h1>
+                #006BFF
+            </card>
+            <card class="text-center" style="background-color: var(--clr-flash-text); color: var(--clr-dark-text);">
+                <h1 class="text-xl">Text</h1>
+                #0D0D0D
+            </card>
+        </cards>
+        <div class="text-2xl flex items-center justify-center py-2">
+            <h1 class="text-xl">AMOLED</h1>
+        </div>
+        <cards>
+            <card class="text-center" style="background-color: var(--clr-amoled-bg); color: var(--clr-amoled-text);">
+                <h1 class="text-xl">Background</h1>
+                #000000
+            </card>
+            <card class="text-center" style="background-color: var(--clr-amoled-bg-soft); color: var(--clr-amoled-text);">
+                <h1 class="text-xl">Background (Soft)</h1>
+                #1D1D1D
+            </card>
+            <card class="text-center" style="background-color: var(--clr-amoled-bg-mute); color: var(--clr-amoled-text);">
+                <h1 class="text-xl">Background (Mute)</h1>
+                #323232
+            </card>
+            <card class="text-center" style="background-color: var(--clr-amoled-bg-extra); color: var(--clr-amoled-text);">
+                <h1 class="text-xl">Background (Extra)</h1>
+                #424242
+            </card>
+            <card class="text-center" style="background-color: var(--clr-amoled-accent); color: var(--clr-light-text);">
+                <h1 class="text-xl">Accent</h1>
+                #00DBFF
+            </card>
+            <card class="text-center" style="background-color: var(--clr-amoled-text); color: var(--clr-light-text);">
+                <h1 class="text-xl">Text</h1>
+                #FFFFFF
+            </card>
+        </cards>
+        <div class="text-2xl flex items-center justify-center py-2">
+            <h1 class="text-xl">Additional Colors</h1>
+        </div>
+        <cards>
+            <card class="text-center" style="background-color: var(--clr-error); color: var(--clr-error-text);">
+                <h1 class="text-xl">Error</h1>
+                #C63838
+            </card>
+            <card class="text-center" style="background-color: var(--clr-error-text); color: var(--clr-light-text);">
+                <h1 class="text-xl">Error Text</h1>
+                #FFFFFF
+            </card>
+            <card class="text-center" style="background-color: var(--clr-gray); color: var(--clr-gray-text);">
+                <h1 class="text-xl">Graey</h1>
+                #424242
+            </card>
+            <card class="text-center" style="background-color: var(--clr-gray-text); color: var(--clr-light-text);">
+                <h1 class="text-xl">Graey Text</h1>
+                #FFFFFF
             </card>
         </cards>
         <Footer />
