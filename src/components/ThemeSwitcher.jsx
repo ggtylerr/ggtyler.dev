@@ -55,11 +55,11 @@ export default function ThemeSwitcher() {
       <Popover
         render={({}) => (
           <>
-            <button className="theme-btn flash" onClick={() => theme('flash')}></button>
-            <button className="theme-btn light" onClick={() => theme('light')}></button>
-            <button className="theme-btn dark" onClick={() => theme('dark')}></button>
-            <button className="theme-btn amoled" onClick={() => theme('amoled')}></button>
-            <button className="theme-btn custom" onClick={() => theme('custom')}></button>
+            <button className="prlgm theme-btn flash" onClick={() => theme('flash')}><span></span></button>
+            <button className="prlgm theme-btn light" onClick={() => theme('light')}><span></span></button>
+            <button className="prlgm theme-btn dark" onClick={() => theme('dark')}><span></span></button>
+            <button className="prlgm theme-btn amoled" onClick={() => theme('amoled')}><span></span></button>
+            <button className="prlgm theme-btn custom" onClick={() => theme('custom')}><span></span></button>
             <br/>
             <prlgm className="input-text">
               <input 

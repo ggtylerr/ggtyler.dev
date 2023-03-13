@@ -175,27 +175,38 @@ header > nav {
 	z-index: 9999999999999999999999999999999;
 }
 .theme-btn {
-	background: var(--clr-bg);
-    width: 20px;
-    height: 20px;
+	background: linear-gradient(to right, var(--clr-bg-extra) 50%, var(--clr-bg) 0) !important;
+    background-size: 200% 100% !important;
+	background-position: right !important;
+    height: 1em;
     line-height: 20px;
-    display: inline-block;
-    border-radius: 50%;
-    text-align: center;
-    text-decoration:none;
-    border: 2px solid var(--clr-text);
-	margin: 5px;
+    border: 2px solid var(--clr-text) !important;
+	margin: 0.5em 1em;
 }
+.theme-btn:hover {
+	background-position: left !important;
+}
+.theme-btn > span { width: 1em; }
 .theme-btn.custom {
 	background: #006BFF;
-	background: linear-gradient(135deg,
-		#FF0000 20%, #FF9A00 26%, 
-		#D0DE21 32%, #4FDC4A 38%,
-		#3FDAD8 44%, #2FC9E2 50%,
-		#1C7FEE 56%, #5F15F2 62%,
-		#BA0CF8 68%, #FB07D9 80%
-	);
+	background: linear-gradient(to right,
+		#FB07D9 0%,     #BA0CF8 5.56%,
+		#5F15F2 11.12%, #1C7FEE 16.68%,
+		#2FC9E2 22.24%, #3FDAD8 27.80%,
+		#4FDC4A 33.36%, #D0DE21 38.92%,
+		#FF9A00 44.48%, #FF0000 50.00%,
+		#FF0000 50.00%, #FF9A00 55.56%, 
+		#D0DE21 61.12%, #4FDC4A 66.68%,
+		#3FDAD8 72.24%, #2FC9E2 77.80%,
+		#1C7FEE 83.36%, #5F15F2 88.92%,
+		#BA0CF8 94.48%, #FB07D9 100%
+	) !important;
+	background-size: 200% 100% !important;
+	background-position: right !important;
 	border-color: black;
+}
+.theme-btn:hover {
+	background-position: left !important;
 }
 .theme-color {
 	display: inline-block;
