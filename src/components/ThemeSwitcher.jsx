@@ -54,79 +54,82 @@ export default function ThemeSwitcher() {
     <>
       <Popover
         render={({}) => (
-          <>
-            <button className="prlgm theme-btn flash" onClick={() => theme('flash')}><span></span></button>
-            <button className="prlgm theme-btn light" onClick={() => theme('light')}><span></span></button>
-            <button className="prlgm theme-btn dark" onClick={() => theme('dark')}><span></span></button>
-            <button className="prlgm theme-btn amoled" onClick={() => theme('amoled')}><span></span></button>
-            <button className="prlgm theme-btn custom" onClick={() => theme('custom')}><span></span></button>
-            <br/>
-            <prlgm className="input-text">
-              <input 
-                id="custom-bg" type="text"
-                placeholder="Background" defaultValue={c.bg} minLength="9" maxLength="9" size="9"
-                onInput={() => colorCheck('bg')} onKeyDown={() => onEnter('bg', event)}
-              />
-            </prlgm>
-            <prlgm className="theme-color" id="custom-bg-color">
-              <span>Hi!</span>
-            </prlgm>
-            <br/>
-            <prlgm className="input-text">
-              <input 
-                id="custom-bg-soft" type="text"
-                placeholder="BG Soft" defaultValue={c.soft} minLength="9" maxLength="9" size="9"
-                onInput={() => colorCheck('bg-soft')} onKeyDown={() => onEnter('bg-soft', event)}
-              />
-            </prlgm>
-            <prlgm className="theme-color" id="custom-bg-soft-color">
-              <span>Hi!</span>
-            </prlgm>
-            <br/>
-            <prlgm className="input-text">
-              <input 
-                id="custom-bg-mute" type="text"
-                placeholder="BG Mute" defaultValue={c.mute} minLength="9" maxLength="9" size="9"
-                onInput={() => colorCheck('bg-mute')} onKeyDown={() => onEnter('bg-mute', event)}
-              />
-            </prlgm>
-            <prlgm className="theme-color" id="custom-bg-mute-color">
-              <span>Hi!</span>
-            </prlgm>
-            <br/>
-            <prlgm className="input-text">
-              <input 
-                id="custom-bg-extra" type="text"
-                placeholder="BG Extra" defaultValue={c.extra} minLength="9" maxLength="9" size="9"
-                onInput={() => colorCheck('bg-extra')} onKeyDown={() => onEnter('bg-extra', event)}
-              />
-            </prlgm>
-            <prlgm className="theme-color" id="custom-bg-extra-color">
-              <span>Hi!</span>
-            </prlgm>
-            <br/>
-            <prlgm className="input-text">
-              <input 
-                id="custom-accent" type="text"
-                placeholder="Accent" defaultValue={c.accent} minLength="9" maxLength="9" size="9"
-                onInput={() => colorCheck('accent')} onKeyDown={() => onEnter('accent', event)}
-              />
-            </prlgm>
-            <prlgm className="theme-color" id="custom-accent-color">
-              <span>Hi!</span>
-            </prlgm>
-            <br/>
-            <prlgm className="input-text">
-              <input 
-                id="custom-text" type="text"
-                placeholder="Text" defaultValue={c.text} minLength="9" maxLength="9" size="9"
-                onInput={() => colorCheck('text')} onKeyDown={() => onEnter('text', event)}
-              />
-            </prlgm>
-            <prlgm className="theme-color" id="custom-text-color">
-              <span>Hi!</span>
-            </prlgm>
-          </>
+          <span className="flex flex-col items-center justify-center p-0">
+            <span className="p-0">
+              <button className="prlgm theme-btn flash" onClick={() => theme('flash')}><span></span></button>
+              <button className="prlgm theme-btn light" onClick={() => theme('light')}><span></span></button>
+              <button className="prlgm theme-btn dark" onClick={() => theme('dark')}><span></span></button>
+              <button className="prlgm theme-btn amoled" onClick={() => theme('amoled')}><span></span></button>
+              <button className="prlgm theme-btn custom" onClick={() => theme('custom')}><span></span></button>
+            </span>
+            <span className="p-0">
+              <prlgm className="input-text">
+                <input 
+                  id="custom-bg" type="text"
+                  placeholder="Background" defaultValue={c.bg} minLength="9" maxLength="9" size="9"
+                  onInput={() => colorCheck('bg')} onKeyDown={() => onEnter('bg', event)}
+                />
+              </prlgm>
+              <prlgm className="theme-color" id="custom-bg-color">
+                <span>Hi!</span>
+              </prlgm>
+              <br/>
+              <prlgm className="input-text">
+                <input 
+                  id="custom-bg-soft" type="text"
+                  placeholder="BG Soft" defaultValue={c.soft} minLength="9" maxLength="9" size="9"
+                  onInput={() => colorCheck('bg-soft')} onKeyDown={() => onEnter('bg-soft', event)}
+                />
+              </prlgm>
+              <prlgm className="theme-color" id="custom-bg-soft-color">
+                <span>Hi!</span>
+              </prlgm>
+              <br/>
+              <prlgm className="input-text">
+                <input 
+                  id="custom-bg-mute" type="text"
+                  placeholder="BG Mute" defaultValue={c.mute} minLength="9" maxLength="9" size="9"
+                  onInput={() => colorCheck('bg-mute')} onKeyDown={() => onEnter('bg-mute', event)}
+                />
+              </prlgm>
+              <prlgm className="theme-color" id="custom-bg-mute-color">
+                <span>Hi!</span>
+              </prlgm>
+              <br/>
+              <prlgm className="input-text">
+                <input 
+                  id="custom-bg-extra" type="text"
+                  placeholder="BG Extra" defaultValue={c.extra} minLength="9" maxLength="9" size="9"
+                  onInput={() => colorCheck('bg-extra')} onKeyDown={() => onEnter('bg-extra', event)}
+                />
+              </prlgm>
+              <prlgm className="theme-color" id="custom-bg-extra-color">
+                <span>Hi!</span>
+              </prlgm>
+              <br/>
+              <prlgm className="input-text">
+                <input 
+                  id="custom-accent" type="text"
+                  placeholder="Accent" defaultValue={c.accent} minLength="9" maxLength="9" size="9"
+                  onInput={() => colorCheck('accent')} onKeyDown={() => onEnter('accent', event)}
+                />
+              </prlgm>
+              <prlgm className="theme-color" id="custom-accent-color">
+                <span>Hi!</span>
+              </prlgm>
+              <br/>
+              <prlgm className="input-text">
+                <input 
+                  id="custom-text" type="text"
+                  placeholder="Text" defaultValue={c.text} minLength="9" maxLength="9" size="9"
+                  onInput={() => colorCheck('text')} onKeyDown={() => onEnter('text', event)}
+                />
+              </prlgm>
+              <prlgm className="theme-color" id="custom-text-color">
+                <span>Hi!</span>
+              </prlgm>
+            </span>
+          </span>
         )}
       >
         <button className="px-1 prlgm"><span>Theme</span></button>
