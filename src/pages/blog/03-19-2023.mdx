@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "A critical look and overview of chat apps"
+title: "A critical look and overview of chat apps (Part 1)"
 description: "...and why is there so many of them?!"
 pubDate: "Mar 19 2023"
 ---
@@ -12,8 +12,8 @@ pubDate: "Mar 19 2023"
     I've been feeling pretty depressed and stressed out lately and 
     have been dealing with work and future plans. Not to mention I 
     was sick for a few days from food poisoning. To make up for 
-    this, this post is much longer. I've also been doing commits on
-    the [dev branch of the repo.](https://github.com/ggtylerr/ggtyler.dev/tree/dev)
+    this, this post and the next one is much longer. I've also been 
+    doing commits on the [dev branch of the repo.](https://github.com/ggtylerr/ggtyler.dev/tree/dev)
     If you want to see it (along with rough drafts of posts), 
     it's public on [dev.ggtyler.dev](https://dev.ggtyler.dev)
 
@@ -27,25 +27,6 @@ pubDate: "Mar 19 2023"
     * Various minor style changes
 </section>
 <section>
-    <h3 class="text-2xl">Table of Contents</h3>
-    <hr />
-    (Yes, this is a big article, so it warrants a ToC.)
-    * [Intro](#intro)
-    * [Discord](#discord)
-        - [The problem with React (and web-based Desktop frameworks)](#react)
-        - [The problem with Nitro](#nitro)
-        - [Disc's Misc. other problems](#disc-misc)
-    * [Matrix (and Element (& friends)))](#matrix)
-    * [Slack](#slack)
-    * [Guilded](#guilded)
-    * [Revolt](#revolt)
-    * [Quickfire](#quickfire)
-    * [Ranking & Conclusion](#end)
-</section>
-<section>
-    <h3 class="text-2xl" id="intro">Intro</h3>
-    <hr/>
-
     When you think of chat apps, what's the first one that
     comes to mind? Probably Discord. Maybe Skype, MS Teams,
     Slack, or TeamSpeak, depending on where you come from.
@@ -75,9 +56,6 @@ pubDate: "Mar 19 2023"
     counting strictly text apps.)*
 </section>
 <section>
-    <h3 class="text-2xl" id="discord">Discord</h3>
-    <hr/>
-
     Discord is great. I've been a user since Jan 2016,
     about 7 months after it was made public. It has an
     intuitive yet accessible UI, has tons of features,
@@ -213,43 +191,108 @@ pubDate: "Mar 19 2023"
     servers), how bots needed to be reinvited for slash commands, and
     how custom clients are constantly being threatened to be removed
     or broken.
+
+    <br/>
+
+    * New features attempt to kill partner apps
+
+    [Discord recently came out with an App Directory,](https://support.discord.com/hc/en-us/articles/9360431966359-Welcome-to-the-App-Directory-)
+    which, while a nice feature, is going to kill sites like Top.gg.
+    These sites mainly have bot listings and is going to be a direct
+    competitor with Discord's built-in directory. Obviously it's better
+    to have this directly in the app, but multiple people rely on these
+    sites for an active income. Not only does this affect the staff,
+    but top.gg has a custom ad setup where people bid specifically
+    for that site. No Google Ads or anything like that. Multiple devs, 
+    sites, and others rely on these ads due to the unique market. In
+    fact, I personally know two people who use them, and one of them
+    happens to be the server hoster.
+
+    <br/>
+
+    [Discord is also working on clips,](https://twitter.com/DiscordPreviews/status/1595169027097301046)
+    which will be directly competing with Medal, a service made
+    by the same people from Top.gg. So not only are they trying to
+    kill bot listing sites, which is where Medal gets the majority if
+    not all of its income, but they will be actively wiping this
+    team off the planet with clips.
+
+    <br/>
+
+    Discord is also working on Client Themes for Nitro, which will
+    be replacing a core feature in client mods like BetterDiscord.
+    Which, speaking of which:
+
+    <br/>
+
+    * Client Mods and Custom Clients are constantly threatened
+
+    BetterDiscord, along with other clients (like Ripcord, Vencord,
+    Aliucord, Shelter, and more) are against Discord's ToS. This is
+    because they have the ability to run client-side scripts, which
+    allow you to abuse Discord's API and see usually private
+    information, like Experiments, hidden channels, and a user's
+    client. This always perplexed me since this is also possible
+    in normal clients. Like I said, they're basically just browsers,
+    so if you knew how to do it, you can run scripts on a normal
+    client.
+
+    <br/>
+
+    Themes are a main feature of these mods as well, and this is also
+    possible with the [Stylus extension.](https://github.com/openstyles/stylus)
+    But for some reason, some people REALLY hate those who use these.
+    I've seen multiple people (including myself) get banned for
+    just sharing a screenshot with a custom theme. Keep in mind,
+    this is possible in browsers and does not immediately indicate
+    that someone is using a modded client. In fact, Opera GX has
+    made custom themes for Discord, with full permission from them.
+
+    <br/>
+
+    And Discord hasn't forgotten about them. As of writing, they're
+    now rolling out a selection of themes for Nitro users. This is
+    a worrying change - if this was a feature available for everyone,
+    it would be fine and a great inclusion. But they chose to paywall
+    it, which could result in custom clients getting taken down and its
+    users getting permbanned. They have never done these before, but
+    this is the first time this is really possible.
+
+    <br/>
+
+    And it's a shame - these clients offer tons of quality of life
+    features that Discord hasn't added in its 7 year existance. There's
+    also a few lightweight clients, like Ripcord and Swiftcord, that
+    are completely native. If they get taken down, I'm sure tons
+    of users would not be able to use the platform anymore.
 </section>
 <section>
-    <h4 class="text-xl" id="matrix">
-        Matrix (and Element (& friends))
-    </h4>
-    <hr/>
-</section>
-<section>
-    <h4 class="text-xl" id="slack">
-        Slack
-    </h4>
-    <hr/>
-</section>
-<section>
-    <h4 class="text-xl" id="guilded">
-        Guilded
-    </h4>
-    <hr/>
-</section>
-<section>
-    <h4 class="text-xl" id="revolt">
-        Revolt
-    </h4>
-    <hr/>
-</section>
-<section>
-    <h4 class="text-xl" id="quickfire">
-        Quickfire Round
-    </h4>
-    <hr/>
-    {/* Telegram, TeamSpeak, MS Team, 
-    Rocket Chat, IRC, Harmony, and uh,
-    Skype, lmao.*/}
-</section>
-<section>
-    <h4 class="text-xl" id="end">
-        Ranking & Conclusion
-    </h4>
-    <hr/>
+    Okay, okay, I'll stop there. I could honestly go on and on about
+    Discord, but this is an incredibly overdue article and I have a
+    lot more to go through.
+
+    <br/>
+
+    Originally, I was going to talk about a bunch of other platforms,
+    such as Revolt and Matrix. This was before I got caught up and
+    the post became over a month late. So instead of delaying it
+    anymore, this will be a two parter. In the next part, I will be
+    going through each of these platforms, discussing its positives
+    and negatives, and finally ranking them.
+
+    <br/>
+
+    Again, if you're interested in seeing it early, [make sure to check
+    the dev branch every now and then.](https://github.com/ggtylerr/ggtyler.dev/tree/dev)
+    If you'd rather not read unfinished stuff, it ***should*** be
+    out next week, if not, then in 2.
+
+    <br/>
+
+    Thank you for being patient and reading through this. I'll
+    see you all soon™!
+
+    <br/>
+
+    ~ ggtyler
 </section>
