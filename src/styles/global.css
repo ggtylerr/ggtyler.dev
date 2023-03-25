@@ -175,9 +175,7 @@ header > nav {
 	z-index: 9999999999999999999999999999999;
 }
 .theme-btn {
-	background: linear-gradient(to right, var(--clr-bg-extra) 50%, var(--clr-bg) 0) !important;
-    background-size: 200% 100% !important;
-	background-position: right !important;
+	background: linear-gradient(to right, var(--clr-bg-extra) 50%, var(--clr-bg) 0) right / 200% 100% !important;
     height: 1em;
     line-height: 20px;
     border: 2px solid var(--clr-text) !important;
@@ -200,9 +198,7 @@ header > nav {
 		#3FDAD8 72.24%, #2FC9E2 77.80%,
 		#1C7FEE 83.36%, #5F15F2 88.92%,
 		#BA0CF8 94.48%, #FB07D9 100%
-	) !important;
-	background-size: 200% 100% !important;
-	background-position: right !important;
+	) right / 200% 100% !important;
 	border-color: black;
 }
 .theme-btn:hover {
@@ -324,9 +320,7 @@ prlgm > select, .prlgm > select {
 	padding-right: 1em;
 }
 button.prlgm {
-	background: linear-gradient(to right, var(--clr-accent) 50%, var(--clr-bg-mute) 0);
-	background-size: 200% 100%;
-	background-position: right;
+	background: linear-gradient(to right, var(--clr-accent) 50%, var(--clr-bg-mute) 0) right / 200% 100%;
 	color: inherit;
 	border: 1px solid var(--clr-accent);
 	transition: .2s ease-out;
