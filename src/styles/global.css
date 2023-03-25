@@ -97,11 +97,11 @@ html {
 /* Icons */
 @font-face {
 	font-family: 'icomoon';
-	src:  url('/icomoon.eot?bxe5ms');
-	src:  url('/icomoon.eot?bxe5ms#iefix') format('embedded-opentype'),
-		url('/icomoon.ttf?bxe5ms') format('truetype'),
-		url('/icomoon.woff?bxe5ms') format('woff'),
-		url('/icomoon.svg?bxe5ms#icomoon') format('svg');
+	src:  url('/icomoon.eot?wmn7ak');
+	src:  url('/icomoon.eot?wmn7ak#iefix') format('embedded-opentype'),
+		url('/icomoon.ttf?wmn7ak') format('truetype'),
+		url('/icomoon.woff?wmn7ak') format('woff'),
+		url('/icomoon.svg?wmn7ak#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 	font-display: block;
@@ -145,7 +145,7 @@ a, a:visited {
 	text-decoration-color: transparent;
 	transition: color 0.2s ease-out;
 }
-a:not(.nounder), a:visited:not(.nounder) {
+a:not(.nounder):hover {
 	text-decoration: underline !important;
 }
 a:hover {
