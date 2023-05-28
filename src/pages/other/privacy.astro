@@ -1,0 +1,49 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
+---
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+    <body>
+        <Header />
+        <section>
+            <p>
+                This site does not use cookies, but instead uses local 
+                storage to save your theme preference. 
+                This cannot be used to identify you and never leaves your device.
+                A partial IP address will be also be saved if you comment, 
+                which is done via Isso (the software used to handle comments)
+                <a href="https://github.com/posativ/isso/issues/445#issuecomment-392116236">
+                and also cannot be used to identify you.</a>
+                Comments can also be deleted <a href="/social">if you contact me.</a>
+            </p>
+            <br/>
+            <p>
+                <b>This is all the data stored on this site.</b> We do not use any kind of
+                privacy-invading software such as Google Analytics or CloudFlare.
+                <b><i>However,</i></b> this site uses various third-party open-source
+                libraries, such as Astro, React, Tailwind, Floating UI, and more.
+                These libraries do not have any tracking methods as far as I know,
+                but they may be included in the future, or I may have missed something.
+            </p>
+            <br/>
+            <p>
+                The same goes for any of my other software, not just this site.
+                If applicable, please check if the software you want to use has an
+                individual privacy policy. If not, then this one applies.
+            </p>
+            <br/>
+            <p>
+                If you believe any part of my software is violating your privacy,
+                that be a specific line of code, a library used, or otherwise,
+                please contact me or open an issue on the relevant repository.
+            </p>
+        </section>
+        <Footer />
+    </body>
+</html>
