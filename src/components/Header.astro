@@ -10,11 +10,11 @@ import ThemeSwitcher from './ThemeSwitcher.jsx';
 	if (options.includes(theme)) document.body.className = theme;
 	else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 		document.body.className = "dark";
-		localStorage.theme = "dark";
+		localStorage.setItem("theme","dark");
 	}
 	else {
 		document.body.className = "light";
-		localStorage.theme = "light";
+		localStorage.setItem("theme","light");
 	}
 	let c = {
 		bg:     localStorage.getItem("custom-bg"),

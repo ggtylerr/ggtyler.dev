@@ -24,8 +24,20 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
             </p>
             <br/>
             <p>
-                <b>This is all the data stored on this site.</b> We do not use any kind of
-                privacy-invading software such as Google Analytics or CloudFlare.
+                <b>This is all the data stored on this site.</b> If you're paranoid,
+                you can disable JS (or just not use those two components.) You can
+                still change your theme preference via editing your Local Storage
+                and setting <code>theme</code> to one of the following: 
+                <code>["flash","light","dark","amoled","custom"]</code>
+                You can also set custom colors by setting a color code string to
+                one of the following keys: <br/>
+                <code>["custom-bg", "custom-bg-soft", "custom-bg-mute", <br/>
+                    "custom-bg-extra", "custom-accent", "custom-text"]</code>
+            </p>
+            <br/>
+            <p>
+                We do not use any kind of privacy-invading software such as 
+                Google Analytics or CloudFlare.
                 <b><i>However,</i></b> this site uses various third-party open-source
                 libraries, such as Astro, React, Tailwind, Floating UI, and more.
                 These libraries do not have any tracking methods as far as I know,
