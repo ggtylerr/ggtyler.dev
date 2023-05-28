@@ -3,6 +3,36 @@ import HeaderLink from './HeaderLink.astro';
 import ThemeSwitcher from './ThemeSwitcher.jsx';
 ---
 
+<!-- Theme setting (placed in header since this is the first body tag) -->
+<script is:raw>
+	const theme = localStorage.theme?.toLowerCase();
+	const options = ["flash", "light", "dark", "amoled", "custom"]
+	if (options.includes(theme)) document.body.className = theme;
+	else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+		document.body.className = "dark";
+		localStorage.setItem("theme","dark");
+	}
+	else {
+		document.body.className = "light";
+		localStorage.setItem("theme","light");
+	}
+	let c = {
+		bg:     localStorage.getItem("custom-bg"),
+		soft:   localStorage.getItem("custom-bg-soft"),
+		mute:   localStorage.getItem("custom-bg-mute"),
+		extra:  localStorage.getItem("custom-bg-extra"),
+		accent: localStorage.getItem("custom-accent"),
+		text:   localStorage.getItem("custom-text"),
+	}
+	let style = document.body.style;
+	if (c.bg)     style.setProperty("--clr-custom-bg", c.bg, "important");
+	if (c.soft)   style.setProperty("--clr-custom-bg-soft", c.soft, "important");
+	if (c.mute)   style.setProperty("--clr-custom-bg-mute", c.mute, "important");
+	if (c.extra)  style.setProperty("--clr-custom-bg-extra", c.extra, "important");
+	if (c.accent) style.setProperty("--clr-custom-accent", c.accent, "important");
+	if (c.text)   style.setProperty("--clr-custom-text", c.text, "important");
+</script>
+
 <header>
 	<nav>
 		<HeaderLink href="/" class="nounder">gg<span class="prlgm" style="color:var(--clr-bg-soft)"><span>tyler</span></span></HeaderLink>
