@@ -62,8 +62,22 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </p>
         </section>
         <section class="text-center">
-            <h1 class="text-2xl">Current Status: <prlgm><span><b>NOMINAL</b></span></prlgm></h1>
-            Check back here for maintenence notices.
+            <h1 class="text-2xl">Current Status: <prlgm class="warning"><span><b>WARNING</b></span></prlgm></h1>
+            Google is currently 
+            <a href="https://github.com/iv-org/invidious/issues/3822">blocking multiple Invidious instances, including mine.</a> 
+            The current solution is to move to different, temporary servers, until a more permanent 
+            workaround can be made. I'm unable to transfer user data due to the risk of GDPR violations,
+            so if you want to use your subscriptions and playlists at the moment, please:
+            <ol>
+                <li><a href="https://qc1.iv.ggtyler.dev/data_control">Export your user data from the main node</a></li>
+                <li><a href="https://iv.ggtyler.dev/login">Make a new account in the current server</a></li>
+                <li><a href="https://iv.ggtyler.dev/data_control">Import your user data</a></li>
+            </ol>
+            It's recommended to keep your user data on your PC, as I may need to move to a different server.
+            Currently, the Invidious server is located at:
+            <blockquote>
+                <code>sea1.iv.ggtyler.dev</code>
+            </blockquote>
         </section>
         <cards class="text-center">
             <card class="h-auto">
@@ -74,7 +88,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <a href="https://invidious.io"><icon></icon></a>
                 <hr/>
                 <a href="https://qc1.iv.ggtyler.dev">QC-1 🇨🇦</a><br/>
-                SEA-1 🇺🇸 (SOON™)
+                <a href="https://sea1.iv.ggtyler.dev">SEA-1 🇺🇸</a><br/>
+                PAR-1 🇫🇷 (SOON™)
             </card>
             <card class="h-auto">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
@@ -83,7 +98,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <a href="https://github.com/zedeus/nitter"><icon></icon></a>
                 <hr/>
                 <a href="https://qc1.nt.ggtyler.dev">QC-1 🇨🇦</a><br/>
-                SEA-1 🇺🇸 (SOON™)
+                SEA-1 🇺🇸 (SOON™)<br/>
+                PAR-1 🇫🇷 (SOON™)
             </card>
             <card class="h-auto">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
@@ -92,7 +108,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <a href="https://codeberg.org/teddit/teddit"><icon></icon></a>
                 <hr/>
                 <a href="https://qc1.td.ggtyler.dev">QC-1 🇨🇦</a><br/>
-                SEA-1 🇺🇸 (SOON™)
+                SEA-1 🇺🇸 (SOON™)<br/>
+                PAR-1 🇫🇷 (SOON™)
             </card>
             <card class="h-auto">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
@@ -101,7 +118,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <a href="https://github.com/libreddit/libreddit/"><icon></icon></a>
                 <hr/>
                 <a href="https://qc1.lr.ggtyler.dev">QC-1 🇨🇦</a><br/>
-                SEA-1 🇺🇸 (SOON™)
+                SEA-1 🇺🇸 (SOON™)<br/>
+                PAR-1 🇫🇷 (SOON™)
             </card>
             <card class="h-auto">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
@@ -111,7 +129,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <Tooltip text="This service runs on the Docker version (from PussTheCat.org)"/>
                 <hr/>
                 <a href="https://qc1.breeze.ggtyler.dev">QC-1 🇨🇦</a><br/>
-                <a href="https://sea1.breeze.ggtyler.dev">SEA-1 🇺🇸</a>
+                <a href="https://sea1.breeze.ggtyler.dev">SEA-1 🇺🇸</a><br/>
+                <a href="https://par1.breeze.ggtyler.dev">PAR-1 🇫🇷</a>
             </card>
         </cards>
         <br/>

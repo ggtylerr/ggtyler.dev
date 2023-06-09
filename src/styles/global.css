@@ -43,6 +43,8 @@ html {
 	--clr-custom-accent: #006BFF;
 	--clr-custom-text: #000B1A;
 
+	--clr-warning: #c6c438;
+	--clr-warning-text: #000;
 	--clr-error: #c63838;
 	--clr-error-text: #FFF;
 	--clr-graey: #424242;
@@ -330,6 +332,10 @@ button.prlgm {
 button.prlgm:hover {
 	background-position: left;
 	color: var(--clr-bg);
+}
+.warning {
+	background-color: var(--clr-warning);
+	color: var(--clr-warning-text);
 }
 .error {
 	background-color: var(--clr-error);
