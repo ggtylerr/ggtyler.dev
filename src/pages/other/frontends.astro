@@ -1,0 +1,142 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Tooltip from '../../components/Tooltip.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
+---
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        <script data-isso={COMMENTS}
+        src={COMMENTS + "js/embed.min.js"}></script>
+	</head>
+    <body>
+        <Header />
+        <center><prlgm class="text-2xl font-bold"><span>FRONTEND LIST</span></prlgm></center>
+        <section>
+            <p>
+                Privacy and open source are two pillars of the internet -
+                ones that are being taken away. Multiple companies and
+                services are constantly trying to fight against them, which
+                is why I'm throwing my own hat into the ring.
+            </p>
+
+            <br/>
+
+            <p>
+                Below is a list of frontends currently being hosted by
+                yours truly. They are all unmodified, non-tracking, and
+                completely community driven. The current list is small,
+                but with your support, not only will there be a complete
+                hosting list, but multiple locations will be selectable.
+            </p>
+
+            <br/>
+
+            <p>
+                Please comment below on any improvements I could do, or
+                any problems you're getting. (Though please note that
+                if it's a bug directly from the software, you'll need to
+                report it to the developers, not me.) I'll also be making
+                a server / chatroom soon for this.
+            </p>
+
+            <br/>
+
+            <p>
+                <b>Also, pro tip:</b> All links can be replaced with a
+                shorthand version.
+
+                <br/>
+
+                Example: <code>qc1.iv.ggtyler.dev</code> -&gt; <code>qc1.iv.ggt.bz</code>
+            </p>
+            
+            <p>
+                Also - services are auto-restarted and updated every hour.
+                Unless specified, they are using Docker builds, which are
+                usually ready for production, and thus should not have any
+                problems.
+            </p>
+        </section>
+        <section class="text-center">
+            <h1 class="text-2xl">Current Status: <prlgm class="warning"><span><b>WARNING</b></span></prlgm></h1>
+            Google is currently 
+            <a href="https://github.com/iv-org/invidious/issues/3822">blocking multiple Invidious instances, including mine.</a> 
+            The current solution is to move to different, temporary servers, until a more permanent 
+            workaround can be made. I'm unable to transfer user data due to the risk of GDPR violations,
+            so if you want to use your subscriptions and playlists at the moment, please:
+            <ol>
+                <li><a href="https://qc1.iv.ggtyler.dev/data_control">Export your user data from the main node</a></li>
+                <li><a href="https://iv.ggtyler.dev/login">Make a new account in the current server</a></li>
+                <li><a href="https://iv.ggtyler.dev/data_control">Import your user data</a></li>
+            </ol>
+            It's recommended to keep your user data on your PC, as I may need to move to a different server.
+            Currently, the Invidious server is located at:
+            <blockquote>
+                <code>sea1.iv.ggtyler.dev</code>
+            </blockquote>
+        </section>
+        <cards class="text-center">
+            <card class="h-auto">
+                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
+                <h1 class="text-xl"><a href="https://iv.ggtyler.dev">Invidious</a></h1>
+                <center>(For YouTube)</center>
+                <a href="https://github.com/iv-org/invidious"><icon></icon></a>
+                <a href="https://invidious.io"><icon></icon></a>
+                <hr/>
+                <a href="https://qc1.iv.ggtyler.dev">QC-1 🇨🇦</a><br/>
+                <a href="https://sea1.iv.ggtyler.dev">SEA-1 🇺🇸</a><br/>
+                PAR-1 🇫🇷 (SOON™)
+            </card>
+            <card class="h-auto">
+                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
+                <h1 class="text-xl"><a href="https://nt.ggtyler.dev">Nitter</a></h1>
+                <center>(For Twitter)</center>
+                <a href="https://github.com/zedeus/nitter"><icon></icon></a>
+                <hr/>
+                <a href="https://qc1.nt.ggtyler.dev">QC-1 🇨🇦</a><br/>
+                SEA-1 🇺🇸 (SOON™)<br/>
+                PAR-1 🇫🇷 (SOON™)
+            </card>
+            <card class="h-auto">
+                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
+                <h1 class="text-xl"><a href="https://td.ggtyler.dev">Teddit</a></h1>
+                <center>(For Reddit)</center>
+                <a href="https://codeberg.org/teddit/teddit"><icon></icon></a>
+                <hr/>
+                <a href="https://qc1.td.ggtyler.dev">QC-1 🇨🇦</a><br/>
+                SEA-1 🇺🇸 (SOON™)<br/>
+                PAR-1 🇫🇷 (SOON™)
+            </card>
+            <card class="h-auto">
+                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
+                <h1 class="text-xl"><a href="https://lr.ggtyler.dev">LibReddit</a></h1>
+                <center>(For Reddit)</center>
+                <a href="https://github.com/libreddit/libreddit/"><icon></icon></a>
+                <hr/>
+                <a href="https://qc1.lr.ggtyler.dev">QC-1 🇨🇦</a><br/>
+                SEA-1 🇺🇸 (SOON™)<br/>
+                PAR-1 🇫🇷 (SOON™)
+            </card>
+            <card class="h-auto">
+                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
+                <h1 class="text-xl"><a href="https://breeze.ggtyler.dev">Breezewiki</a></h1>
+                <center>(For Fandom)</center>
+                <a href="https://gitdab.com/cadence/breezewiki"><icon></icon></a>
+                <Tooltip text="This service runs on the Docker version (from PussTheCat.org)"/>
+                <hr/>
+                <a href="https://qc1.breeze.ggtyler.dev">QC-1 🇨🇦</a><br/>
+                <a href="https://sea1.breeze.ggtyler.dev">SEA-1 🇺🇸</a><br/>
+                <a href="https://par1.breeze.ggtyler.dev">PAR-1 🇫🇷</a>
+            </card>
+        </cards>
+        <br/>
+        <section id="isso-thread">
+            <noscript>JavaScript needs to be activated to view comments.</noscript>
+        </section>
+        <Footer />
+    </body>
+</html>

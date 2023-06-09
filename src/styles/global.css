@@ -43,6 +43,8 @@ html {
 	--clr-custom-accent: #006BFF;
 	--clr-custom-text: #000B1A;
 
+	--clr-warning: #c6c438;
+	--clr-warning-text: #000;
 	--clr-error: #c63838;
 	--clr-error-text: #FFF;
 	--clr-graey: #424242;
@@ -97,11 +99,11 @@ html {
 /* Icons */
 @font-face {
 	font-family: 'icomoon';
-	src:  url('/icomoon.eot?bxe5ms');
-	src:  url('/icomoon.eot?bxe5ms#iefix') format('embedded-opentype'),
-		url('/icomoon.ttf?bxe5ms') format('truetype'),
-		url('/icomoon.woff?bxe5ms') format('woff'),
-		url('/icomoon.svg?bxe5ms#icomoon') format('svg');
+	src:  url('/icomoon.eot?7ojrrw');
+	src:  url('/icomoon.eot?7ojrrw#iefix') format('embedded-opentype'),
+		url('/icomoon.ttf?7ojrrw') format('truetype'),
+		url('/icomoon.woff?7ojrrw') format('woff'),
+		url('/icomoon.svg?7ojrrw#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 	font-display: block;
@@ -114,6 +116,8 @@ icon {
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
+	width: 1em;
+	height: 1em;
 
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
@@ -145,7 +149,7 @@ a, a:visited {
 	text-decoration-color: transparent;
 	transition: color 0.2s ease-out;
 }
-a:not(.nounder), a:visited:not(.nounder) {
+a:not(.nounder):hover {
 	text-decoration: underline !important;
 }
 a:hover {
@@ -328,6 +332,10 @@ button.prlgm {
 button.prlgm:hover {
 	background-position: left;
 	color: var(--clr-bg);
+}
+.warning {
+	background-color: var(--clr-warning);
+	color: var(--clr-warning-text);
 }
 .error {
 	background-color: var(--clr-error);
