@@ -63,24 +63,38 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
         </section>
         <section class="text-center">
             <h1 class="text-2xl">Current Status: <prlgm class="warning"><span><b>WARNING</b></span></prlgm></h1>
-            Google is currently 
+            As you may know, Google has been 
             <a href="https://github.com/iv-org/invidious/issues/3822">blocking multiple Invidious instances, including mine.</a> 
-            The current solution is to move to different, temporary servers, until a more permanent 
-            workaround can be made. I'm unable to transfer user data due to the risk of GDPR violations,
-            so if you want to use your subscriptions and playlists at the moment, please:
+            The past solution was to move to different, temporary servers. I've been able to get a new primary server in NYC 
+            with IPv6, meaning I'll be able to use a better patch - IPv6 address rotation.
+            Unfortunately, due to the way QC1 was made and handled, <b>QC1 will be deprecated on the 1st.</b>
+            I'm unable to transfer user data due to the risk of GDPR violations,
+            so if you still have any leftover data from there (and other nodes):
             <ol>
-                <li><a href="https://qc1.iv.ggtyler.dev/data_control">Export your user data from the main node</a></li>
+                <li><a href="https://qc1.iv.ggtyler.dev/data_control">Export your user data from the QC1 node</a></li>
                 <li><a href="https://iv.ggtyler.dev/login">Make a new account in the current server</a></li>
                 <li><a href="https://iv.ggtyler.dev/data_control">Import your user data</a></li>
             </ol>
-            It's recommended to keep your user data on your PC, as I may need to move to a different server.
-            Currently, the Invidious server is located at:
-            <blockquote>
-                <code>par1.iv.ggtyler.dev</code>
+            I recommend making periodic backups as well. While the US has much more (and cheaper) servers,
+            I can't forsee the future and I won't know exactly when this will need to be transferred again.
+            <br/><br/>
+            <details>
+                <summary>Explanation for QC1 deprecation</summary>
+                QC1 (previously hosted on OVH in Quebec City) was a dedicated server that was being shared
+                among multiple people, but primarily by me. This was being paid by a good dev friend of mine
+                (moocow) who decided they didn't want the server. <i>(Yes, I was paying them a bit as part of my share.)</i>
+                Due to the way OVH works, you <b>need</b> to live outside of the US in order to host servers globally.
+                I only have a few friends who happen to live outside there, but unfortunately, none of them were willing
+                to make an account for me.
+
+                <br/><br/>
+
+                I personally apologize for not giving the exact details or transferring sooner. I had a power outage
+                due to a storm (not hurricane hilary) and had very little access to power and data for ~36 hours. Before that,
+                I had about a day or so where I could've transferred everything over, but I just haven't been able to have time for it.
+                Blame it on depression, college, work, or lazyness, either way I should've done it when I got ssh access, and I didn't.
+            </details>
             </blockquote>
-            <hr/>
-            <a href="https://tedd.it/shutdown">Teddit has shut down,</a> and as such, I've
-            removed my instance. Go use LibReddit or Lemmy. (The current link redirects to lemmy now lol)
         </section>
         <cards class="text-center">
             <card class="h-auto">
@@ -90,7 +104,9 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <a href="https://github.com/iv-org/invidious"><icon></icon></a>
                 <a href="https://invidious.io"><icon></icon></a>
                 <hr/>
+                <a href="https://nyc1.iv.ggtyler.dev">NYC-1 🇺🇸</a><br/>
                 <a href="https://qc1.iv.ggtyler.dev">QC-1 🇨🇦</a><br/>
+                <Tooltip text="Will be deprecated on the 1st!"/>
                 <a href="https://sea1.iv.ggtyler.dev">SEA-1 🇺🇸</a><br/>
                 <a href="https://par1.iv.ggtyler.dev">PAR-1 🇫🇷</a>
             </card>
@@ -124,17 +140,6 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <a href="https://qc1.breeze.ggtyler.dev">QC-1 🇨🇦</a><br/>
                 <a href="https://sea1.breeze.ggtyler.dev">SEA-1 🇺🇸</a><br/>
                 <a href="https://par1.breeze.ggtyler.dev">PAR-1 🇫🇷</a>
-            </card>
-            <card class="h-auto">
-                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://td.ggtyler.dev">Teddit</a></h1>
-                <center>(For Reddit)</center>
-                <a href="https://codeberg.org/teddit/teddit"><icon></icon></a>
-                <hr/>
-                <s><a href="https://qc1.td.ggtyler.dev">QC-1 🇨🇦</a><br/>
-                SEA-1 🇺🇸 (SOON™)<br/>
-                PAR-1 🇫🇷 (SOON™)<br/></s>
-                Teddit has shut down. Go use LibReddit or Lemmy.
             </card>
         </cards>
         <br/>
