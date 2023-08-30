@@ -155,6 +155,11 @@ a:not(.nounder):hover {
 a:hover {
 	text-decoration-color: var(--clr-accent);
 }
+hr {
+	border-color: var(--clr-bg-mute);
+	border-radius: 5px;
+	border-width: 1px;
+}
 /* Header */
 header {
 	padding: 0.5em;
@@ -353,14 +358,14 @@ cards {
 	display: grid;
 	grid-gap: 5px;
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-auto-rows: 1fr !important;
 	align-items: center;
 	justify-items: center;
 }
 card {
 	background-color: var(--clr-bg-soft);
-	height: 200px;
+	min-height: 200px;
 	width: 200px;
-	display: inline-block;
 	border-radius: 5px;
 	padding: 5px;
 	position: relative;
@@ -369,8 +374,20 @@ cards.small {
 	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 cards.small card {
-	height: 150px; 
+	min-height: 150px; 
 	width: 150px;
+}
+card .inner {
+	background-color: var(--clr-bg-mute);
+	width: 190px;
+	max-width: 190px;
+	display: inline-block;
+	padding: 5px;
+	border-radius: 5px;
+}
+cards.small card .inner {
+	width: 140px;
+	max-width: 140px;
 }
 /* Lists */
 ol { list-style-position: inside !important; list-style-type: decimal !important; }
