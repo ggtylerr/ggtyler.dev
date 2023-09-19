@@ -56,6 +56,31 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
                 please contact me or open an issue on the relevant repository.
             </p>
         </section>
+        <section>
+            <h1 class="text-2xl">Frontends</h1>
+            <p>
+                I host <a href="/other/frontends">multiple frontends</a> on my servers,
+                mostly for user privacy. These are all open source and run on the same
+                infrastructure as all my other services, which means that it does not
+                collect any data whatsoever. No Cloudflare.
+            </p>
+            <br/>
+            <p>
+                It should be noted that due to auto updates, if a bad actor were to
+                push a malicious update that started data collection, it may slip through.
+                This is unlikely as all services run on Docker, and thus they'd need access
+                to both the repository and the docker images, but it's still a possibility.
+                This is why I still suggest you use a VPN and/or adblocker when using these.
+            </p>
+            <br/>
+            <p>                
+                Unfortunately, I don't have time to review each and every single piece of code
+                before updating, and due to the nature of these frontends, auto updating
+                is the only way to reliably keep them working. Please double check the
+                frontend's source code before using it if you're concerned. (These are always
+                linked on the frontend list.)
+            </p>
+        </section>
         <Footer />
     </body>
 </html>
