@@ -1,0 +1,15 @@
+---
+export interface Props {
+    name: string;
+    amount?: number;
+}
+const { name, amount = 2 } = Astro.props;
+// workaround using arrays instead of num since no for loops
+// thx stackoverflow https://stackoverflow.com/a/33352604
+const amountArr = Array.from({length: amount}, (_, i) => i + 1);
+---
+<icon class={name}>
+    {amountArr.map((i) => (
+        <span class={"path" + i}></span>
+    ))}
+</icon>

@@ -3,6 +3,7 @@ import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Tooltip from '../../components/Tooltip.astro';
+import MCIcon from '../../components/MCIcon.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
 ---
 <!DOCTYPE html>
@@ -77,23 +78,6 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </ol>
             I recommend making periodic backups as well. While the US has much more (and cheaper) servers,
             I can't forsee the future and I won't know exactly when this will need to be transferred again.
-            <br/><br/>
-            <details>
-                <summary>Explanation for QC1 deprecation</summary>
-                QC1 (previously hosted on OVH in Quebec City) was a dedicated server that was being shared
-                among multiple people, but primarily by me. This was being paid by a good dev friend of mine
-                (moocow) who decided they didn't want the server. <i>(Yes, I was paying them a bit as part of my share.)</i>
-                Due to the way OVH works, you <b>need</b> to live outside of the US in order to host servers globally.
-                I only have a few friends who happen to live outside there, but unfortunately, none of them were willing
-                to make an account for me.
-
-                <br/><br/>
-
-                I personally apologize for not giving the exact details or transferring sooner. I had a power outage
-                due to a storm (not hurricane hilary) and had very little access to power and data for ~36 hours. Before that,
-                I had about a day or so where I could've transferred everything over, but I just haven't been able to have time for it.
-                Blame it on depression, college, work, or lazyness, either way I should've done it when I got ssh access, and I didn't.
-            </details>
             </blockquote>
         </section>
         <cards class="text-center">
@@ -105,12 +89,14 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <a href="https://invidious.io"><icon></icon></a>
                 <br/>
                 <span class="inner">
-                    <a href="https://nyc1.iv.ggtyler.dev">NYC-1 🇺🇸</a><br/>
-                    <a href="https://par1.iv.ggtyler.dev">PAR-1 🇫🇷</a><br/>
-                    <a href="https://qc1.iv.ggtyler.dev">QC-1 🇨🇦</a>
-                    <Tooltip text="Will be deprecated on the 1st!"/><br/>
-                    <a href="https://sea1.iv.ggtyler.dev">SEA-1 🇺🇸</a>
-                    <Tooltip text="Google has blocked this instance. It's only being hosted for user data reasons."/>
+                    <span>
+                        <a href="https://nyc1.iv.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
+                        <a href="https://par1.iv.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><br/>
+                        <a href="https://qc1.iv.ggtyler.dev"><MCIcon name="ca" amount={3} /> QC-1</a>
+                        <Tooltip text="Will be deprecated on the 1st!"/><br/>
+                        <a href="https://sea1.iv.ggtyler.dev"><MCIcon name="us" amount={4} /> SEA-1</a>
+                        <Tooltip text="Google has blocked this instance. It's only being hosted for user data reasons."/>
+                    </span>
                 </span>
             </card>
             <card>
@@ -119,14 +105,48 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <center>(For YouTube)</center>
                 <a href="https://github.com/TeamPiped/Piped"><icon></icon></a>
                 <a href="https://docs.piped.video/"><icon></icon></a>
-                <Tooltip text="API: piapi.ggtyler.dev"/>
+                <Tooltip text="API: piapi.ggtyler.dev PROXY: piproxy.ggtyler.dev"/>
                 <br/>
                 <span class="inner">
-                    <a href="https://nyc1.pi.ggtyler.dev">NYC-1 🇺🇸</a><br/>
-                    PAR-1 🇫🇷
-                    <Tooltip text="IPv6 is unsupported and will likely not come to this node."/><br/>
-                    SEA-1 🇺🇸
-                    <Tooltip text="Google has blocked the IP and IPv6 isn't supported. It's very unlikely it will come to this node."/>
+                    <span>
+                        <a href="https://nyc1.pi.ggtyler.dev"><MCIcon name="us" amount={4} />  NYC-1</a><br/>
+                        <MCIcon name="fr" amount={3} /> PAR-1
+                        <Tooltip text="IPv6 is unsupported and will likely not come to this node."/><br/>
+                        <MCIcon name="us" amount={4} /> SEA-1
+                        <Tooltip text="Google has blocked the IP and IPv6 isn't supported. It's very unlikely it will come to this node."/>
+                    </span>
+                </span>
+            </card>
+            <card>
+                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
+                <h1 class="text-xl"><a href="https://bb.ggtyler.dev">Beatbump</a></h1>
+                <center>(For YouTube Music)</center>
+                <a href="https://github.com/snuffyDev/Beatbump"><icon></icon></a>
+                <a href="https://beatbump-docs.vercel.app/"><icon></icon></a>
+                <Tooltip text="Proxy: bbproxy.ggtyler.dev"/>
+                <br/>
+                <span class="inner">
+                    <span>
+                        <a href="https://nyc1.bb.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
+                        <a href="https://par1.bb.ggtyler.dev"><MCIcon name="fr" amount={4} /> PAR-1</a><br/>
+                        <MCIcon name="us" amount={4} /> SEA-1
+                        <Tooltip text="Google has blocked the IP and IPv6 isn't supported. It's very unlikely it will come to this node."/>
+                    </span>
+                </span>
+            </card>
+            <card>
+                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
+                <h1 class="text-xl"><a href="https://hp.ggtyler.dev">Hyperpipe</a></h1>
+                <center>(For YouTube Music)</center>
+                <a href="https://codeberg.org/Hyperpipe/Hyperpipe"><icon></icon></a>
+                <Tooltip text="API: hpapi.ggtyler.dev"/>
+                <br/>
+                <span class="inner">
+                    <span>
+                        <a href="https://nyc1.hp.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
+                        <MCIcon name="fr" amount={3} /> PAR-1 <Tooltip text="Being considered - will use non-ggtyler piped servers if hosted on this node."/><br/>
+                        <MCIcon name="us" amount={4} /> SEA-1 <Tooltip text="Being considered - will use non-ggtyler piped servers if hosted on this node."/>
+                    </span>
                 </span>
             </card>
             <card>
@@ -136,11 +156,13 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <a href="https://github.com/zedeus/nitter"><icon></icon></a>
                 <br/>
                 <span class="inner">
-                    <a href="https://nyc1.nt.ggtyler.dev">NYC-1 🇺🇸</a><br/>
-                    <a href="https://sea1.nt.ggtyler.dev">SEA-1 🇺🇸</a><br/>
-                    <a href="https://par1.nt.ggtyler.dev">PAR-1 🇫🇷</a><br/>
-                    <a href="https://qc1.nt.ggtyler.dev">QC-1 🇨🇦</a>
-                    <Tooltip text="Will be deprecated on the 1st!"/>
+                    <span>
+                        <a href="https://nyc1.nt.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
+                        <a href="https://sea1.nt.ggtyler.dev"><MCIcon name="us" amount={4} /> SEA-1</a><br/>
+                        <a href="https://par1.nt.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><br/>
+                        <a href="https://qc1.nt.ggtyler.dev"><MCIcon name="ca" amount={3} /> QC-1</a>
+                        <Tooltip text="Will be deprecated on the 1st!"/>
+                    </span>
                 </span>
             </card>
             <card>
@@ -150,11 +172,13 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <a href="https://github.com/libreddit/libreddit/"><icon></icon></a>
                 <br/>
                 <span class="inner">
-                    <a href="https://nyc1.lr.ggtyler.dev">NYC-1 🇺🇸</a><br/>
-                    <a href="https://sea1.lr.ggtyler.dev">SEA-1 🇺🇸</a><br/>
-                    <a href="https://par1.lr.ggtyler.dev">PAR-1 🇫🇷</a><br/>
-                    <a href="https://qc1.lr.ggtyler.dev">QC-1 🇨🇦</a>
-                    <Tooltip text="Will be deprecated on the 1st!"/>
+                    <span>
+                        <a href="https://nyc1.lr.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
+                        <a href="https://sea1.lr.ggtyler.dev"><MCIcon name="us" amount={4} /> SEA-1</a><br/>
+                        <a href="https://par1.lr.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><br/>
+                        <a href="https://qc1.lr.ggtyler.dev"><MCIcon name="ca" amount={3} /> QC-1</a>
+                        <Tooltip text="Will be deprecated on the 1st!"/>
+                    </span>
                 </span>
             </card>
             <card>
@@ -165,11 +189,13 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <Tooltip text="This service runs on the Docker version (from PussTheCat.org)"/>
                 <br/>
                 <span class="inner">
-                    <a href="https://nyc1.breeze.ggtyler.dev">NYC-1 🇺🇸</a><br/>
-                    <a href="https://sea1.breeze.ggtyler.dev">SEA-1 🇺🇸</a><br/>
-                    <a href="https://par1.breeze.ggtyler.dev">PAR-1 🇫🇷</a><br/>
-                    <a href="https://qc1.breeze.ggtyler.dev">QC-1 🇨🇦</a>
-                    <Tooltip text="Will be deprecated on the 1st!"/>
+                    <span>
+                        <a href="https://nyc1.breeze.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
+                        <a href="https://sea1.breeze.ggtyler.dev"><MCIcon name="us" amount={4} /> SEA-1</a><br/>
+                        <a href="https://par1.breeze.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><br/>
+                        <a href="https://qc1.breeze.ggtyler.dev"><MCIcon name="ca" amount={4} /> QC-1</a>
+                        <Tooltip text="Will be deprecated on the 1st!"/>
+                    </span>
                 </span>
             </card>
         </cards>
