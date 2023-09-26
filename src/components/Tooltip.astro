@@ -10,7 +10,7 @@ const { text, width="w-32" } = Astro.props;
 <div class="relative inline-flex flex-col items-center group">
     <icon></icon>
     <div class="absolute bottom-0 flex flex-col items-center hidden mb-6 group-hover:flex">
-        <span class="relative z-10 p-2 text-xs leading-none whitespace-no-wrap shadow-lg rounded" style="background: var(--clr-bg-extra); color: var(--clr-text);">{text}</span>
+        <span class="relative z-10 p-2 text-xs leading-none whitespace-no-wrap shadow-lg rounded text-center" style="background: var(--clr-bg-extra); color: var(--clr-text);">{text}</span>
         <div class={width + " -mt-2 rotate-45"} style="background: var(--clr-bg-extra);"></div>
     </div>
 </div>
