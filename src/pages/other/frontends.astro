@@ -63,22 +63,16 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </p>
         </section>
         <section class="text-center">
-            <h1 class="text-2xl">Current Status: <prlgm class="warning"><span><b>WARNING</b></span></prlgm></h1>
-            As you may know, Google has been 
-            <a href="https://github.com/iv-org/invidious/issues/3822">blocking multiple Invidious instances, including mine.</a> 
-            The past solution was to move to different, temporary servers. I've been able to get a new primary server in NYC 
-            with IPv6, meaning I'll be able to use a better patch - IPv6 address rotation.
-            Unfortunately, due to the way QC1 was made and handled, <b>QC1 will be deprecated on the 1st.</b>
-            I'm unable to transfer user data due to the risk of GDPR violations,
-            so if you still have any leftover data from there (and other nodes):
-            <ol>
-                <li><a href="https://qc1.iv.ggtyler.dev/data_control">Export your user data from the QC1 node</a></li>
-                <li><a href="https://iv.ggtyler.dev/login">Make a new account in the current server</a></li>
-                <li><a href="https://iv.ggtyler.dev/data_control">Import your user data</a></li>
-            </ol>
-            I recommend making periodic backups as well. While the US has much more (and cheaper) servers,
-            I can't forsee the future and I won't know exactly when this will need to be transferred again.
-            </blockquote>
+            <h1 class="text-2xl">Current Status: <prlgm class="error"><span><b>ALERT</b></span></prlgm></h1>
+            Google (or specifically YouTube) has blocked all of my servers. I'm working on getting IPv6
+            up for NYC-1 and a VPN solution for the others, but at the moment, <b>Invidious, Piped, 
+            and Beatbump do not work. Cobalt also doesn't work with YouTube.</b> Hyperpipe can still be 
+            used by changing instances in the settings, but it will be slower depending on the instance. 
+            SearXNG does not seem to be affected.
+            <hr/>
+            QC-1 (the previous main node) has been deprecated on October 1st, 2023. If you had any user data
+            and you did not back it up, it is now gone as it couldn't be backed up due to GDPR restrictions.
+            I'm sorry for any inconvenience caused.
         </section>
         <cards class="text-center">
             <card>
@@ -92,8 +86,6 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                     <span>
                         <a href="https://nyc1.iv.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
                         <a href="https://par1.iv.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><br/>
-                        <a href="https://qc1.iv.ggtyler.dev"><MCIcon name="ca" amount={3} /> QC-1</a>
-                        <Tooltip text="Will be deprecated on the 1st!"/><br/>
                         <a href="https://sea1.iv.ggtyler.dev"><MCIcon name="us" amount={4} /> SEA-1</a>
                         <Tooltip text="Google has blocked this instance. It's only being hosted for user data reasons."/>
                     </span>
@@ -160,8 +152,6 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                         <a href="https://nyc1.nt.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
                         <a href="https://sea1.nt.ggtyler.dev"><MCIcon name="us" amount={4} /> SEA-1</a><br/>
                         <a href="https://par1.nt.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><br/>
-                        <a href="https://qc1.nt.ggtyler.dev"><MCIcon name="ca" amount={3} /> QC-1</a>
-                        <Tooltip text="Will be deprecated on the 1st!"/>
                     </span>
                 </span>
             </card>
@@ -176,8 +166,6 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                         <a href="https://nyc1.lr.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
                         <a href="https://sea1.lr.ggtyler.dev"><MCIcon name="us" amount={4} /> SEA-1</a><br/>
                         <a href="https://par1.lr.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><br/>
-                        <a href="https://qc1.lr.ggtyler.dev"><MCIcon name="ca" amount={3} /> QC-1</a>
-                        <Tooltip text="Will be deprecated on the 1st!"/>
                     </span>
                 </span>
             </card>
@@ -193,8 +181,6 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                         <a href="https://nyc1.breeze.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
                         <a href="https://sea1.breeze.ggtyler.dev"><MCIcon name="us" amount={4} /> SEA-1</a><br/>
                         <a href="https://par1.breeze.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><br/>
-                        <a href="https://qc1.breeze.ggtyler.dev"><MCIcon name="ca" amount={4} /> QC-1</a>
-                        <Tooltip text="Will be deprecated on the 1st!"/>
                     </span>
                 </span>
             </card>
