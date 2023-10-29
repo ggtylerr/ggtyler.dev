@@ -185,7 +185,7 @@ body {
 	font-family: "Rubik", Verdana, sans-serif;
 	margin: auto !important;
 	padding: 20px;
-	max-width: 65ch;
+	max-width: 1000px;
 	text-align: left;
 	background-color: var(--clr-bg);
 	word-wrap: break-word;
@@ -413,15 +413,15 @@ nav * {
 cards {
 	display: grid;
 	grid-gap: 5px;
-	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 	grid-auto-rows: 1fr !important;
 	align-items: center;
 	justify-items: center;
 }
 card {
 	background-color: var(--clr-bg-soft);
-	min-height: 200px;
-	width: 200px;
+	min-height: 180px;
+	width: 180px;
 	border-radius: 5px;
 	padding: 5px;
 	position: relative;
@@ -435,8 +435,8 @@ cards.small card {
 }
 card .inner {
 	background-color: var(--clr-bg-mute);
-	width: 190px;
-	max-width: 190px;
+	width: 170px;
+	max-width: 170px;
 	display: flex;
 	padding: 5px;
 	border-radius: 5px;
