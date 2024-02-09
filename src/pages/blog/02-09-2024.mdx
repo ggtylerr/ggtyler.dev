@@ -1,0 +1,67 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "Programming on a Steam Deck"
+description: "How to do work on a portable game system"
+pubDate: "Feb 09 2024"
+heroImage: "/res/blog/02092024-SteamDeck-small.png"
+---
+
+<section>
+  I work part-time, and often times, I want to do some dev work during my breaks, to keep my mind off of work and to hopefully get some actual work done. Previously I used a Macbook for this, but I got a Steam Deck about half a year ago and love it. The screen size is a bit small but regardless, it has some pretty good specs. (And no, it's not an OLED, and I'm probably not getting a portable screen.) It's definitely better than a cheapo Macbook Air. For a starting price of $399 (at the time of writing,) you not only get a pretty good gaming handheld, but you can use it as a full on PC. Simply plug in a USB-C hub (there are some on Amazon that clip on too and act as a stand), attach your keyboard and mouse, and you're golden.
+  <br/>
+  There's only one problem - it's on Arch Linux. Specifically, a special fork of it included with various stuff, such as Proton and a default "Gaming Mode" and UI. There's one concerning change to any desktop user - it has a read-only system file structure.
+</section>
+
+<section>
+  <h4 class="text-xl">Installing apps and packages</h4>
+  <hr/>
+  In order to install any apps, you have to get it through flatpaks. Discover is a default app store for Arch Linux where you can get them easily. This is fine for most apps - Firefox and Chromium (including Ungoogled Chromium) are available and actively updated. Same goes for VLC, Spotify, Discord, etc. There's also some games available such as osu!lazer and Minecraft (available through Prism Launcher.) There's one in particular that's of note to developers - Visual Studio Code.
+  <br/>
+  VSC on flatpak is...interesting to say the least. It's the full IDE of course, but the problem is, flatpaks are sandboxed. These are run separately from the system, so even if you have a language installed (let's use Node.JS 20 as an example), you can't use it in VSC. Instead you have to setup and use a podman service. [Here's the guide I tried to use, from Zero IT Lab.](https://engineering.zeroitlab.com/2022/09/20/develop-on-deck/) Personally, I was not able to get this working. I ended up using [code-server](https://github.com/coder/code-server) on my dedi, which is something most people (including devs) don't realistically want to go through. Surprisingly enough, most people don't want to get a VPS or dedicated server just to get an IDE.
+</section>
+
+<section>
+  <h4 class="text-xl">Installing system packages</h4>
+  <hr/>
+  You might be wondering how you install system packages then - flatpaks are great for apps, but for libraries (such as Node or Python), that's simply not gonna cut it. You are able to disable read-only mode via terminal by [setting up sudo and running a command.](https://help.steampowered.com/en/faqs/view/671A-4453-E8D2-323C) From there you can set up yay and install packages like you would on regular Arch.
+  <br/>
+  The unfortunate part is that any system updates will wipe any packages you download. Literally every time you update your system, you will need to go through the whole process of installing again. Thankfully you can fix this by converting your system to use btrfs instead of ext4, which has the additional benefit of being faster and taking up less space. [You can check out the gitlab page here.](https://gitlab.com/popsulfr/steamos-btrfs) This takes a while to convert, especially when you already have stuff installed, but it does work.
+  <br/>
+  There are a couple other quirks with this system too - this may just be a me problem, but every once in a while, yay is unable to verify the package's (or dependency's) PGP keys. Nothing I could do fixed it, including updating all my existing packages and system, and clearing my cache. It doesn't help that the Arch community in general is very unhelpful, as pretty much every post on their forums has at least one douchebag trying to "help" with a know-it-all attitude.
+  <br/>
+  > Edit: After gathering feedback before the post's release, I learned that apparently this is a common occurence in Arch. Keep in mind that I don't primarily use it (I use Windows as my main OS, with Ubuntu on my servers) so there might just be a simple solution I'm missing. And of course, this isn't directly SteamOS's fault. It's simply a con of using Arch as a base. But the bottom line is this: it should not be this complicated and problem-ridden to install something. 
+  <br/>
+  Are we doomed to use this clunky method for all our libraries? To go through complicated madness each install and to hope and pray it all works? Well, not necessarily. There is one big fix that I wholly recommend.
+</section>
+
+<section>
+  <h4 class="text-xl">Using a different OS</h4>
+  <hr/>
+  Bazzite is everything you want out of SteamOS and then some. It has the same desktop/gaming mode functionality, along with a ton of other additions that you can pick and choose right on install (or even afterwards!) It has a ton of other features [that you can see on GitHub,](https://github.com/ublue-os/bazzite) but there's one in particular that we're interested in: *proper package management.*
+  <br/>
+  Now, installing stuff is still a little bit odd. [There's 7 formats they list in their docs](https://universal-blue.discourse.group/t/installing-and-managing-software-on-bazzite/35) (which for some reason is in their forums), but the one we're looking for is `rpm-ostree`. As they state in their docs, you're only supposed to use this for system-level apps and libraries, so we're only going to be using this to install Node. (You can install VSC on the Bazzite Portal or any other method.)
+  <br/>
+  What do you need to do? Just run `rpm-ostree install nodejs20` and restart. **That's it.** No need to use podman, setup btrfs, or any other junk. If you want to use yarn (like me) you also need to install corepack via `npm install -g corepack`, and then enable it via `corepack enable`. (I believe this also includes pnpm.)
+  <br/>
+  Of course, you can also install Windows on your deck, or even dual boot it. I don't recommend it as it's pretty clunky on a Steam Deck (plus you'll probably have to setup some third party stuff to get your controls working on desktop) but it does offer a much more user friendly experience. If you're deathly afraid of Linux and terminals (...but still program?) then it's a fine enough alternative.
+  <br/>
+  You can also use other linux distros such as Ubuntu or even HoloISO. However, it's my firm belief that if you still want to use your Steam Deck as...well, a Steam Deck, then I highly recommend Bazzite. Even if you aren't using it for programming, it's simply better than the stock OS in every way. 
+</section>
+
+<section>
+  <h4 class="text-xl">Anyways, where have you been?!</h4>
+  <hr/>
+  Busy at work! I don't wanna reveal too much about my personal life or my job, but simply put - the holidays screwed me over, physically and mentally. Even though I'm part-time, I often times have to work full-time hours on busy seasons, and unfortunately I just get way too exhausted afterwards to even work on anything. But now that it's over and I got a less stressful position, I can finally finish off that Discord article I've been meaning to rewrite (they made a lot more dumb decisions since then!) and release some actual software.
+  <br/>
+  Of course, I haven't been completely slacking off. Most of you came from [one of my frontends](/other/frontends) and decided to add the RSS feed or check my posts. Thanks for doing that by the way! The frontends are what gets most of my spare attention for dev work. We now have 15 whole services running on (mostly) 3 servers! Maybe even a 4th if I can get a cheap server in Asia with IPv6! It is pretty costly for me, going for roughly $120 a month for all the servers *(most of the cost comes from NYC-1, which is a full dedicated server with IPv6 for 90 euro,)* but I'm thankfully in a situation where I'm able to afford it without worrying too much. If I'd ever need to cut back on costs, it's not *too* big of a problem to replace the servers either.
+  <br/>
+  Speaking of costs, after many requests, [I've made a LiberaPay account.](https://liberapay.com/ggtyler) I want to make this absolutely clear: ***Donations will never ever EVER be required.*** I'm still going to be paying for the servers, even if there's no donations.
+  <br/>
+  As for actual software development, [I recently helped out with Polyfrost to make parts of their new website.](https://polyfrost.org) It was a surprisingly big undertaking, but it was definitely cool to work on a public site like this, and the team there are amazing people.
+  <br/>
+  > Some more context in case you want it: I saw their post looking for web developers, posted on October 22nd, and pretty much immediately took them up for their offer. (I was the first one to do so.) After a month of evaluation, they eventually hired me on commision on November 26th. (A few days after Black Friday and right before Cyber Monday.) I was able to make a couple key components (my favorite was definitely the slider), along with the majority of the OneConfig page, but unfortunately I just got way too busy. The site was finally released on January 24th, with most of the work being done by [Lynith](https://lynith.dev) and [Pauline.](https://github.com/pauliesnug) (Which thank you if you happen to be reading this! I'm sorry I wasn't able to help that much!) I was paid a day before, and the funds will be going towards server costs.
+  <br/>
+  Anyways, with all the nonsense out of the way, expect to see some *actual* stuff happening very soon™. Thanks for sticking around, and I'll catch you all on the flip side.
+
+  ~ ggtyler
+</section>
