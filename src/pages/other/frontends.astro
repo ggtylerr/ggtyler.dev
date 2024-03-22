@@ -70,10 +70,21 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
         </section>
         <section class="text-center">
             <h1 class="text-2xl">Current Status: <prlgm class="warning"><span><b>WARNING</b></span></prlgm></h1>
-            <p>IPV6 is back up and running on NYC-1! All our YouTube services have started working again. I am also going through the process of setting up a new server, CAL-1, to replace our currently dead Seattle server. You can access some of the currently public nodes here.</p>
+            <p>
+                IPv6 is currently broken on NYC-1. Unfortunately, this is an issue on the server hoster's side, and
+                there isn't anything I can do to fix it. On the bright side, CAL-1 is fully operational, with IPv6 and
+                everything. Please use that in the meantime or use other instances for YouTube-related frontends.
+            </p>
             <hr/>
-            In other news, I am happy to announce that libreddit has finally been replaced with RedLib. This is a fork
-            of the former that has been updated to workaround the previous Reddit API changes, and has since been actively maintained.
+            <p>
+                In other news, Nitter has been officially discontinued. Our instance hasn't been working for a while
+                due to Twitter's updates, and 
+                <a href="https://github.com/zedeus/nitter/issues/1155#issuecomment-1913361757">Nitter has been deemed dead by the developer.</a>
+                If you want to use Nitter, I recommend setting up a private instance with a small group using it.
+                <br/><br/>
+                The good news is that we have two new instances running now - Poke and RedLib. Poke is a frontend for
+                YouTube and a few other services. RedLib is a fork of LibReddit that's actively maintained.
+            </p>
         </section>
         <cards class="text-center">
             <card>
@@ -87,7 +98,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                     <span>
                         <a href="https://nyc1.iv.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
                         <a href="https://cal1.iv.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://par1.iv.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><Tooltip text="Google has blocked this instance. It's only being hosted for user data reasons."/><br/>
+                        <a href="https://par1.iv.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><Tooltip text="Google has blocked this instance. This server will be replaced soon."/><br/>
                     </span>
                 </span>
             </card>
@@ -104,7 +115,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                         <a href="https://nyc1.pi.ggtyler.dev"><MCIcon name="us" amount={4} />  NYC-1</a><br/>
                         <a href="https://cal1.pi.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
                         <MCIcon name="fr" amount={3} /> PAR-1
-                        <Tooltip text="IPv6 is unsupported and will likely not come to this node."/><br/>
+                        <Tooltip text="IPv6 is unsupported and will likely not come to this node. This server will be replaced soon."/><br/>
                     </span>
                 </span>
             </card>
@@ -120,7 +131,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                     <span>
                         <a href="https://nyc1.bb.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
                         <a href="https://cal1.bb.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://par1.bb.ggtyler.dev"><MCIcon name="fr" amount={4} /> PAR-1</a><br/>
+                        <a href="https://par1.bb.ggtyler.dev"><MCIcon name="fr" amount={4} /> PAR-1</a> <Tooltip text="Google has blocked this instance. This server will be replaced soon."/><br/>
                     </span>
                 </span>
             </card>
@@ -134,22 +145,22 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <span class="inner">
                     <span>
                         <a href="https://nyc1.hp.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.bb.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <MCIcon name="fr" amount={3} /> PAR-1 <Tooltip text="Being considered - will use non-ggtyler piped servers if hosted on this node."/><br/>
+                        <a href="https://cal1.hp.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
+                        <MCIcon name="fr" amount={3} /> PAR-1 <Tooltip text="Google has blocked this instance. This server will be replaced soon."/><br/>
                     </span>
                 </span>
             </card>
             <card>
-                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://nt.ggtyler.dev">Nitter</a></h1>
-                <center>(For Twitter)</center>
-                <a href="https://github.com/zedeus/nitter"><icon></icon></a>
+                <span class="text-[3.5em]"><icon></icon>┊<icon>P</icon></span>
+                <h1 class="text-xl"><a href="https://poke.ggtyler.dev">Poke</a></h1>
+                <center>(For YouTube and others)</center>
+                <a href="https://codeberg.org/ashley/poke"><icon></icon></a>
                 <br/>
                 <span class="inner">
                     <span>
-                        <a href="https://nyc1.nt.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <MCIcon name="us" amount={4} /> CAL-1<br/>
-                        <a href="https://par1.nt.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><br/>
+                        <a href="https://nyc1.poke.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
+                        <a href="https://cal1.poke.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
+                        <MCIcon name="fr" amount={3} /> PAR-1<br/>
                     </span>
                 </span>
             </card>
@@ -192,7 +203,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <span class="inner">
                     <span>
                         <a href="https://nyc1.breeze.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <MCIcon name="us" amount={4} /> CAL-1<br/>
+                        <a href="https://cal1.breeze.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
                         <a href="https://par1.breeze.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><br/>
                     </span>
                 </span>
@@ -207,8 +218,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <span class="inner">
                     <span>
                         <a href="https://nyc1.co.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <MCIcon name="us" amount={4} /> CAL-1<br/>
-                        <a href="https://par1.co.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><br/>
+                        <a href="https://cal1.co.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
+                        <a href="https://par1.co.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a> <Tooltip text="Google has blocked this instance. YouTube will not work on this instance. This server will be replaced soon."/><br/>
                     </span>
                 </span>
             </card>
@@ -222,7 +233,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <span class="inner">
                     <span>
                         <a href="https://nyc1.sx.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <MCIcon name="us" amount={4} /> CAL-1<br/>
+                        <a href="https://cal1.sx.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
                         <a href="https://par1.sx.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><br/>
                     </span>
                 </span>
@@ -250,7 +261,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <span class="inner">
                     <span>
                         <a href="https://nyc1.sptl.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <MCIcon name="us" amount={4} /> CAL-1<br/>
+                        <a href="https://cal1.sptl.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
                         <MCIcon name="fr" amount={3} /> PAR-1<br/>
                     </span>
                 </span>
@@ -264,7 +275,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <span class="inner">
                     <span>
                         <a href="https://nyc1.lbtl.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <MCIcon name="us" amount={4} /> CAL-1<br/>
+                        <a href="https://cal1.lbtl.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
                         <MCIcon name="fr" amount={3} /> PAR-1<br/>
                     </span>
                 </span>
@@ -278,7 +289,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <span class="inner">
                     <span>
                         <a href="https://nyc1.lv.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <MCIcon name="us" amount={4} /> CAL-1<br/>
+                        <a href="https://cal1.lv.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
                         <MCIcon name="fr" amount={3} /> PAR-1<br/>
                     </span>
                 </span>
@@ -292,7 +303,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <span class="inner">
                     <span>
                         <a href="https://nyc1.mz.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <MCIcon name="us" amount={4} /> CAL-1<br/>
+                        <a href="https://cal1.mz.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
                         <MCIcon name="fr" amount={3} /> PAR-1<br/>
                     </span>
                 </span>
