@@ -345,6 +345,7 @@ header > nav {
 	display: inline-block;
 	border: solid 1px black;
 	padding: 0;
+	margin: 0 .2em !important;
 }
 #custom-bg-color 		{ background-color: var(--clr-custom-bg); 		color: var(--clr-custom-bg); }
 #custom-bg-soft-color 	{ background-color: var(--clr-custom-bg-soft); 	color: var(--clr-custom-bg-soft); }
