@@ -316,7 +316,7 @@ header > nav {
     height: 1em;
     line-height: 20px;
     border: 2px solid var(--clr-text) !important;
-	margin: 0.5em 1em;
+	margin: 0 !important;
 }
 .theme-btn:hover {
 	background-position: left !important;
@@ -344,6 +344,7 @@ header > nav {
 .theme-color {
 	display: inline-block;
 	border: solid 1px black;
+	padding: 0;
 }
 #custom-bg-color 		{ background-color: var(--clr-custom-bg); 		color: var(--clr-custom-bg); }
 #custom-bg-soft-color 	{ background-color: var(--clr-custom-bg-soft); 	color: var(--clr-custom-bg-soft); }
@@ -420,6 +421,7 @@ prlgm.input-text, .prlgm.input-text {
 	border: solid 1px var(--clr-bg-extra);
 	border-bottom-color: var(--clr-accent);
 	transition: color 0.2s ease-out, background-color 0.2s ease-out;
+	margin: 0 !important;
 }
 prlgm.input-text:hover, prlgm.input-text:active,
 prlgm.input-text:focus, .prlgm.input-text:hover, 
