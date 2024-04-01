@@ -407,7 +407,7 @@ prlgm, .prlgm {
 	width: -moz-fit-content;
 	width: fit-content;
 	height: 1.5em;
-	margin: 0 0.1em;
+	margin: 0 0.3em;
 }
 prlgm > *, .prlgm > * {
 	display: inline-block;
@@ -479,7 +479,7 @@ button.prlgm:hover {
 	color: var(--clr-graey-text);
 }
 nav * {
-	padding: 0 5px;
+	padding: 0 7px;
 }
 /* Cards */
 cards {
@@ -521,6 +521,12 @@ card .inner span, cards.small card .inner span {
 cards.small card .inner {
 	width: 140px;
 	max-width: 140px;
+}
+card a:has(icon), card div.group {
+	padding: 0 2px;
+}
+card .inner span icon {
+	padding: 0 4px;
 }
 /* Lists */
 ol { list-style-position: inside !important; list-style-type: decimal !important; }
