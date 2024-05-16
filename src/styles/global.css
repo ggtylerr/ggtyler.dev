@@ -171,11 +171,11 @@ html {
 /* Icons */
 @font-face {
 	font-family: 'icomoon';
-	src: url('/fonts/icomoon.eot?jxuvrb');
-	src: url('/fonts/icomoon.eot?jxuvrb#iefix') format('embedded-opentype'),
-		 url('/fonts/icomoon.ttf?jxuvrb') format('truetype'),
-		 url('/fonts/icomoon.woff?jxuvrb') format('woff'),
-		 url('/fonts/icomoon.svg?jxuvrb#icomoon') format('svg');
+	src: url('/fonts/icomoon.eot?26ekdi');
+	src: url('/fonts/icomoon.eot?26ekdi#iefix') format('embedded-opentype'),
+		 url('/fonts/icomoon.ttf?26ekdi') format('truetype'),
+		 url('/fonts/icomoon.woff?26ekdi') format('woff'),
+		 url('/fonts/icomoon.svg?26ekdi#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 	font-display: block;
@@ -537,6 +537,18 @@ ul { list-style-position: inside !important; list-style-type: disc !important; }
 li ul, li ol { margin: 0 0 0 1em; }
 li ul { list-style-type: circle !important; }
 li ol { list-style-type: upper-roman !important; }
+/* Collapsibles */
+summary {
+	background-color: var(--clr-bg-mute);
+	border-bottom: 5px solid var(--clr-bg-extra);
+	border-radius: 5px;
+	padding: 5px;
+}
+details {
+	background-color: var(--clr-bg-mute);
+	border-radius: 5px;
+	padding: 10px;
+}
 /* Comments */
 h4.isso-thread-heading { color: inherit !important; }
 #isso-thread { padding: 10px !important; }
