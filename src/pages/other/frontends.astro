@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import Tooltip from '../../components/Tooltip.astro';
 import MCIcon from '../../components/MCIcon.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
+import type { Code } from 'astro:components';
 ---
 <!DOCTYPE html>
 <html lang="en-us">
@@ -22,20 +23,27 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
         <Header />
         <center><prlgm class="text-2xl font-bold"><span>FRONTEND LIST</span></prlgm></center>
         <section class="text-center">
-            <h1 class="text-2xl">Current Status: <prlgm><span><b>INFO</b></span></prlgm></h1>
+            <h1 class="text-2xl">Current Status: <prlgm class="warning"><span><b>WARNING</b></span></prlgm></h1>
             <p>
-                This page has been revamped a bit - removed the fluff and added some more useful info,
-                which you can find below the service list.
-
-                A lot of under the hood server improvements have been done as well to improve performance
-                and reliability.
-            </p>
-            <hr/>
-            <p>
-                4get has been removed in favor of SearXNG and the new service LibreY. 4get hasn't been
-                working for a while and has been actively impeading other frontends, not to mention
-                everything you can do with 4get, you can do on the other two. I have also heard reports
-                of the dev's transphobic behavior - while I can't personally back them up, it's worth noting.
+                YouTube is A/B testing (rolling out) a change that requires users to login
+                to an account to view any videos. This is subsequently affecting these YT frontends:
+                <ul>
+                    <li>Invidious <a href="https://github.com/iv-org/invidious/issues/4734">(Issue #4734)</a></li>
+                    <li>Piped <a href="https://github.com/TeamPiped/Piped/issues/3658">(Issue #3658)</a></li>
+                    <li>Beatbump</li>
+                    <li>Hyperpipe</li>
+                </ul>
+                Poke does not seem to be affected. Cobalt has patched this*, waiting on them to
+                provide instructions for Docker users (which we use.)
+                As this is a gradual rollout, you may see other instances working. Unfortunately,
+                ours are affected, and in the coming days, all servers will not work until a proper
+                patch is deployed.
+                <br/>
+                <i>
+                    * Cobalt's fix is not necessary a "patch", it's essentially just using a user token.
+                    Do not expect this to last long. 
+                    See <a href="https://github.com/imputnet/cobalt/issues/551">Issue #551</a> for details.
+                </i>
             </p>
         </section>
         <cards class="text-center">
