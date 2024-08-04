@@ -361,7 +361,7 @@ img {
 }
 code {
 	padding: 2px 5px;
-	background-color: var(--clr-bg-mute);
+	background-color: var(--clr-bg-mute) !important;
 	font-family: 'PT Mono', monospace;
 }
 pre.astro-code code * {
