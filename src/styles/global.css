@@ -171,11 +171,11 @@ html {
 /* Icons */
 @font-face {
 	font-family: 'icomoon';
-	src: url('/fonts/icomoon.eot?26ekdi');
-	src: url('/fonts/icomoon.eot?26ekdi#iefix') format('embedded-opentype'),
-		 url('/fonts/icomoon.ttf?26ekdi') format('truetype'),
-		 url('/fonts/icomoon.woff?26ekdi') format('woff'),
-		 url('/fonts/icomoon.svg?26ekdi#icomoon') format('svg');
+	src: url('/fonts/icomoon.eot?crltul');
+	src: url('/fonts/icomoon.eot?crltul#iefix') format('embedded-opentype'),
+		 url('/fonts/icomoon.ttf?crltul') format('truetype'),
+		 url('/fonts/icomoon.woff?crltul') format('woff'),
+		 url('/fonts/icomoon.svg?crltul#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 	font-display: block;
@@ -237,6 +237,15 @@ icon.ca .path3:before {
 	content: "\e917";
   	color: #d52b1e;
   	margin-left: -1em;
+}
+icon.pl .path1:before {
+	content: "\e92c";
+	color: rgb(238, 238, 238);
+}
+icon.pl .path2:before {
+	content: "\e92d";
+	margin-left: -1em;
+	color: rgb(220, 20, 60);
 }
 icon.fr .path1:before {
 	content: "\e911";

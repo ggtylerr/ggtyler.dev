@@ -5,7 +5,6 @@ import Footer from '../../components/Footer.astro';
 import Tooltip from '../../components/Tooltip.astro';
 import MCIcon from '../../components/MCIcon.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
-import type { Code } from 'astro:components';
 ---
 <!DOCTYPE html>
 <html lang="en-us">
@@ -43,9 +42,13 @@ import type { Code } from 'astro:components';
                     Do not expect this to last long. 
                     See <a href="https://github.com/imputnet/cobalt/issues/551">Issue #551</a> for details.
                 </i>
+                <hr/>
+                We have started hosting in Poland with our POL-1 server - this will be replacing PAR-1. On August 31st, 
+                we'll be permamently shutting down PAR-1. Please move any user data you have on that server as we cannot
+                move it for you (due to GDPR cross country restrictions.)
             </p>
         </section>
-        <cards class="text-center">
+        <cards class="text-center items-start">
             <card>
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
                 <h1 class="text-xl"><a href="https://iv.ggtyler.dev">Invidious</a></h1>
@@ -57,7 +60,8 @@ import type { Code } from 'astro:components';
                     <span>
                         <a href="https://nyc1.iv.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
                         <a href="https://cal1.iv.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://par1.iv.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><Tooltip text="Google has blocked this instance. This server will be replaced soon."/><br/>
+                        <a href="https://pol1.iv.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a><br/>
+                        <a href="https://par1.iv.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><Tooltip text="Google has blocked this instance. This server will shut down on 31/08/2024."/><br/>
                     </span>
                 </span>
             </card>
@@ -71,10 +75,9 @@ import type { Code } from 'astro:components';
                 <br/>
                 <span class="inner">
                     <span>
-                        <a href="https://nyc1.pi.ggtyler.dev"><MCIcon name="us" amount={4} />  NYC-1</a><br/>
+                        <a href="https://nyc1.pi.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
                         <a href="https://cal1.pi.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <MCIcon name="fr" amount={3} /> PAR-1
-                        <Tooltip text="IPv6 is unsupported and will likely not come to this node. This server will be replaced soon."/><br/>
+                        <a href="https://pol1.pi.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a>
                     </span>
                 </span>
             </card>
@@ -90,7 +93,8 @@ import type { Code } from 'astro:components';
                     <span>
                         <a href="https://nyc1.bb.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
                         <a href="https://cal1.bb.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://par1.bb.ggtyler.dev"><MCIcon name="fr" amount={4} /> PAR-1</a> <Tooltip text="Google has blocked this instance. This server will be replaced soon."/><br/>
+                        <a href="https://pol1.bb.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a><br/>
+                        <a href="https://par1.bb.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a> <Tooltip text="Google has blocked this instance. This server will shut down on 31/08/2024."/><br/>
                     </span>
                 </span>
             </card>
@@ -105,7 +109,8 @@ import type { Code } from 'astro:components';
                     <span>
                         <a href="https://nyc1.hp.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
                         <a href="https://cal1.hp.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <MCIcon name="fr" amount={3} /> PAR-1 <Tooltip text="Google has blocked this instance. This server will be replaced soon."/><br/>
+                        <a href="https://pol1.hp.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a><br/>
+                        <MCIcon name="fr" amount={3} /> PAR-1 <Tooltip text="Google has blocked this instance. This server will shut down on 31/08/2024."/><br/>
                     </span>
                 </span>
             </card>
@@ -119,7 +124,7 @@ import type { Code } from 'astro:components';
                     <span>
                         <a href="https://nyc1.poke.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
                         <a href="https://cal1.poke.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <MCIcon name="fr" amount={3} /> PAR-1<br/>
+                        <a href="https://pol1.poke.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a>
                     </span>
                 </span>
             </card>
@@ -133,7 +138,7 @@ import type { Code } from 'astro:components';
                     <span>
                         <a href="https://nyc1.lr.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
                         <a href="https://cal1.lr.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://par1.lr.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><br/>
+                        <a href="https://par1.lr.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a> <Tooltip text="This server will shut down on 31/08/2024."/>
                     </span>
                 </span>
             </card>
@@ -148,7 +153,7 @@ import type { Code } from 'astro:components';
                     <span>
                         <a href="https://nyc1.st.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
                         <a href="https://cal1.st.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://par1.st.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><br/>
+                        <a href="https://par1.st.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a> <Tooltip text="This server will shut down on 31/08/2024."/>
                     </span>
                 </span>
             </card>
@@ -163,7 +168,7 @@ import type { Code } from 'astro:components';
                     <span>
                         <a href="https://nyc1.breeze.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
                         <a href="https://cal1.breeze.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://par1.breeze.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><br/>
+                        <a href="https://par1.breeze.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a> <Tooltip text="This server will shut down on 31/08/2024."/>
                     </span>
                 </span>
             </card>
@@ -178,7 +183,7 @@ import type { Code } from 'astro:components';
                     <span>
                         <a href="https://nyc1.co.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
                         <a href="https://cal1.co.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://par1.co.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a> <Tooltip text="Google has blocked this instance. YouTube will not work on this instance. This server will be replaced soon."/><br/>
+                        <a href="https://par1.co.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a> <Tooltip text="Google has blocked this instance. YouTube will not work on this instance. This server will shut down on 31/08/2024."/><br/>
                     </span>
                 </span>
             </card>
@@ -193,7 +198,7 @@ import type { Code } from 'astro:components';
                     <span>
                         <a href="https://nyc1.sx.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
                         <a href="https://cal1.sx.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://par1.sx.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a><br/>
+                        <a href="https://par1.sx.ggtyler.dev"><MCIcon name="fr" amount={3} /> PAR-1</a> <Tooltip text="This server will shut down on 31/08/2024."/>
                     </span>
                 </span>
             </card>
@@ -206,8 +211,7 @@ import type { Code } from 'astro:components';
                 <span class="inner">
                     <span>
                         <a href="https://nyc1.ly.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.ly.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <MCIcon name="fr" amount={3} /> PAR-1<br/>
+                        <a href="https://cal1.ly.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a>
                     </span>
                 </span>
             </card>
@@ -220,8 +224,7 @@ import type { Code } from 'astro:components';
                 <span class="inner">
                     <span>
                         <a href="https://nyc1.sptl.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.sptl.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <MCIcon name="fr" amount={3} /> PAR-1<br/>
+                        <a href="https://cal1.sptl.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a>
                     </span>
                 </span>
             </card>
@@ -234,8 +237,7 @@ import type { Code } from 'astro:components';
                 <span class="inner">
                     <span>
                         <a href="https://nyc1.lbtl.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.lbtl.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <MCIcon name="fr" amount={3} /> PAR-1<br/>
+                        <a href="https://cal1.lbtl.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a>
                     </span>
                 </span>
             </card>
@@ -248,8 +250,7 @@ import type { Code } from 'astro:components';
                 <span class="inner">
                     <span>
                         <a href="https://nyc1.lv.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.lv.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <MCIcon name="fr" amount={3} /> PAR-1<br/>
+                        <a href="https://cal1.lv.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a>
                     </span>
                 </span>
             </card>
@@ -262,8 +263,7 @@ import type { Code } from 'astro:components';
                 <span class="inner">
                     <span>
                         <a href="https://nyc1.mz.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.mz.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <MCIcon name="fr" amount={3} /> PAR-1<br/>
+                        <a href="https://cal1.mz.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a>
                     </span>
                 </span>
             </card>
@@ -274,7 +274,7 @@ import type { Code } from 'astro:components';
                 <summary>Server details</summary>
                 <p>
                     NYC-1 is our main server - it's a fully dedicated server with <i>way</i> more OP specs than needed.
-                    This is how my hosts are one of the most performant and reliable.</p>
+                    This is how my hosts are one of the most performant and reliable.
                 </p>
                 <ul class="ml-4">
                     <li>CPU: Intel Xeon E5-2650 v2 2.6GHz</li>
@@ -283,14 +283,14 @@ import type { Code } from 'astro:components';
                     <li>NETWORK: 1Gbps Unmetered</li>
                     <li>HOST: RoyaleHosting</li>
                     <li>LOCATION: Nearby New York City</li>
-                    <li>COST: €90 per month (roughly $97 a month)</li>
+                    <li>COST: €90 per month (roughly $98 a month)</li>
                 </ul>
                 <p>
                     CAL-1 is a standard VPS hosted in the heart of Silicon Valley, allowing for the best connection
                     to most popular services (i.e. YouTube.)
                 </p>
                 <ul class="ml-4">
-                    <li>CPU: AMD EPYC 7402P 2.8GHz (2 vCPUS)</li>
+                    <li>CPU: AMD EPYC 7402P 2.8GHz (2 vCPUs)</li>
                     <li>RAM: 5GB</li>
                     <li>STORAGE: 60GB SSD</li>
                     <li>NETWORK: 750Mbps Unmetered (during congestion, this can go as low as 2.5Mbps)</li>
@@ -299,8 +299,21 @@ import type { Code } from 'astro:components';
                     <li>COST: $20 per month</li>
                 </ul>
                 <p>
-                    PAR-1 is a low powered dedicated server hosted in Paris. This will be replaced soon 
-                    with a VPS with a dedicated IPv6 subnet. This is why you don't see a lot of stuff running on there.
+                    POL-1 is a standard VPS hosted in <s>femboy land</s> Warsaw, Poland. As our Europe server, it's
+                    specced out to be fast and stable enough for all our <s>femboys</s> europeans.
+                </p>
+                <ul class="ml-4">
+                    <li>CPU: Intel(R) Xeon(R) Silver 4114 (4 vCPUs)</li>
+                    <li>RAM: 4GB</li>
+                    <li>STORAGE: 144GB SSD</li>
+                    <li>NETWORK: 1Gbps 60TB monthly cap</li>
+                    <li>HOST: Skhron</li>
+                    <li>LOCATION: Warsaw</li>
+                    <li>COST: €42.87 per month (roughly $47 a month)</li>
+                </ul>
+                <p>
+                    PAR-1 is a low powered dedicated server hosted in Paris. This will shut down on August 31st
+                    due to the lack of IPv6, replaced by POL-1.
                 </p>
                 <ul class="ml-4">
                     <li>CPU: Intel Xeon E3-1220 3.1Ghz</li>
@@ -318,9 +331,6 @@ import type { Code } from 'astro:components';
                     As you can tell, running these all isn't cheap. I am currently paying over $100 out of pocket,
                     solely for the sake of others to use these. If you want to help out, you can donate to me at
                     <a href="https://liberapay.com/ggtyler">Liberapay.</a>
-                    <br/><br/>
-                    (Please note that I'm not able to accept payments over Stripe due to legal nonsense. I'll be
-                    sorting out a fix for this soon, and possibly adding GitHub Sponsors to remedy this.)
                     <br/><br/>
                     To be 100% crystal clear - <b><i>Donations will never be required for this service to run.</i></b>
                     Unless I get fired from my job for whatever reason and can't find a new one in time to pay for this,
