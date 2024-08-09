@@ -293,9 +293,10 @@ a:hover {
 	text-decoration-color: var(--clr-accent);
 }
 hr {
-	border-color: var(--clr-bg-mute);
+	border-color: var(--clr-bg-extra);
 	border-radius: 5px;
 	border-width: 1px;
+	margin: 0.5em 0;
 }
 /* Header */
 header {

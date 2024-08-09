@@ -22,26 +22,17 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
         <Header />
         <center><prlgm class="text-2xl font-bold"><span>FRONTEND LIST</span></prlgm></center>
         <section>
-            <h1 class="text-center text-2xl">Current Status: <prlgm class="warning"><span><b>WARNING</b></span></prlgm></h1>
+            <h1 class="text-center text-2xl">Current Status: <prlgm><span><b>INFO</b></span></prlgm></h1>
             <p>
-                YouTube is A/B testing (rolling out) a change that requires users to login
-                to an account to view any videos. This is subsequently affecting these YT frontends:
-                <ul>
-                    <li>Invidious <a href="https://github.com/iv-org/invidious/issues/4734">(Issue #4734)</a></li>
-                    <li>Piped <a href="https://github.com/TeamPiped/Piped/issues/3658">(Issue #3658)</a></li>
-                    <li>Beatbump</li>
-                    <li>Hyperpipe</li>
-                </ul>
-                Poke does not seem to be affected. Cobalt has patched this* and their fix has been implemented on our servers.
-                As this is a gradual rollout, you may see other instances working. Unfortunately,
-                ours are affected, and in the coming days, all servers will not work until a proper
-                patch is deployed.
-                <br/>
-                <i>
-                    * Cobalt's fix is not necessary a "patch", it's essentially just using a user token.
-                    Do not expect this to last long. 
-                    See <a href="https://github.com/imputnet/cobalt/issues/551">Issue #551</a> for details.
-                </i>
+                The YouTube sign-in block on NYC-1 has finally been fixed! Turns out there was another IPv6 range
+                available on our hoster's server farm. We've switched to it and thankfully the block has not been rolled
+                out to it yet. (We'll be monitoring in case it gets blocked again.)
+                <br/><br/>
+                That means every YouTube frontend is now fully working! (Except Beatbump - the dev (SnuffyDev) 
+                <a href="https://github.com/snuffyDev/Beatbump/issues/231">still needs to fix some stuff.</a>)
+                Thank you for sticking with my instances while it was out! And huge thanks to 
+                <a href="https://royalehosting.net/">RoyaleHosting,</a> specifically their CEO Stan for the IPv6 range.
+                (This is not an ad or sponsor - I'm just happy with their customer support. Even if it's a little pricey ;P)
                 <hr/>
                 We have started hosting in Poland with our POL-1 server - this will be replacing PAR-1. On August 31st, 
                 we'll be permamently shutting down PAR-1. Please move any user data you have on that server as we cannot
