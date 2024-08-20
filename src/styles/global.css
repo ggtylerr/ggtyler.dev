@@ -171,11 +171,11 @@ html {
 /* Icons */
 @font-face {
 	font-family: 'icomoon';
-	src: url('/fonts/icomoon.eot?6eqalo');
-	src: url('/fonts/icomoon.eot?6eqalo#iefix') format('embedded-opentype'),
-		 url('/fonts/icomoon.ttf?6eqalo') format('truetype'),
-		 url('/fonts/icomoon.woff?6eqalo') format('woff'),
-		 url('/fonts/icomoon.svg?6eqalo#icomoon') format('svg');
+	src: url('/fonts/icomoon.eot?4yu4kv');
+	src: url('/fonts/icomoon.eot?4yu4kv#iefix') format('embedded-opentype'),
+		 url('/fonts/icomoon.ttf?4yu4kv') format('truetype'),
+		 url('/fonts/icomoon.woff?4yu4kv') format('woff'),
+		 url('/fonts/icomoon.svg?4yu4kv#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 	font-display: block;
