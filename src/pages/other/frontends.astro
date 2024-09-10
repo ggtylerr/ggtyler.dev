@@ -20,14 +20,34 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
 	</head>
     <body>
         <Header />
-        <center><prlgm class="text-2xl font-bold"><span>FRONTEND LIST</span></prlgm></center>
+        <p class="text-3xl font-bold text-center">Current Status: <prlgm class="warning"><span><b>WARNING</b></span></prlgm></p>
         <section>
-            <h1 class="text-center text-2xl">Current Status: <prlgm class="warning"><span><b>WARNING</b></span></prlgm></h1>
+            <p>
+                We have now published our internal server structure to the public, you can see it 
+                <a href="https://github.com/ggtylerr/globe">on this Git repo.</a> We'll be updating our servers to
+                include the new improvements made with this public release and will be temporarily turning off our
+                server access during the following times:
+                <ul>
+                    <li>
+                        NYC-1: September 10th,
+                        <a href="https://www.worldtimebuddy.com/?qm=1&lid=5128581,100&h=5128581&date=2024-9-10&sln=1-4&hf=1">05:00 to 07:00 UTC</a>
+                    </li>
+                    <li>
+                        CAL-1: September 12th,
+                        <a href="https://www.worldtimebuddy.com/?qm=1&lid=100,8&h=100&date=2024-9-12&sln=5-7&hf=1">05:00 to 07:00 UTC</a>
+                    </li>
+                    <li>
+                        POL-1: September 13th,
+                        <a href="https://www.worldtimebuddy.com/?qm=1&lid=100,12&h=100&date=2024-9-13&sln=0-3&hf=1">00:00 to 02:00 UTC</a>
+                    </li>
+                </ul>
+            </p>
+            <span class="flex justify-center m-4"><prlgm class="hr"></prlgm></span>
             <p>
                 Server is currently migrating data. Any frontends that are currently down are undergoing maintenance.
                 You can see more frequent updates on <a href="https://layer8.space/@ggtyler">my Mastodon account.</a>
             </p>
-            <hr/>
+            <span class="flex justify-center m-4"><prlgm class="hr"></prlgm></span>
             <p>
                 http3-ytproxy, the tool used to make video/image loading faster on Invidious, has been malfunctioning.
                 (Likely just the software not liking their new patch.) This has been removed from our servers for
@@ -46,13 +66,13 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                     <li>Doing full restarts of Invidious and switching IPv6 addresses every 3 hours</li>
                 </ul>
                 <br/>
-                It should also be noted that Beatbump and Piped (and by extension, Hyperpipe) is not working at
+                It should also be noted that Piped (and by extension, Hyperpipe) is not working at
                 this time. This is solely because the devs have not implemented the proper patches yet - please be patient.
                 You can use Invidious, Poke, and Cobalt instead.
             </p>
         </section>
         <cards class="text-center items-start">
-            <card>
+            <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
                 <h1 class="text-xl"><a href="https://iv.ggtyler.dev">Invidious</a></h1>
                 <center>(For YouTube)</center>
@@ -67,7 +87,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                     </span>
                 </span>
             </card>
-            <card>
+            <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
                 <h1 class="text-xl"><a href="https://pi.ggtyler.dev">Piped</a></h1>
                 <center>(For YouTube)</center>
@@ -83,23 +103,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                     </span>
                 </span>
             </card>
-            <card>
-                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://bb.ggtyler.dev">Beatbump</a></h1>
-                <center>(For YouTube Music)</center>
-                <a href="https://github.com/snuffyDev/Beatbump"><icon></icon></a>
-                <a href="https://beatbump-docs.vercel.app/"><icon></icon></a>
-                <Tooltip text="Proxy: bbproxy.ggtyler.dev"/>
-                <br/>
-                <span class="inner">
-                    <span>
-                        <a href="https://nyc1.bb.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.bb.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://pol1.bb.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a>
-                    </span>
-                </span>
-            </card>
-            <card>
+            <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
                 <h1 class="text-xl"><a href="https://hp.ggtyler.dev">Hyperpipe</a></h1>
                 <center>(For YouTube Music)</center>
@@ -114,7 +118,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                     </span>
                 </span>
             </card>
-            <card>
+            <card class="w-56">
                 <span class="text-[3.4em]"><icon></icon>┊<icon></icon></span>
                 <h1 class="text-xl"><a href="https://poke.ggtyler.dev">Poke</a></h1>
                 <center class="text-sm">(For YouTube and more)</center>
@@ -128,7 +132,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                     </span>
                 </span>
             </card>
-            <card>
+            <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
                 <h1 class="text-xl"><a href="https://lr.ggtyler.dev">RedLib</a></h1>
                 <center>(For Reddit)</center>
@@ -142,7 +146,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                     </span>
                 </span>
             </card>
-            <card>
+            <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
                 <h1 class="text-xl"><a href="https://st.ggtyler.dev">SafeTwitch</a></h1>
                 <center>(For Twitch)</center>
@@ -157,7 +161,21 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                     </span>
                 </span>
             </card>
-            <card>
+            <card class="w-56">
+                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
+                <h1 class="text-xl"><a href="https://dm.ggtyler.dev">Dumb</a></h1>
+                <center>(For Genius)</center>
+                <a href="https://github.com/rramiachraf/dumb"><icon></icon></a>
+                <br/>
+                <span class="inner">
+                    <span>
+                        <a href="https://nyc1.dm.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
+                        <a href="https://cal1.dm.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
+                        <a href="https://pol1.dm.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a>
+                    </span>
+                </span>
+            </card>
+            <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
                 <h1 class="text-xl"><a href="https://breeze.ggtyler.dev">Breezewiki</a></h1>
                 <center>(For Fandom)</center>
@@ -172,7 +190,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                     </span>
                 </span>
             </card>
-            <card>
+            <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
                 <h1 class="text-xl"><a href="https://co.ggtyler.dev">Cobalt</a></h1>
                 <center>(For social media DL)</center>
@@ -187,7 +205,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                     </span>
                 </span>
             </card>
-            <card>
+            <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
                 <h1 class="text-xl"><a href="https://sx.ggtyler.dev">SearXNG</a></h1>
                 <center>(For searching)</center>
@@ -202,7 +220,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                     </span>
                 </span>
             </card>
-            <card>
+            <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
                 <h1 class="text-xl"><a href="https://ly.ggtyler.dev">LibreY</a></h1>
                 <center>(For searching)</center>
@@ -216,7 +234,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                     </span>
                 </span>
             </card>
-            <card>
+            <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
                 <h1 class="text-xl"><a href="https://sptl.ggtyler.dev">SimplyTranslate</a></h1>
                 <center>(For translation)</center>
@@ -230,7 +248,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                     </span>
                 </span>
             </card>
-            <card>
+            <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
                 <h1 class="text-xl"><a href="https://lbtl.ggtyler.dev">LibreTranslate</a></h1>
                 <center>(For translation)</center>
@@ -244,7 +262,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                     </span>
                 </span>
             </card>
-            <card>
+            <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
                 <h1 class="text-xl"><a href="https://lv.ggtyler.dev">Lingva</a></h1>
                 <center>(For translation)</center>
@@ -258,7 +276,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                     </span>
                 </span>
             </card>
-            <card>
+            <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
                 <h1 class="text-xl"><a href="https://mz.ggtyler.dev">Mozhi</a></h1>
                 <center>(For translation)</center>
@@ -273,8 +291,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 </span>
             </card>
         </cards>
+        <p class="text-3xl font-bold text-center mt-4">ADDITIONAL INFO</p>
         <section>
-            <h1 class="text-2xl text-center">Additional Info</h1>
             <details>
                 <summary>Server details</summary>
                 <p>

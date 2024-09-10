@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import MainMisc from '../components/MainMisc.astro';
 ---
 <!DOCTYPE html>
 <html lang="en-us">
@@ -11,39 +12,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 	</head>
     <body>
         <Header />
-        <cards>
-            <card>
-                <a class="text-xl" href="/resume.pdf" target="_blank">Resume</a>
-                <br/>
-                Hire me!
-            </card>
-            <card>
-                <a class="text-xl" href="/other/brand-kit">Brand Kit</a>
-                <br/>
-                Design guidelines for my projects
-            </card>
-            <card>
-                <a class="text-xl" href="/other/frontends">Frontends</a>
-                <br/>
-                Alternative Frontends to multiple services, hosted on the
-                ggtyler server cluster.
-            </card>
-            <card>
-                <a class="text-xl" href="/other/privacy">Privacy Policy</a>
-                <br/>
-                The site's privacy policy (spoilers: I don't collect any data)
-            </card>
-            <card>
-                <a class="text-xl" href="/other/pgp-key.asc">PGP Key</a>
-                <br/>
-                My PGP pubkey, in case you want to send an encrypted email to me.
-            </card>
-            <card>
-                <a class="text-xl" href="/other/credits">Credits</a>
-                <br/>
-                The resources and people who helped make this possible
-            </card>
-        </cards>
+        <MainMisc />
         <Footer />
     </body>
 </html>

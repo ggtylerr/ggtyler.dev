@@ -6,6 +6,20 @@ export default function ThemeSwitcher() {
     localStorage.setItem("theme",theme);
     document.body.className = theme;
   }
+  function hexToRgb(hex) {
+    // https://stackoverflow.com/a/5624139
+    var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+    hex = hex.replace(shorthandRegex, function(_, r, g, b) {
+      return r + r + g + g + b + b;
+    });
+
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    return result ? {
+      r: parseInt(result[1], 16),
+      g: parseInt(result[2], 16),
+      b: parseInt(result[3], 16)
+    } : null;
+  }
   const selected = localStorage.getItem("theme");
 	if (selected) document.body.className = selected;
 
@@ -18,12 +32,32 @@ export default function ThemeSwitcher() {
     text:   localStorage.getItem("custom-text"),
   }
   let style = document.body.style;
-  if (c.bg)     style.setProperty("--clr-custom-bg", c.bg, "important");
-  if (c.soft)   style.setProperty("--clr-custom-bg-soft", c.soft, "important");
-  if (c.mute)   style.setProperty("--clr-custom-bg-mute", c.mute, "important");
-  if (c.extra)  style.setProperty("--clr-custom-bg-extra", c.extra, "important");
-  if (c.accent) style.setProperty("--clr-custom-accent", c.accent, "important");
-  if (c.text)   style.setProperty("--clr-custom-text", c.text, "important");
+  if (c.bg)     {
+    style.setProperty("--clr-custom-bg", c.bg, "important");
+    const rgb = hexToRgb(c.bg);
+    style.setProperty("--clr-custom-bgRGB", `${rgb.r},${rgb.g},${rgb.b}`, "important");
+  }
+  if (c.soft) {
+    style.setProperty("--clr-custom-bg-soft", c.soft, "important");
+    const rgb = hexToRgb(c.soft);
+    style.setProperty("--clr-custom-bg-softRGB", `${rgb.r},${rgb.g},${rgb.b}`, "important");
+  }
+  if (c.mute) {
+    style.setProperty("--clr-custom-bg-mute", c.mute, "important");
+    const rgb = hexToRgb(c.mute);
+    style.setProperty("--clr-custom-bg-muteRGB", `${rgb.r},${rgb.g},${rgb.b}`, "important");
+  }
+  if (c.extra) {
+    style.setProperty("--clr-custom-bg-extra", c.extra, "important");
+    const rgb = hexToRgb(c.extra);
+    style.setProperty("--clr-custom-bg-extraRGB", `${rgb.r},${rgb.g},${rgb.b}`, "important");
+  }
+  if (c.accent) {
+    style.setProperty("--clr-custom-accent", c.accent, "important");
+    const rgb = hexToRgb(c.accent);
+    style.setProperty("--clr-custom-accentRGB", `${rgb.r},${rgb.g},${rgb.b}`, "important");
+  }
+  if (c.text) style.setProperty("--clr-custom-text", c.text, "important");
 
   const colorRegex = /^#?[0-9A-Fa-f]{3}(([0-9A-Fa-f]{3})([0-9A-Fa-f]{2})?)?$/g;
   function changeCustom(type) {
@@ -34,12 +68,14 @@ export default function ThemeSwitcher() {
       c[type] = document.getElementById(`custom-${type}`).value;
       if (c[type].charAt(0) !== "#") c[type] = '#' + c[type];
       style.setProperty(`--clr-custom-${type}`, c[type]);
+      const rgb = hexToRgb(c[type]);
+      style.setProperty(`--clr-custom-${type}RGB`, `${rgb.r},${rgb.g},${rgb.b}`);
       localStorage.setItem(`custom-${type}`, c[type])
     }
   }
   function colorCheck(type) {
     const elem = document.getElementById(`custom-${type}`);
-    if (!colorRegex.test(elem.value)) elem.style.color = "var(--clr-error)";
+    if (!colorRegex.test(elem.value)) elem.style.color = "rgb(var(--clr-error))";
     else elem.style.color = "var(--clr-text)";
   }
   function onEnter(type, event) {
@@ -132,7 +168,7 @@ export default function ThemeSwitcher() {
           </span>
         )}
       >
-        <button className="px-1 prlgm"><span>Theme</span></button>
+        <button className="px-4 h-[2em] inline-block prlgm bgc"><span>Theme</span></button>
       </Popover>
     </>
   );

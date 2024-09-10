@@ -8,10 +8,23 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
 <html lang="en-us">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+        <style>
+            .svg-backslash {
+                aspect-ratio: 1 / 1;
+                box-sizing: content-box;
+                width: 30em;
+                max-width: 100%;
+                background: url(/other/brand-kit/backslash.svg) no-repeat;
+                background-size: auto 100%;
+            }
+            .dark .svg-backslash, .amoled .svg-backslash {
+                background-image: url(/other/brand-kit/backslash-dark.svg);
+            }
+        </style>
 	</head>
     <body>
         <Header />
-        <h1 class="text-center text-2xl"><prlgm><span>Backslash</span></prlgm> Design</h1>
+        <h1 class="text-center text-2xl onest font-bold"><prlgm><span>BACKSLASH</span></prlgm> DESIGN</h1>
         <section>
             <p>
                 The Backslash Design is a design standard inspired by the
@@ -20,6 +33,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
                 It mainly uses parallelograms to distinguish it from
                 other designs (which commonly uses rounded rectangles.)
             </p>
+            <br/>
+            <p>
+                With a redesign in 2024 sketched by 
+                <a href="https://www.behance.net/shaheerchoudhe">Shaheer Babar,</a>
+                and a refinement and implementation by yours truly,
+                this design stands out from the rest, while being simple,
+                sleek, and easily implementable.
+            </p>
+            <br/>
             <cards>
                 <prlgm class="text-xl"><span>Title</span></prlgm>
                 <button class="prlgm text-xl"><span>Button</span></button>
@@ -32,11 +54,30 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
                     </select>
                 </prlgm>
             </cards>
+            <!-- TODO: include examples of checkboxes, cards, sections, and hr -->
         </section>
-        <div class="text-2xl flex flex-col items-center justify-center py-2">
-            <prlgm><span>Color Schemes</span></prlgm>
-            <h1 class="text-xl">Seaview (Light)</h1>
-        </div>
+        <section>
+            <p>
+                While not yet available, the slash is at the perfect angle
+                to be unique, while also being able to be made into an icon.
+                It goes from 4 units down over 1 unit in either left or right,
+                meaning it can be implemented into a 16x16, 32x32, or any variation
+                of an icon size. The exact measurements can be found below:
+            </p>
+            <br/>
+            <div class="flex justify-center"><div class="svg-backslash"></div></div>
+        </section>
+        <h1 class="text-center text-2xl onest font-bold"><prlgm><span>LOGO</span></prlgm></h1>
+        <section>
+            <p>
+                The logo is relatively simple, being a stylized version of the
+                name "ggtyler" with "tyler" being in the backslash parallelogram.
+            </p>
+            <!-- TODO: add image, svg -->
+        </section>
+        <h1 class="text-center text-2xl font-bold onest mt-16"><prlgm><span>COLOR</span></prlgm> SCHEMES</h1>
+        <span class="flex justify-center m-4 mt-8"><prlgm class="hr"></prlgm></span>
+        <h1 class="text-center text-xl font-bold onest mb-4">SEAVIEW <prlgm><span>LIGHT</span></prlgm></h1>
         <cards>
             <card class="text-center" style="background-color: var(--clr-light-bg); color: var(--clr-light-text);">
                 <h1 class="text-xl">Background</h1>
@@ -63,9 +104,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
                 #000B1A
             </card>
         </cards>
-        <div class="text-2xl flex items-center justify-center py-2">
-            <h1 class="text-xl">Seaview (Dark)</h1>
-        </div>
+        <span class="flex justify-center m-4 mt-8"><prlgm class="hr"></prlgm></span>
+        <h1 class="text-center text-xl font-bold onest mb-4">SEAVIEW <prlgm><span>DARK</span></prlgm></h1>
         <cards>
             <card class="text-center" style="background-color: var(--clr-dark-bg); color: var(--clr-dark-text);">
                 <h1 class="text-xl">Background</h1>
@@ -92,9 +132,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
                 #FFFFFF
             </card>
         </cards>
-        <div class="text-2xl flex items-center justify-center py-2">
-            <h1 class="text-xl">Flashbang</h1>
-        </div>
+        <span class="flex justify-center m-4 mt-8"><prlgm class="hr"></prlgm></span>
+        <h1 class="text-center text-xl font-bold onest mb-4"><prlgm><span>FLASHBANG</span></prlgm></h1>
         <cards>
             <card class="text-center" style="background-color: var(--clr-flash-bg); color: var(--clr-flash-text);">
                 <h1 class="text-xl">Background</h1>
@@ -121,9 +160,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
                 #0D0D0D
             </card>
         </cards>
-        <div class="text-2xl flex items-center justify-center py-2">
-            <h1 class="text-xl">AMOLED</h1>
-        </div>
+        <span class="flex justify-center m-4 mt-8"><prlgm class="hr"></prlgm></span>
+        <h1 class="text-center text-xl font-bold onest mb-4"><prlgm><span>AMOLED</span></prlgm></h1>
         <cards>
             <card class="text-center" style="background-color: var(--clr-amoled-bg); color: var(--clr-amoled-text);">
                 <h1 class="text-xl">Background</h1>
@@ -150,11 +188,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
                 #FFFFFF
             </card>
         </cards>
-        <div class="text-2xl flex items-center justify-center py-2">
-            <h1 class="text-xl">Additional Colors</h1>
-        </div>
+        <span class="flex justify-center m-4 mt-8"><prlgm class="hr"></prlgm></span>
+        <h1 class="text-center text-xl font-bold onest mb-4">ADDITIONAL <prlgm><span>COLORS</span></prlgm></h1>
         <cards>
-            <card class="text-center" style="background-color: var(--clr-error); color: var(--clr-error-text);">
+            <card class="text-center" style="background-color: rgb(var(--clr-error)); color: var(--clr-error-text);">
                 <h1 class="text-xl">Error</h1>
                 #C63838
             </card>
@@ -162,7 +199,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
                 <h1 class="text-xl">Error Text</h1>
                 #FFFFFF
             </card>
-            <card class="text-center" style="background-color: var(--clr-graey); color: var(--clr-graey-text);">
+            <card class="text-center" style="background-color: rgb(var(--clr-graey)); color: var(--clr-graey-text);">
                 <h1 class="text-xl">Graey</h1>
                 #424242
             </card>

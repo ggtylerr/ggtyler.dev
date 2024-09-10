@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import MainSocial from '../components/MainSocial.astro';
 ---
 <!DOCTYPE html>
 <html lang="en-us">
@@ -13,27 +14,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
     <body>
         <Header />
         <span class="text-center text-2xl flex justify-center"><prlgm><span><b>OFFICIAL</b></span></prlgm></span>
-        <section>
-            <h1 class="text-xl"><icon></icon> GitHub (<a href="https://github.com/ggtylerr">ggtylerr</a>)</h1>
-            All of my current projects are open source and are hosted on my GitHub profile.
-        </section>
-        <section>
-            <h1 class="text-xl">
-                <icon></icon> Email (<a href="mailto:contact@ggtylerr.dev">contact@ggtylerr.dev</a>)
-                <a href="/other/pgp-key.asc">PGP Key</a>
-            </h1>
-            The preferred contact for regular and professional inquiries.
-        </section>
-        <section>
-            <h1 class="text-xl"><icon></icon> Mastodon (<a href="https://layer8.space/@ggtyler">@ggtyler@layer8.space</a>)</h1>
-            Short updates and related news will be posted on this account.
-        </section>
-        <section>
-            <h1 class="text-xl"><icon></icon> YouTube (<a href="https://www.youtube.com/@ggtyler-dev">@ggtylerr-dev</a>)</h1>
-            Any videos made for my projects (e.g. updates or informational material) are hosted here.
-        </section>
+        <MainSocial />
         <span class="text-center text-2xl flex justify-center pb-3"><prlgm><span><b>PERSONAL</b></span></prlgm></span>
-        <section><b>Do not contact me over these platforms for help.</b> These are my personal accounts. You will be ignored.</section>
+        <section class="text-center"><b>Do not contact me over these platforms for help.</b> These are my personal accounts. You will be ignored.</section>
         <cards class="small text-center">
             <card>
                 <span class="text-[3.5em]"><icon></icon></span>

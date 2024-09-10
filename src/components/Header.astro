@@ -6,7 +6,15 @@ import ThemeSwitcher from './ThemeSwitcher.jsx';
 <!-- Theme setting (placed in header since this is the first body tag) -->
 <script is:raw>
 	const theme = localStorage.theme?.toLowerCase();
-	const options = ["flash", "light", "dark", "amoled", "custom"]
+	const options = ["flash", "light", "dark", "amoled", "custom"];
+	function hexToRgb(hex) {
+		var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+		return result ? {
+		  r: parseInt(result[1], 16),
+		  g: parseInt(result[2], 16),
+		  b: parseInt(result[3], 16)
+		} : null;
+	  }
 	if (options.includes(theme)) document.body.className = theme;
 	else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 		document.body.className = "dark";
@@ -29,26 +37,73 @@ import ThemeSwitcher from './ThemeSwitcher.jsx';
 	if (c.soft)   style.setProperty("--clr-custom-bg-soft", c.soft, "important");
 	if (c.mute)   style.setProperty("--clr-custom-bg-mute", c.mute, "important");
 	if (c.extra)  style.setProperty("--clr-custom-bg-extra", c.extra, "important");
-	if (c.accent) style.setProperty("--clr-custom-accent", c.accent, "important");
 	if (c.text)   style.setProperty("--clr-custom-text", c.text, "important");
+	if (c.accent) {
+		style.setProperty("--clr-custom-accent", c.accent, "important");
+		let rgb = hexToRgb(c.accent);
+		style.setProperty("--clr-custom-accentRGB", `${rgb.r},${rgb.g},${rgb.b}`, "important");
+	}
 </script>
 
+<bar>
+	<p>This website is currently in beta! Expect a few incomplete pages.</p>
+</bar>
 <header>
+	<HeaderLink href="/" class="nounder text-2xl onest !border-0" style="color: var(--clr-accent) !important;">
+		gg<span class="!m-[0.1em] prlgm font-bold" style="color:var(--clr-bg-soft)"><span>tyler</span></span>
+	</HeaderLink>
 	<nav>
-		<HeaderLink href="/" class="nounder">gg<span class="!m-[0.1em] prlgm" style="color:var(--clr-bg-soft)"><span>tyler</span></span></HeaderLink>
 		<HeaderLink href="/projects">Projects</HeaderLink>
 		<HeaderLink href="/blog">Blog</HeaderLink>
 		<HeaderLink href="/social">Social</HeaderLink>
 		<HeaderLink href="/other/frontends">Frontends</HeaderLink>
 		<HeaderLink href="/other">Misc</HeaderLink>
-		<ThemeSwitcher client:only="react" />
 	</nav>
+	<ThemeSwitcher client:only="react" />
 </header>
 <style>
-	header {
-		margin: 0em 0 2em;
+	bar {
+		color: var(--clr-text);
+		text-align: center;
+		padding: 0.5em;
+		margin-bottom: 1em;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background: repeating-linear-gradient( 
+			59.036deg, var(--clr-bg-soft), 
+			var(--clr-bg-soft) 1em, 
+			var(--clr-bg-mute) 1em, 
+			var(--clr-bg-mute) 2em 
+		) !important;
+		display: flex;
+		justify-content: center;
 	}
-	h2 {
-		margin: 0.5em 0;
+	bar p {
+		background: var(--clr-bg-soft);
+		width: fit-content;
+		padding: 0.5em;
+	}
+	header {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		margin: 3em 0 1em;
+	}
+	nav {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		flex-grow: 1;
+		flex: auto;
+		gap: 2em;
+	}
+	@media (max-device-width: 1000px) {
+		header {
+			flex-wrap: wrap;
+			gap: 1em;
+		}
 	}
 </style>

@@ -3,46 +3,96 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
+import MainProjects from '../components/MainProjects.astro';
+import MainSocial from '../components/MainSocial.astro';
+import MainMisc from '../components/MainMisc.astro';
+
+const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
+	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
+);
 ---
 
 <!DOCTYPE html>
 <html lang="en-us">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			.init {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 75vh;
+				font-weight: bold;
+				position: relative;
+				position: static;
+				text-align: center;
+				font-size: 1.25rem;
+				width: 66.6666666667%;
+				margin: 0 auto;
+			}
+			.midtext { 
+				width: 75%;
+				font-size: 3rem;
+				line-height: 1.5;
+				display: block;
+			}
+			@media (max-device-width: 1000px) {
+				.init { width: 100%; }
+				.midtext { width: 100%; }
+			}
+		</style>
 	</head>
 	<body>
 		<Header title={SITE_TITLE} />
-		<div 
-			class="flex items-center justify-center h-56 font-bold -z-10 relative" 
-			style="font-size: 3em; color: var(--clr-accent)">
-			<p>gg<prlgm class="m-[0.1em]"><span>tyler</span></prlgm></p>
-		</div>
-
-		<div class="text-center">
-			This site is currently in <prlgm><span><b>BETA</b></span></prlgm> so expect missing pages and bugs.
-		</div>
-		
-		<div class="text-center">
-			Here from a frontend and want more? Check out the <a href="/other/frontends">frontends list!</a>
-		</div>
-
-		<section>
-			<p class="text-center text-xl"><b>Full-stack and app developer</b></p>
-			<p>
-				Hi, I'm Tyler. I've been developing programs for 4 years now,
-				and I dabble in everything from TUIs to full server software.
+		<div class="init onest">
+			<p>HI, I'M TYLER, A</p>
+			<span class="midtext onest">
+				FULL STACK AND
+				APP <prlgm class="mr-0"><span>DEVELOPER</span></prlgm>
+			</span>
+			<p class="text-base font-normal pt-8">
+				I've been coding up programs for over 5 years now, and I dabble in everything from TUIs to full server software.
+				This site acts as both a portfolio and a blog, plus some miscellaneous things.
 			</p>
-			<p>
-				This site acts as both a portfolio and a blog, plus some miscellaneous
-				things.
-			</p>
-		</section>
-		<section>
-			<p>If you want to see my previous work, head on to <a href="/projects">my project showcase.</a></p>
-			<p>If you want to see my posts, go to <a href="/blog">my blog.</a></p>
-			<p>If you want to get in contact, check out <a href="/social">my socials.</a></p>
-			<p>If you want something else, go to <a href="/other">the miscellaneous section.</a></p>
-		</section>
+		</div>
+		<span class="flex justify-center m-4"><prlgm class="hr"></prlgm></span>
+		<p class="text-3xl font-bold text-center onest">PROJECTS</p>
+		<MainProjects />
+		<span class="flex justify-center">
+			<a class="px-4 button prlgm bgc leading-[2em] inline-block" href="/projects"><span>View All</span></a>
+		</span>
+		<span class="flex justify-center m-4 mt-32"><prlgm class="hr"></prlgm></span>
+		<p class="text-3xl font-bold text-center">BLOG POSTS</p>
+		<cards class="mt-4">
+			{posts.slice(0,6).map((post) => {
+				return <card>
+					<a href={post.url} class="flex flex-col text h-full nodeco">
+						<time datetime={post.frontmatter.pubDate}>
+							{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
+								year: 'numeric',
+								month: 'short',
+								day: '2-digit',
+							}).toLocaleUpperCase()}
+						</time>
+						<p class="text-xl onest !font-bold redeco">{post.frontmatter.title}</p>
+						<p class="text-base font-normal mt-auto">{post.frontmatter.description}</p>
+					</a>
+				</card>
+			})}
+		</cards>
+		<span class="flex justify-center m-4">
+			<a class="px-4 button prlgm bgc leading-[2em] inline-block" href="/blog"><span>View All</span></a>
+		</span>
+		<span class="flex justify-center m-4 mt-32"><prlgm class="hr"></prlgm></span>
+		<p class="text-3xl font-bold text-center">SOCIALS</p>
+		<MainSocial />
+		<span class="flex justify-center m-4">
+			<a class="px-4 button prlgm bgc leading-[2em] inline-block" href="/social"><span>View All</span></a>
+		</span>
+		<span class="flex justify-center m-4 mt-32"><prlgm class="hr"></prlgm></span>
+		<p class="text-3xl font-bold text-center">MISC</p>
+		<MainMisc />
 		<Footer />
 	</body>
 </html>

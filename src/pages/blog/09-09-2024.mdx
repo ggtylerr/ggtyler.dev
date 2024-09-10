@@ -1,0 +1,151 @@
+---
+layout: "../../layouts/BlogPost.astro"
+title: "Five years and counting"
+description: "A quick look back at the past, and a look into the future."
+pubDate: "Sep 09 2024"
+---
+
+<section>
+    It was yet another day at high school - I was packing up after a long
+    and boring day of classes, heading over to the one part of school that
+    I actually liked. It was a small club, consisting of myself, two of
+    my friends from middle school *(one who I still talk to,)* and a
+    teacher. Our ultimate goal was to make a robot to compete in the
+    yearly competition. It...wasn't going so well.
+    <br/>
+    With only three members, previously four before one left, and only
+    one person actually doing the work, our progress was insanely slow.
+    We had just barely made a framework at the time and was very clearly
+    not gonna make a working robot by the deadline. But today was a little
+    different - we were gonna move on to learning Python 2.
+</section>
+<section>
+    None of us have learned programming before and it seemed like a big task.
+    But as you could've guessed, I ended up really liking it. Over the next
+    week, I made a few test scripts and small games, before finally releasing
+    my first project: [KAaNE,](https://github.com/ggtylerr/KAaNE) or 
+    "Keep Assisting and Nobody Explodes." This was meant as a companion program
+    for the game [KTaNE,](https://keeptalkinggame.com/) "Keep Talking and Nobody 
+    Explodes," which is primarily a multiplayer only game. The goal was to allow
+    anyone to play it alone.
+    <br/>
+    Of course, other apps have already existed prior to this point and can be
+    considered a cheating software to some. But to me, in early 2018? I saw it as
+    a really good way to learn how to develop something, while also being able to
+    cater to a certain niche. I was even able to add some functionality still not
+    seen in other apps (sometimes called "solvers") - pretty much all of them
+    only supported the native game, where as mine also included a handful of
+    modded solvers.
+    <br/>
+    This was my first script, and with that, mistakes were made. The entirety of
+    the project is mostly one Python script, which was incredibly bloated and poorly
+    written. Plus, it's plastered with my old username. *(Yes, that's what "gg"
+    stood for initially.)* But overtime I iterated upon it with new versions, such
+    as [a GUI version made in Java,](https://github.com/ggtylerr/KAaNE-JE-)
+    [a version made for Android,](https://github.com/ggtylerr/KAaNE-AE-)
+    one that was made in Qt that never got released, and a few others.
+    <br/>
+    I also made a lot of other projects and drafts, most of which never saw the
+    public light. One of which is this site, initially released on December 10th,
+    2019. *(...okay, it hasn't been five years since then, and over five years since my
+    first program, but it's close enough.)*
+</section>
+<section>
+    Over time though, I gradually lost free time and motivation. I simply couldn't
+    open my IDE for the longest time, and I eventually got a job and tried university.
+    In the back of my mind, I always wondered: "Is coding even my thing? Would anyone
+    even care for what I make?" Those questions have been engrained in my mind for a long
+    time now, and roughly two years ago, I wanted to see if *anyone* would care for
+    what I do.
+    <br/>
+    So, back in December of 2022, I started hosting Invidious. At the time, I was using
+    a dedicated server shared amongst two other people. Just like with Python 4 years
+    prior, I was going into sysadmin mostly blind. I had no idea what I was doing
+    most of the time. Whenever a problem happened, I begged the main admin, moocow,
+    to help me out.
+    <br/>
+    8 months later, I moved out of their server and into one I rented entirely on my own.
+    In fact, I set up three - one in New York, Seattle, and Paris. I set up more
+    frontends, changed around the servers, set up more scripts and configs, and...
+</section>
+<section>
+    Now, we're in the present. Well, nearly there, we're about a month away.
+    <br/>
+    Invidious was down for a few months - Google put in their latest blocks to
+    deter any scraping from (most likely) AI models, and subsequently blocked
+    most third-party services. But Invidious was just gearing up to workaround these,
+    and as someone who was keeping a close eye on the situation, I implemented the
+    patch as soon as I was able to.
+    <br/>
+    When it fully released, they decided to remove any public instance that hasn't
+    updated it yet, and that left mine to be one of the only ones available. Not only
+    that, it was the one of two that was primarily hosted in the US, and the fourth on
+    the list.
+    <br/>
+    ...and now we're in the present! Needless to say, we got a lot of users from that. 
+    At the time of writing, there are now [4000 users,](https://iv.ggtyler.dev/api/v1/stats) 
+    900 of which have been active the past month. It even managed to get into LTT's now 
+    deleted de-google video, as Invidious was present and the instance was listed in it. 
+    (Thanks, Linus!)
+    <br/>
+    4000 might not seem like a lot to some people - of course, that's the amount of
+    registered users, and I have how many are actively on the instance. *(I don't use
+    any kind of analytics.)* But to me, it finally served as an answer to that question.
+    *People finally care.*
+    <br/>
+    If you can't tell, I'm not exactly a prolific developer or master hacker. I'm a guy
+    working shit wages, trying to make a name for himself by hosting privacy friendly 
+    services. And while I've been happy just hosting them for myself for the past few years,
+    knowing that there are people out there who use them too? Who actually benefitted
+    from it? It's a nice feeling, and I can't really thank you all enough.
+    <br/>
+    So as a little thank you, I'm publishing...well, a lot of things.
+</section>
+<section>
+    As you no doubt can already tell, the entire website got a new design. The previous one,
+    while nice in some areas, lacked the overall theme that I wanted to use, which were backslashes.
+    For those that don't know, a backslash character, `\`, is used in programming
+    to ["escape" a character.](https://en.wikipedia.org/wiki/Escape_character) It seemed
+    fitting to use, as I wanted it to stand out, to "escape" amongst the crowd. Now
+    with this new design, I feel like it really does do that now.
+    <br/>
+    I can't take credit for it alone, as the bulk of it was sketched by 
+    [Shaheer Babar,](https://www.behance.net/shaheerchoudhe) a UI designer who
+    specializes in these kinds of sleek designs. I of course did the coding, made tweaks,
+    additions, and so on, but still. I highly recommend his work if you need a designer.
+    <br/>
+    Along with the sleek new looks, I've officially published the internal server configs
+    and scripts for the frontends under [project "GLOBE".](https://www.github.com/ggtylerr/globe)
+    This is intended as a way to validate the services I host, while also allowing
+    the community to make any changes. This is also a way for *anyone* to host their own,
+    so no need to rely on mine anymore. Self-hosting 15 frontends is now as simple as cloning
+    the repo, running a script, and adding a lot of DNS records. *(...I'll be fixing `init.sh`
+    to not need that over the following week.)*
+    <br/>
+    And speaking of frontends, this is a little bit old now, but I've started a proof of concept
+    for a YouTube frontend made in Astro, called [AstroTube.](https://www.github.com/ggtylerr/astrotube)
+    This uses the Invidious API as a backend and is meant to be as performant and lightweight as
+    possible. In fact, here's a video of it running [on my New 3DS XL.](https://iv.ggtyler.dev/watch?v=FKY8s_4wL2M) 
+    *(Yes, not very old, but not even Invidious runs on it.)*
+    <br/>
+    Besides that, I've also finally [migrated to Mastodon,](https://layer8.space/@ggtyler)
+    and there is now a [Discord and Matrix chat room.](/social) And while I couldn't get a prototype 
+    out in time for this post, I'm also planning on making a native client for YouTube, Invidious, Piped,
+    and more on desktop. Stay tuned for that. 
+</section>
+<section>
+    I know it isn't terribly much, but I'm now fully dedicated to working on this again. I've
+    had a lot of trouble over the past few years, but it starting to seem like I'm finally able
+    to have something in this life. I can't forsee the future, Invidious and other frontends
+    will certainly die down overtime or get patched, but... regardless of what will happen, all I can
+    say is this: Thank you. Truthfully.
+    <br/>
+    By using any of the frontends I've hosted, and hell, reading this post and any others,
+    I'm able to get just that little bit of motivation back. The same kind I thought died out. Over
+    the past week alone, I've been working non-stop on all of the above, and while I was definitely
+    stressed out at times... it felt good finally working on something I know people will like and use.
+    <br/>
+    🍺 So here's to roughly 5 years of this site, and roughly many more!
+    <br/>
+    ~ ggtyler
+</section>
