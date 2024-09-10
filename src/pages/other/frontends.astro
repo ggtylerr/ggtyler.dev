@@ -23,6 +23,13 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
         <p class="text-3xl font-bold text-center">Current Status: <prlgm class="warning"><span><b>WARNING</b></span></prlgm></p>
         <section>
             <p>
+                Unfortunately, Invidious has been hit with yet another block by Google, and our instance
+                is now non-functional. As this is an A/B test, you should be able to use other instances,
+                or use one of our other servers listed here. As for an official patch, please be patient 
+                with the developers, or consider contributing to the project.
+            </p>
+            <span class="flex justify-center m-4"><prlgm class="hr"></prlgm></span>
+            <p>
                 We have now published our internal server structure to the public, you can see it 
                 <a href="https://github.com/ggtylerr/globe">on this Git repo.</a> We'll be updating our servers to
                 include the new improvements made with this public release and will be temporarily turning off our
@@ -41,34 +48,6 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                         <a href="https://www.worldtimebuddy.com/?qm=1&lid=100,12&h=100&date=2024-9-13&sln=0-3&hf=1">00:00 to 02:00 UTC</a>
                     </li>
                 </ul>
-            </p>
-            <span class="flex justify-center m-4"><prlgm class="hr"></prlgm></span>
-            <p>
-                Server is currently migrating data. Any frontends that are currently down are undergoing maintenance.
-                You can see more frequent updates on <a href="https://layer8.space/@ggtyler">my Mastodon account.</a>
-            </p>
-            <span class="flex justify-center m-4"><prlgm class="hr"></prlgm></span>
-            <p>
-                http3-ytproxy, the tool used to make video/image loading faster on Invidious, has been malfunctioning.
-                (Likely just the software not liking their new patch.) This has been removed from our servers for
-                the time being, but expect videos to load slower.
-                <br/><br/>
-                <b>
-                    We're testing out some new tweaks to combat this - please let me know if any of these improve
-                    performance.
-                </b>
-                This currently includes:
-                <ul>
-                    <li>Using 5 replicas</li>
-                    <li>Using PGBouncer
-                        <ul><li>Thank you AlexPewMaster (from reallyaweso.me, with direct support) and Weidenwiesel (from nerdvpn.de, with his optimization config) for help with the implementation!</li></ul>
-                    </li>
-                    <li>Doing full restarts of Invidious and switching IPv6 addresses every 3 hours</li>
-                </ul>
-                <br/>
-                It should also be noted that Piped (and by extension, Hyperpipe) is not working at
-                this time. This is solely because the devs have not implemented the proper patches yet - please be patient.
-                You can use Invidious, Poke, and Cobalt instead.
             </p>
         </section>
         <cards class="text-center items-start">
