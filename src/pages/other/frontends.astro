@@ -20,33 +20,44 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
 	</head>
     <body>
         <Header />
-        <p class="text-3xl font-bold text-center">Current Status: <prlgm class="warning"><span><b>WARNING</b></span></prlgm></p>
+        <p class="text-3xl font-bold text-center onest">Current Status: <prlgm class="warning"><span><b>WARNING</b></span></prlgm></p>
         <section>
             <p>
-                Unfortunately, Invidious has been hit with yet another block by Google, and our instance
+                Unfortunately, Invidious has been hit with yet another block by Google, and our main instance
                 is now non-functional. As this is an A/B test, you should be able to use other instances,
                 or use one of our other servers listed here. As for an official patch, please be patient 
                 with the developers, or consider contributing to the project.
             </p>
+            <p>
+                This now makes the vast majority of frontends blocked, including:
+                <ul>
+                    <li>Invidious (as of writing, only on NYC-1)</li>
+                    <li>Piped (as of writing, only on NYC-1 and CAL-1)</li>
+                    <li>Hyperpipe (as of writing, only on NYC-1 and CAL-1)</li>
+                    <li>Poke (as of writing, only on NYC-1)</li>
+                </ul>
+                We will update this service notice whenever possible, but updates will be more frequent on:
+                <ul>
+                    <li><a href="https://matrix.to/#/#invidious:matrix.org">The Invidious Matrix group</a></li>
+                    <li><a href="https://layer8.space/@ggtyler">Mastodon</a></li>
+                    <li>Our chat rooms: 
+                        <a href="https://matrix.to/#/%21ZTIzihtnvdIPLjNoSG%3Amatrix.org?via=matrix.org&via=t2bot.io">Matrix</a>, 
+                        <a href="https://discord.gg/FdPDWjNz7u">Discord</a>
+                    </li>
+                </ul>
+            </p>
             <span class="flex justify-center m-4"><prlgm class="hr"></prlgm></span>
             <p>
-                We have now published our internal server structure to the public, you can see it 
-                <a href="https://github.com/ggtylerr/globe">on this Git repo.</a> We'll be updating our servers to
-                include the new improvements made with this public release and will be temporarily turning off our
-                server access during the following times:
+                We have now updated all our servers to use a new and public server structure. If you're
+                interested, you can <a href="https://github.com/ggtylerr/globe">view the repo here.</a>
+                A few notable changes:
                 <ul>
-                    <li>
-                        NYC-1: September 10th,
-                        <a href="https://www.worldtimebuddy.com/?qm=1&lid=5128581,100&h=5128581&date=2024-9-10&sln=1-4&hf=1">05:00 to 07:00 UTC</a>
+                    <li>Invidious is now running a custom-made patch made by unixfox to increase performance.</li>
+                    <li>Cobalt is now running on the latest version, v10, with a custom-made image for their web app.</li>
+                    <li>Scheduled restarts are now not necessary for any frontend except for Invidious.
+                        Updates are handled automatically and restarts are only done when necessary.
                     </li>
-                    <li>
-                        CAL-1: September 12th,
-                        <a href="https://www.worldtimebuddy.com/?qm=1&lid=100,8&h=100&date=2024-9-12&sln=5-7&hf=1">05:00 to 07:00 UTC</a>
-                    </li>
-                    <li>
-                        POL-1: September 13th,
-                        <a href="https://www.worldtimebuddy.com/?qm=1&lid=100,12&h=100&date=2024-9-13&sln=0-3&hf=1">00:00 to 02:00 UTC</a>
-                    </li>
+                    <li>For server hosters, hosting your own instance is now as simple as running our script!</li>
                 </ul>
             </p>
         </section>
@@ -55,7 +66,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
                 <h1 class="text-xl"><a href="https://iv.ggtyler.dev">Invidious</a></h1>
                 <center>(For YouTube)</center>
-                <a href="https://github.com/iv-org/invidious"><icon></icon></a>
+                <a href="https://github.com/ggtylerr/invidious"><icon></icon></a>
                 <a href="https://invidious.io"><icon></icon></a>
                 <br/>
                 <span class="inner">
@@ -270,7 +281,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 </span>
             </card>
         </cards>
-        <p class="text-3xl font-bold text-center mt-4">ADDITIONAL INFO</p>
+        <p class="text-3xl font-bold text-center mt-4 onest">ADDITIONAL INFO</p>
         <section>
             <details>
                 <summary>Server details</summary>
@@ -342,49 +353,6 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                     Have a specific server location you like to use? Go to <a href="https://ggt.bz">ggt.bz</a> first,
                     select the location you prefer, and now any link you visit through that will use that location.
                     (The exception being including the location in the URL itself.)
-                </p>
-            </details>
-            <details>
-                <summary>Service Restarts</summary>
-                <p>
-                    Services are restarted hourly to ensure they're running smoothly (with a few exceptions.) These also run update checks,
-                    to make sure they're updated. These are spread out across the hour to prevent the server from being overloaded. Restart
-                    times are as follows:
-                    <ul class="ml-4">
-                        <li>
-                            Invidious - :00 - :05
-                            <ul>
-                                <li>Invidious is set up with a <a href="https://docs.invidious.io/improve-public-instance/">much more performant setup.</a></li>
-                                <li>Because of this, hourly restarts don't affect the service at all.</li>
-                                <li>However, there is a full service restart every 6 hours on automatic IPv6 changes, which may stop videos, albeit briefly.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            Cobalt - :00
-                            <ul>
-                                <li>This is only restarted on 0:00 UTC to prevent interruptions to downloads.</li>
-                            </ul>
-                        </li>
-                        <li>RedLib - :06</li>
-                        <li>Piped - :08</li>
-                        <li>Breezewiki - :12</li>
-                        <li>Beatbump - :16</li>
-                        <li>Hyperpipe - :20</li>
-                        <li>SearXNG - :24</li>
-                        <li>SafeTwitch - :28</li>
-                        <li>SimplyTranslate - :32</li>
-                        <li>LibreTranslate - :36</li>
-                        <li>Lingva - :40</li>
-                        <li>Mozhi - :44</li>
-                        <li>LibreY - :48</li>
-                        <li>
-                            Poke - :52
-                            <ul>
-                                <li>This only restarts if there are any new commits.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    Keep in mind that as more services are added, this system may be changed to daily restarts for non-essential services.
                 </p>
             </details>
         </section>
