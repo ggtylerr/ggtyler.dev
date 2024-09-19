@@ -20,30 +20,21 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
 	</head>
     <body>
         <Header />
-        <p class="text-3xl font-bold text-center onest">Current Status: <prlgm class="warning"><span><b>WARNING</b></span></prlgm></p>
+        <p class="text-3xl font-bold text-center onest">Current Status: <prlgm><span><b>INFO</b></span></prlgm></p>
         <section>
             <p>
-                Unfortunately, Invidious has been hit with yet another block by Google, and our main instance
-                is now non-functional. As this is an A/B test, you should be able to use other instances,
-                or use one of our other servers listed here. As for an official patch, please be patient 
-                with the developers, or consider contributing to the project.
-            </p>
-            <p>
-                This now makes the vast majority of frontends blocked, including:
+                <a href="https://github.com/iv-org/invidious/pull/4928">Invidious is now patched</a> 
+                and is live on all servers :) Thanks for sticking with us while it was blocked!
+                <br/>
+                Please note that Piped (and Hyperpipe, which uses Piped) is still blocked as they still
+                have not implemented the latest patches. Please be patient with the devs as they
+                work on it.
+                <br/>
+                Also, consider checking out the following for regular updates:
                 <ul>
-                    <li>Invidious (as of writing, only on NYC-1)</li>
-                    <li>Piped (as of writing, only on NYC-1 and CAL-1)</li>
-                    <li>Hyperpipe (as of writing, only on NYC-1 and CAL-1)</li>
-                    <li>Poke (as of writing, only on NYC-1)</li>
-                </ul>
-                We will update this service notice whenever possible, but updates will be more frequent on:
-                <ul>
-                    <li><a href="https://matrix.to/#/#invidious:matrix.org">The Invidious Matrix group</a></li>
                     <li><a href="https://layer8.space/@ggtyler">Mastodon</a></li>
-                    <li>Our chat rooms: 
-                        <a href="https://matrix.to/#/%21ZTIzihtnvdIPLjNoSG%3Amatrix.org?via=matrix.org&via=t2bot.io">Matrix</a>, 
-                        <a href="https://discord.gg/FdPDWjNz7u">Discord</a>
-                    </li>
+                    <li><a href="https://matrix.to/#/%21ZTIzihtnvdIPLjNoSG%3Amatrix.org?via=matrix.org&via=t2bot.io">Matrix</a></li>
+                    <li><a href="https://discord.gg/FdPDWjNz7u">Discord</a></li>
                 </ul>
             </p>
             <span class="flex justify-center m-4"><prlgm class="hr"></prlgm></span>
@@ -357,8 +348,16 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </details>
         </section>
         <section>
-            Comments are approved manually - please be patient. If you do not see your comment immediately, <b><i>don't spam it.</i></b>
-            Please have some common sense here too. These are still human beings, so no racism, sexism, homophobia, transphobia, etc. No NSFW either.
+            <h1 class="text-3xl text-center onest mb-4">PLEASE <prlgm><span>READ</span></prlgm> BEFORE COMMENTING!</h1>
+            <p>
+                If you're commenting about a service not working, then check the service notice up top! It's very likely
+                that it's a known issue. If you're commenting about me making a frontend, please remember that <b><i>I do not
+                make anything listed here - </i></b> I merely host it for the public to use.
+            </p>
+            <p>
+                Comments are approved manually - please be patient. If you do not see your comment immediately, <b><i>don't spam it.</i></b>
+                Please have some common sense here too. These are still human beings, so no racism, sexism, homophobia, transphobia, etc. No NSFW either.
+            </p>
         </section>
         <section id="isso-thread">
             <noscript>JavaScript needs to be activated to view comments.</noscript>
