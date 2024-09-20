@@ -20,15 +20,20 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
 	</head>
     <body>
         <Header />
-        <p class="text-3xl font-bold text-center onest">Current Status: <prlgm><span><b>INFO</b></span></prlgm></p>
+        <p class="text-3xl font-bold text-center onest">Current Status: <prlgm class="warning"><span><b>WARNING</b></span></prlgm></p>
         <section>
             <p>
-                <a href="https://github.com/iv-org/invidious/pull/4928">Invidious is now patched</a> 
-                and is live on all servers :) Thanks for sticking with us while it was blocked!
+                <s><a href="https://github.com/iv-org/invidious/pull/4928">Invidious is now patched</a></s>
+                Unfortunately it got blocked within 24 hours... CAL-1 is still unblocked but don't expect
+                it to last.
                 <br/>
-                Please note that Piped (and Hyperpipe, which uses Piped) is still blocked as they still
-                have not implemented the latest patches. Please be patient with the devs as they
-                work on it.
+                List of affected instances:
+                <ul>
+                    <li>Invidious (NYC-1, POL-1)</li>
+                    <li>Piped (NYC-1, POL-1)</li>
+                    <li>Hyperpipe (NYC-1, POL-1)</li>
+                    <li>Poke (NYC-1, POL-1)</li>
+                </ul>
                 <br/>
                 Also, consider checking out the following for regular updates:
                 <ul>
