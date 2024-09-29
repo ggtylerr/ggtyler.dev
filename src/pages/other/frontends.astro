@@ -44,23 +44,24 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </p>
             <span class="flex justify-center m-4"><prlgm class="hr"></prlgm></span>
             <p>
-                We have now updated all our servers to use a new and public server structure. If you're
-                interested, you can <a href="https://github.com/ggtylerr/globe">view the repo here.</a>
-                A few notable changes:
-                <ul>
-                    <li>Invidious is now running a custom-made patch made by unixfox to increase performance.</li>
-                    <li>Cobalt is now running on the latest version, v10, with a custom-made image for their web app.</li>
-                    <li>Scheduled restarts are now not necessary for any frontend except for Invidious.
-                        Updates are handled automatically and restarts are only done when necessary.
-                    </li>
-                    <li>For server hosters, hosting your own instance is now as simple as running our script!</li>
-                </ul>
+                The majority of the "main" subdomains have been updated to redirect to nyc1.
+                (As an example, <code>https://iv.ggtyler.dev</code> will redirect to <code>https://nyc1.iv.ggtyler.dev</code>.)
+                This is to prevent confusion between the main and nyc1 subdomains, since internally 
+                it's literally the same, while also fixing any issues that cropped up from using two
+                different subdomains.
+                <br/><br/>
+                Most services are largely unaffected by this change - the most that will happen is that
+                you'll need to log in again, or change the theme setting. (Some services like
+                Cobalt and SearXNG were also already using the nyc1 subdomain, so they're completely 
+                unaffected.) However, for LibreY, their settings are stored in browser and would be
+                technically lost to this change. As such, LibreY redirects are disabled until
+                <b>November 1st</b> to give users time to move their settings.
             </p>
         </section>
         <cards class="text-center items-start">
             <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://iv.ggtyler.dev">Invidious</a></h1>
+                <h1 class="text-xl"><a href="https://nyc1.iv.ggtyler.dev">Invidious</a></h1>
                 <center>(For YouTube)</center>
                 <a href="https://github.com/ggtylerr/invidious"><icon></icon></a>
                 <a href="https://invidious.io"><icon></icon></a>
@@ -75,11 +76,11 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </card>
             <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://pi.ggtyler.dev">Piped</a></h1>
+                <h1 class="text-xl"><a href="https://nyc1.pi.ggtyler.dev">Piped</a></h1>
                 <center>(For YouTube)</center>
                 <a href="https://github.com/TeamPiped/Piped"><icon></icon></a>
                 <a href="https://docs.piped.video/"><icon></icon></a>
-                <Tooltip text="API: piapi.ggtyler.dev PROXY: piproxy.ggtyler.dev"/>
+                <Tooltip text="API: nyc1.piapi.ggtyler.dev PROXY: nyc1.piproxy.ggtyler.dev"/>
                 <br/>
                 <span class="inner">
                     <span>
@@ -91,10 +92,10 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </card>
             <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://hp.ggtyler.dev">Hyperpipe</a></h1>
+                <h1 class="text-xl"><a href="https://nyc1.hp.ggtyler.dev">Hyperpipe</a></h1>
                 <center>(For YouTube Music)</center>
                 <a href="https://codeberg.org/Hyperpipe/Hyperpipe"><icon></icon></a>
-                <Tooltip text="API: hpapi.ggtyler.dev"/>
+                <Tooltip text="API: nyc1.hpapi.ggtyler.dev"/>
                 <br/>
                 <span class="inner">
                     <span>
@@ -106,7 +107,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </card>
             <card class="w-56">
                 <span class="text-[3.4em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://poke.ggtyler.dev">Poke</a></h1>
+                <h1 class="text-xl"><a href="https://nyc1.poke.ggtyler.dev">Poke</a></h1>
                 <center class="text-sm">(For YouTube and more)</center>
                 <a href="https://codeberg.org/ashley/poke"><icon></icon></a>
                 <br/>
@@ -120,7 +121,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </card>
             <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://lr.ggtyler.dev">RedLib</a></h1>
+                <h1 class="text-xl"><a href="https://nyc1.lr.ggtyler.dev">RedLib</a></h1>
                 <center>(For Reddit)</center>
                 <a href="https://github.com/redlib-org/redlib"><icon></icon></a>
                 <br/>
@@ -134,10 +135,10 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </card>
             <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://st.ggtyler.dev">SafeTwitch</a></h1>
+                <h1 class="text-xl"><a href="https://nyc1.st.ggtyler.dev">SafeTwitch</a></h1>
                 <center>(For Twitch)</center>
                 <a href="https://codeberg.org/SafeTwitch/safetwitch"><icon></icon></a>
-                <Tooltip text="API: stapi.ggtyler.dev"/>
+                <Tooltip text="API: nyc1.stapi.ggtyler.dev"/>
                 <br/>
                 <span class="inner">
                     <span>
@@ -149,7 +150,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </card>
             <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://dm.ggtyler.dev">Dumb</a></h1>
+                <h1 class="text-xl"><a href="https://nyc1.dm.ggtyler.dev">Dumb</a></h1>
                 <center>(For Genius)</center>
                 <a href="https://github.com/rramiachraf/dumb"><icon></icon></a>
                 <br/>
@@ -163,7 +164,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </card>
             <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://breeze.ggtyler.dev">Breezewiki</a></h1>
+                <h1 class="text-xl"><a href="https://nyc1.breeze.ggtyler.dev">Breezewiki</a></h1>
                 <center>(For Fandom)</center>
                 <a href="https://gitdab.com/cadence/breezewiki"><icon></icon></a>
                 <Tooltip text="This service runs on the Docker version (from PussTheCat.org)"/>
@@ -178,7 +179,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </card>
             <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://co.ggtyler.dev">Cobalt</a></h1>
+                <h1 class="text-xl"><a href="https://nyc1.co.ggtyler.dev">Cobalt</a></h1>
                 <center>(For social media DL)</center>
                 <a href="https://github.com/imputnet/cobalt"><icon></icon></a>
                 <Tooltip text="This service restarts at 0:00 UTC and postprocessing may be slow."/>
@@ -193,7 +194,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </card>
             <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://sx.ggtyler.dev">SearXNG</a></h1>
+                <h1 class="text-xl"><a href="https://nyc1.sx.ggtyler.dev">SearXNG</a></h1>
                 <center>(For searching)</center>
                 <a href="https://github.com/searxng/searxng"><icon></icon></a>
                 <a href="https://docs.searxng.org/"><icon></icon></a>
@@ -208,7 +209,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </card>
             <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://ly.ggtyler.dev">LibreY</a></h1>
+                <h1 class="text-xl"><a href="https://nyc1.ly.ggtyler.dev">LibreY</a></h1>
                 <center>(For searching)</center>
                 <a href="https://github.com/Ahwxorg/LibreY"><icon></icon></a>
                 <br/>
@@ -222,7 +223,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </card>
             <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://sptl.ggtyler.dev">SimplyTranslate</a></h1>
+                <h1 class="text-xl"><a href="https://nyc1.sptl.ggtyler.dev">SimplyTranslate</a></h1>
                 <center>(For translation)</center>
                 <a href="https://codeberg.org/ManeraKai/simplytranslate/"><icon></icon></a>
                 <br/>
@@ -236,7 +237,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </card>
             <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://lbtl.ggtyler.dev">LibreTranslate</a></h1>
+                <h1 class="text-xl"><a href="https://nyc1.lbtl.ggtyler.dev">LibreTranslate</a></h1>
                 <center>(For translation)</center>
                 <a href="https://github.com/LibreTranslate/LibreTranslate"><icon></icon></a>
                 <br/>
@@ -250,7 +251,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </card>
             <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://lv.ggtyler.dev">Lingva</a></h1>
+                <h1 class="text-xl"><a href="https://nyc1.lv.ggtyler.dev">Lingva</a></h1>
                 <center>(For translation)</center>
                 <a href="https://github.com/TheDavidDelta/lingva-translate"><icon></icon></a>
                 <br/>
@@ -264,7 +265,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
             </card>
             <card class="w-56">
                 <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://mz.ggtyler.dev">Mozhi</a></h1>
+                <h1 class="text-xl"><a href="https://nyc1.mz.ggtyler.dev">Mozhi</a></h1>
                 <center>(For translation)</center>
                 <a href="https://codeberg.org/aryak/mozhi"><icon></icon></a>
                 <br/>
