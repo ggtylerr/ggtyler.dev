@@ -23,24 +23,11 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
         <p class="text-3xl font-bold text-center onest">Current Status: <prlgm class="warning"><span><b>WARNING</b></span></prlgm></p>
         <section>
             <p>
-                <s><a href="https://github.com/iv-org/invidious/pull/4928">Invidious is now patched</a></s>
-                Unfortunately it got blocked within 24 hours... CAL-1 and POL-1 are still unblocked but don't expect
-                it to last.
-                <br/>
-                List of affected instances:
-                <ul>
-                    <li>Invidious (NYC-1)</li>
-                    <li>Piped (All servers)</li>
-                    <li>Hyperpipe (All servers)</li>
-                    <li>Poke (NYC-1)</li>
-                </ul>
-                <br/>
-                Also, consider checking out the following for regular updates:
-                <ul>
-                    <li><a href="https://layer8.space/@ggtyler">Mastodon</a> (or <a href="https://bsky.app/profile/ggtyler.layer8.space.ap.brid.gy">Bluesky</a>)</li>
-                    <li><a href="https://matrix.to/#/%21ZTIzihtnvdIPLjNoSG%3Amatrix.org?via=matrix.org&via=t2bot.io">Matrix</a></li>
-                    <li><a href="https://discord.gg/FdPDWjNz7u">Discord</a></li>
-                </ul>
+                YouTube blocks are regularly occuring - this may be fixed soon-ish but for right now,
+                NYC-1 is completely blocked. CAL-1 and POL-1 have occassional issues, especially
+                regarding Piped, but the vast majority of problems can be resolved by waiting a few
+                minutes and refreshing. For some cases, like a video buffering for a long time during
+                playback, this can be resolved by refreshing or changing the video quality.
             </p>
             <span class="flex justify-center m-4"><prlgm class="hr"></prlgm></span>
             <p>
@@ -48,21 +35,6 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
                 we have now officially shut down our Cobalt instance. Thank you for everyone that's used it over the past year or so.
                 To continue using Cobalt, please use <a href="https://cobalt.tools">the official site</a> or
                 <a href="https://github.com/ggtylerr/globe">host it yourself.</a>
-            </p>
-            <span class="flex justify-center m-4"><prlgm class="hr"></prlgm></span>
-            <p>
-                The majority of the "main" subdomains have been updated to redirect to nyc1.
-                (As an example, <code>https://iv.ggtyler.dev</code> will redirect to <code>https://nyc1.iv.ggtyler.dev</code>.)
-                This is to prevent confusion between the main and nyc1 subdomains, since internally 
-                it's literally the same, while also fixing any issues that cropped up from using two
-                different subdomains.
-                <br/><br/>
-                Most services are largely unaffected by this change - the most that will happen is that
-                you'll need to log in again, or change the theme setting. (Some services like
-                Cobalt and SearXNG were also already using the nyc1 subdomain, so they're completely 
-                unaffected.) However, for LibreY, their settings are stored in browser and would be
-                technically lost to this change. As such, LibreY redirects are disabled until
-                <b>November 1st</b> to give users time to move their settings.
             </p>
         </section>
         <cards class="text-center items-start">
