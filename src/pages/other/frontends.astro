@@ -23,19 +23,13 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
         <p class="text-3xl font-bold text-center onest">Current Status: <prlgm class="warning"><span><b>WARNING</b></span></prlgm></p>
         <section>
             <p>
-                <b>UPDATE:</b> <s>Recent YT updates seem to have broken sighelper, leading to Invidious not launching across all instances. This also affects Poke.</s> Sighelper has now been patched thanks to the work of <a href="https://github.com/lifo9">lifo9</a> and the docker container from <a href="https://github.com/rockerBOO">rockerBOO.</a> Invidious and Poke should now perform as expected (see blockage details below.)
-            </p>
-            <br/>
-            <p>
-                Also, Piped (+ Hyperpipe) is now fully blocked. Nothing possible until their <a href="https://hub.docker.com/r/1337kavin/bg-helper-server">potoken / signature bypass</a> is complete and stable enough for production.
-            </p>
-            <br/>
-            <p>
-                YouTube blocks are regularly occuring - this may be fixed soon-ish but for right now,
-                NYC-1 is completely blocked. CAL-1 and POL-1 have occassional issues, especially
-                regarding Piped, but the vast majority of problems can be resolved by waiting a few
-                minutes and refreshing. For some cases, like a video buffering for a long time during
-                playback, this can be resolved by refreshing or changing the video quality.
+                We have updated Invidious to use a special bypass (same one used on some other popular instances.)
+                Please let us know of any problems as this is still experimental. Known bugs include:
+                <ul>
+                    <li>On CAL-1, DASH playback doesn't work on Linux w/ Firefox.</li>
+                    <li>On CAL-1, Images don't work.</li>
+                </ul>
+                Piped and Hyperpipe are still affected by YouTube's block.
             </p>
         </section>
         <cards class="text-center items-start">
