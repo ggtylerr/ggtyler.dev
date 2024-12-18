@@ -5,6 +5,17 @@ import Footer from '../../components/Footer.astro';
 import Tooltip from '../../components/Tooltip.astro';
 import MCIcon from '../../components/MCIcon.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
+
+let Status, StatusFront;
+
+try {
+  Status = (await import("./frontends-status.mdx")).Content;
+  StatusFront = (await import("./frontends-status.mdx")).frontmatter;
+} catch (error) {
+  console.error("MDX file not found, importing alternative.");
+  Status = (await import("./frontends-status-404.mdx")).Content;
+  StatusFront = (await import("./frontends-status-404.mdx")).frontmatter;
+}
 ---
 <!DOCTYPE html>
 <html lang="en-us">
@@ -20,26 +31,9 @@ import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
 	</head>
     <body>
         <Header />
-        <p class="text-3xl font-bold text-center onest">Current Status: <prlgm class="warning"><span><b>WARNING</b></span></prlgm></p>
+        <p class="text-3xl font-bold text-center onest">Current Status: <prlgm class={StatusFront.status}><span><b>{StatusFront.status.toUpperCase()}</b></span></prlgm></p>
         <section>
-            <p>
-                We have updated Invidious to use a special bypass (same one used on some other popular instances.)
-                Please let us know of any problems <a href="https://github.com/iv-org/invidious/issues">(that are NOT on invidious' issue tracker)</a> 
-                as this is still experimental. Known bugs include:
-                <ul>
-                    <li>You may still occasionally get the "content isn't available", "this helps protect...", etc. errors. Just wait for a few minutes then refresh.</li>
-                    <li>DASH playback doesn't work if the page is reloaded. (Simply refresh again or disable DASH.)</li>
-                    <li>Third-party apps, such as FreeTube and Materialious, will not work. 
-                        See <a href="https://github.com/iv-org/invidious-companion/issues/22">iv-org/invidious-companion#22.</a>
-                    </li>
-                    <li>Audio may not function. (Change browsers, servers, or clear cache.)
-                        <ul><li>I can't seem to replicate this bug anymore so I'm not sure if this was just something that popped up during setup - please let me know if you can reproduce this consistently.</li></ul>
-                    </li>
-                </ul>
-                <br/>
-                Piped and Hyperpipe are <b>still affected</b> by YouTube's block. <b>They will not work</b> until they start implementing
-                similar methods that Invidious has, such as Piped's (currently experimental) nsig patches.
-            </p>
+            <Status />
         </section>
         <cards class="text-center items-start">
             <card class="w-56">

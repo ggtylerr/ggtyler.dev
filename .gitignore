@@ -17,3 +17,6 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# status message config
+src/pages/other/frontends-status.mdx
