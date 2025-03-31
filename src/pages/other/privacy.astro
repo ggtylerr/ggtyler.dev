@@ -11,7 +11,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
 	</head>
     <body>
         <Header />
-        <section>
+        <section id="site">
             <p>
                 This site does not use cookies, but instead uses local 
                 storage to save your theme preference. 
@@ -56,7 +56,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
                 please contact me or open an issue on the relevant repository.
             </p>
         </section>
-        <section>
+        <section id="frontends">
             <h1 class="text-2xl">Frontends</h1>
             <p>
                 I host <a href="/other/frontends">multiple frontends</a> on my servers,
@@ -79,6 +79,37 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
                 is the only way to reliably keep them working. Please double check the
                 frontend's source code before using it if you're concerned. (These are always
                 linked on the frontend list.)
+            </p>
+        </section>
+        <section id="anubis">
+            <h1 class="text-2xl">Anubis</h1>
+            <p>
+                Some services (most notably <a href="https://nyc1.iv.ggtyler.dev">Invidious</a>)
+                use an anti-bot software named <a href="https://anubis.techaro.lol/">Anubis.</a>
+                This is in place to keep the software as stable as possible - without it,
+                it would simply not function due to the amount of bots attempting to scrape data.
+            </p>
+            <br/>
+            <p>
+                This software processes some network data, namely 
+                <a href="https://anubis.techaro.lol/docs/design/how-anubis-works#challenge-format">
+                the client's IP and browser user-agent.</a>
+                We do not log these and you can very easily use a VPN, Tor, or User-Agent changing
+                browser extension, to improve privacy if needed. This software also has the ability 
+                to use DNSBL, which is known to block these VPN/Tor users. It has been configured to 
+                not use this.
+            </p>
+            <br/>
+            <p>
+                Depending on your outlook, the only potential breach of privacy is the fact that
+                it requires you to use JavaScript. This is absolutely required for its functionality
+                and doesn't actually impact privacy whatsoever - 
+                <a href="https://github.com/fingerprintjs/blog-nojs-fingerprint-demo/">
+                it is 100% possible to track a user without it</a>
+                and the only thing it's really doing is answering a proof-of-work challenge, sending
+                network requests, and updating the client's HTML. That is all that the client-side JS 
+                is used for, and can be confirmed by 
+                <a href="https://github.com/TecharoHQ/anubis/tree/main/web/js">looking at its source code.</a>
             </p>
         </section>
         <Footer />
