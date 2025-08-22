@@ -1,6 +1,6 @@
 ---
 layout: "../../layouts/BlogPost.astro"
-title: "Frontends Hosting Shutdown Notice"
+title: "Frontends Hosting Shutdown Notice (updated Aug 22 for clarity.)"
 description: "The hosting of privacy frontends, Project GLOBE, will be shut down on September 17th."
 pubDate: "Aug 18 2025"
 ---
@@ -63,4 +63,29 @@ pubDate: "Aug 18 2025"
     Sayonara.
     <br/>
     ~ ggtyler
+</section>
+<section>
+    **UPDATE:** I wanted to clarify some things since some people missed the reasoning I was laying out here. To be 
+fair, I should've elaborated more on some other details. There are multiple reasons why I'm no longer hosting:
+    <br/>
+    * Money.
+        - ~$170/mo, or over $2000/yr.
+        - Not only is this expensive, but there are plenty of other, much better, things to be spending this on.
+    * Time.
+        - Server maintenance take significant time to get perfect, especially for websites that use external services.
+        - Not to mention, I'm in both work and college at the moment.
+    * Stability.
+        - Invidious hasn't been working reliably since [June 2024.](https://github.com/iv-org/invidious/issues/4734)
+        - Other similar YouTube frontends, such as Piped, have not been working at all or have barely worked since then.
+        - SearXNG, RedLib, and more recently Breezewiki have started having similar problems.
+    * Public interest
+        - As this is privacy-first, there are almost no analytics or hard numbers. However it's clear that there are barely any users compared to other instances.
+        - (Almost none, since Invidious logs the amount of active logged in users. [There have been 26 this past month on NYC-1.](https://nyc1.iv.ggtyler.dev/api/v1/stats))
+    * Alternatives
+        - There are plenty of other instances that handle it better, such as [Nadeko (Fjixu's)](https://nadeko.net/), [PussTheCat (TheFrenchGhosty's)](https://pussthecat.org/), [NerdVPN](https://nerdvpn.de/), [YewTube (unixfox's invidious)](https://yewtu.be), [Catgirl Cloud](https://catgirl.cloud), [The Bunny Zone](https://thebunny.zone/), and many more.
+        - If you need privacy, use a VPN or Tor. For something like YouTube, using a different session for each video should provide the same amount of privacy while being significantly more stable. (Session being restarting incognito mode, or for Tor using a new circuit / identity.)
+        - If you don't use it for privacy and instead for debloating, simply use [uBlock Origin](https://github.com/gorhill/uBlock) and [Enhancer for YouTube.](https://www.mrfdev.com/enhancer-for-youtube) On mobile, you can use [ReVanced.](https://revanced.app/)
+        - If you're using this for proxying (i.e. at school), [here's a list of some sites.](https://fmhy.net/adblockvpnguide#proxy-sites) *(Yes, I'm linking FMHY on here. Even if you don't like piracy for some reason, you can't lie and say it isn't a good resource for a lot of free stuff.)*
+  
+    Hopefully that clears some things up :)
 </section>
