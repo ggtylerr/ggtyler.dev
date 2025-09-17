@@ -2,334 +2,176 @@
 import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
-import Tooltip from '../../components/Tooltip.astro';
-import MCIcon from '../../components/MCIcon.astro';
-import { SITE_TITLE, SITE_DESCRIPTION, COMMENTS } from '../../config';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../config';
 
-let Status, StatusFront;
+const list = [
+    "nyc1.*.ggtyler.dev",
+    "cal1.*.ggtyler.dev",
+    "pol1.*.ggtyler.dev",
+    "*.ggtyler.dev",
+    "nyc1.*.ggt.bz",
+    "cal1.*.ggt.bz",
+    "pol1.*.ggt.bz",
+    "*.ggt.bz"
+];
 
-try {
-  Status = (await import("./frontends-status.mdx")).Content;
-  StatusFront = (await import("./frontends-status.mdx")).frontmatter;
-} catch (error) {
-  console.error("MDX file not found, importing alternative.");
-  Status = (await import("./frontends-status-404.mdx")).Content;
-  StatusFront = (await import("./frontends-status-404.mdx")).frontmatter;
-}
+const iv = list.map((i) => i.replace("*", "iv"));
+const pi = list.map((i) => i.replace("*", "pi"));
+const hp = list.map((i) => i.replace("*", "hp"));
+const poke = list.map((i) => i.replace("*", "poke"));
+const lr = list.map((i) => i.replace("*", "lr"));
+const st = list.map((i) => i.replace("*", "st"));
+const dm = list.map((i) => i.replace("*", "dm"));
+const breeze = list.map((i) => i.replace("*", "breeze"));
+const sx = list.map((i) => i.replace("*", "sx"));
+const ly = list.map((i) => i.replace("*", "ly"));
+const sptl = list.map((i) => i.replace("*", "sptl"));
+const lbtl = list.map((i) => i.replace("*", "lbtl"));
+const lv = list.map((i) => i.replace("*", "lv"));
+const mz = list.map((i) => i.replace("*", "mz"));
 ---
 <!DOCTYPE html>
 <html lang="en-us">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-        <script data-isso={COMMENTS} 
-        data-title="Frontends List"
-        data-isso-sorting="newest"
-        data-isso-max-comments-top="30"
-        data-isso-max-comments-nested="5"
-        data-isso-reveal-on-click="15"
-        src={COMMENTS + "js/embed.min.js"}></script>
 	</head>
     <body>
         <Header />
-        <p class="text-3xl font-bold text-center onest">Current Status: <prlgm class={StatusFront.status}><span><b>{StatusFront.status.toUpperCase()}</b></span></prlgm></p>
-        <section>
-            <Status />
-        </section>
-        <cards class="text-center items-start">
-            <card class="w-56">
-                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://nyc1.iv.ggtyler.dev">Invidious</a></h1>
-                <center>(For YouTube)</center>
-                <a href="https://github.com/ggtylerr/invidious"><icon></icon></a>
-                <a href="https://invidious.io"><icon></icon></a>
-                <br/>
-                <span class="inner">
-                    <span>
-                        <a href="https://nyc1.iv.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.iv.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://pol1.iv.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a>
-                    </span>
-                </span>
-            </card>
-            <card class="w-56">
-                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://nyc1.pi.ggtyler.dev">Piped</a></h1>
-                <center>(For YouTube)</center>
-                <a href="https://github.com/TeamPiped/Piped"><icon></icon></a>
-                <a href="https://docs.piped.video/"><icon></icon></a>
-                <Tooltip text="API: nyc1.piapi.ggtyler.dev PROXY: nyc1.piproxy.ggtyler.dev"/>
-                <br/>
-                <span class="inner">
-                    <span>
-                        <a href="https://nyc1.pi.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.pi.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://pol1.pi.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a>
-                    </span>
-                </span>
-            </card>
-            <card class="w-56">
-                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://nyc1.hp.ggtyler.dev">Hyperpipe</a></h1>
-                <center>(For YouTube Music)</center>
-                <a href="https://codeberg.org/Hyperpipe/Hyperpipe"><icon></icon></a>
-                <Tooltip text="API: nyc1.hpapi.ggtyler.dev"/>
-                <br/>
-                <span class="inner">
-                    <span>
-                        <a href="https://nyc1.hp.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.hp.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://pol1.hp.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a>
-                    </span>
-                </span>
-            </card>
-            <card class="w-56">
-                <span class="text-[3.4em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://nyc1.poke.ggtyler.dev">Poke</a></h1>
-                <center class="text-sm">(For YouTube and more)</center>
-                <a href="https://codeberg.org/ashley/poke"><icon></icon></a>
-                <br/>
-                <span class="inner">
-                    <span>
-                        <a href="https://nyc1.poke.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.poke.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://pol1.poke.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a>
-                    </span>
-                </span>
-            </card>
-            <card class="w-56">
-                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://nyc1.lr.ggtyler.dev">RedLib</a></h1>
-                <center>(For Reddit)</center>
-                <a href="https://github.com/redlib-org/redlib"><icon></icon></a>
-                <br/>
-                <span class="inner">
-                    <span>
-                        <a href="https://nyc1.lr.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.lr.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://pol1.lr.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a>
-                    </span>
-                </span>
-            </card>
-            <card class="w-56">
-                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://nyc1.st.ggtyler.dev">SafeTwitch</a></h1>
-                <center>(For Twitch)</center>
-                <a href="https://codeberg.org/SafeTwitch/safetwitch"><icon></icon></a>
-                <Tooltip text="API: nyc1.stapi.ggtyler.dev"/>
-                <br/>
-                <span class="inner">
-                    <span>
-                        <a href="https://nyc1.st.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.st.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://pol1.st.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a>
-                    </span>
-                </span>
-            </card>
-            <card class="w-56">
-                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://nyc1.dm.ggtyler.dev">Dumb</a></h1>
-                <center>(For Genius)</center>
-                <a href="https://github.com/rramiachraf/dumb"><icon></icon></a>
-                <br/>
-                <span class="inner">
-                    <span>
-                        <a href="https://nyc1.dm.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.dm.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://pol1.dm.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a>
-                    </span>
-                </span>
-            </card>
-            <card class="w-56">
-                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://nyc1.breeze.ggtyler.dev">Breezewiki</a></h1>
-                <center>(For Fandom)</center>
-                <a href="https://gitdab.com/cadence/breezewiki"><icon></icon></a>
-                <Tooltip text="This service runs on the Docker version (from PussTheCat.org)"/>
-                <br/>
-                <span class="inner">
-                    <span>
-                        <a href="https://nyc1.breeze.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.breeze.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://pol1.breeze.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a>
-                    </span>
-                </span>
-            </card>
-            <card class="w-56">
-                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://nyc1.sx.ggtyler.dev">SearXNG</a></h1>
-                <center>(For searching)</center>
-                <a href="https://github.com/searxng/searxng"><icon></icon></a>
-                <a href="https://docs.searxng.org/"><icon></icon></a>
-                <br/>
-                <span class="inner">
-                    <span>
-                        <a href="https://nyc1.sx.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.sx.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://pol1.sx.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a>
-                    </span>
-                </span>
-            </card>
-            <card class="w-56">
-                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://nyc1.ly.ggtyler.dev">LibreY</a></h1>
-                <center>(For searching)</center>
-                <a href="https://github.com/Ahwxorg/LibreY"><icon></icon></a>
-                <br/>
-                <span class="inner">
-                    <span>
-                        <a href="https://nyc1.ly.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.ly.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://pol1.ly.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a>
-                    </span>
-                </span>
-            </card>
-            <card class="w-56">
-                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://nyc1.sptl.ggtyler.dev">SimplyTranslate</a></h1>
-                <center>(For translation)</center>
-                <a href="https://codeberg.org/ManeraKai/simplytranslate/"><icon></icon></a>
-                <br/>
-                <span class="inner">
-                    <span>
-                        <a href="https://nyc1.sptl.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.sptl.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://pol1.sptl.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a>
-                    </span>
-                </span>
-            </card>
-            <card class="w-56">
-                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://nyc1.lbtl.ggtyler.dev">LibreTranslate</a></h1>
-                <center>(For translation)</center>
-                <a href="https://github.com/LibreTranslate/LibreTranslate"><icon></icon></a>
-                <br/>
-                <span class="inner">
-                    <span>
-                        <a href="https://nyc1.lbtl.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.lbtl.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://pol1.lbtl.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a>
-                    </span>
-                </span>
-            </card>
-            <card class="w-56">
-                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://nyc1.lv.ggtyler.dev">Lingva</a></h1>
-                <center>(For translation)</center>
-                <a href="https://github.com/TheDavidDelta/lingva-translate"><icon></icon></a>
-                <br/>
-                <span class="inner">
-                    <span>
-                        <a href="https://nyc1.lv.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.lv.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://pol1.lv.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a>
-                    </span>
-                </span>
-            </card>
-            <card class="w-56">
-                <span class="text-[3.5em]"><icon></icon>┊<icon></icon></span>
-                <h1 class="text-xl"><a href="https://nyc1.mz.ggtyler.dev">Mozhi</a></h1>
-                <center>(For translation)</center>
-                <a href="https://codeberg.org/aryak/mozhi"><icon></icon></a>
-                <br/>
-                <span class="inner">
-                    <span>
-                        <a href="https://nyc1.mz.ggtyler.dev"><MCIcon name="us" amount={4} /> NYC-1</a><br/>
-                        <a href="https://cal1.mz.ggtyler.dev"><MCIcon name="us" amount={4} /> CAL-1</a><br/>
-                        <a href="https://pol1.mz.ggtyler.dev"><MCIcon name="pl" amount={2} /> POL-1</a>
-                    </span>
-                </span>
-            </card>
-        </cards>
-        <p class="text-3xl font-bold text-center mt-4 onest">ADDITIONAL INFO</p>
-        <section>
-            <details>
-                <summary>Server details</summary>
-                <p>
-                    NYC-1 is our main server - it's a fully dedicated server with <i>way</i> more OP specs than needed.
-                    This is how my hosts are one of the most performant and reliable.
-                </p>
-                <p>
-                    Besides myself, this server is shared between 3 other sysadmins: 
-                    <a href="https://ashleygraves.eu">Ashley Graves,</a>
-                    <a href="https://emreis.com">emreis,</a>
-                    and <a href="https://ashley0143.xyz">Ashley0143.</a>
-                </p>
-                <ul class="ml-4">
-                    <li>CPU: Intel Xeon E5-2660 v3 3.3GHz</li>
-                    <li>RAM: 64GB</li>
-                    <li>STORAGE: 1TB SSD</li>
-                    <li>NETWORK: 10Gbps(?) Unmetered</li>
-                    <li>HOST: RoyaleHosting</li>
-                    <li>LOCATION: Nearby New York City</li>
-                    <li>COST: €90 per month (roughly $98 a month)</li>
-                </ul>
-                <p>
-                    CAL-1 is a standard VPS hosted in the heart of Silicon Valley, allowing for the best connection
-                    to most popular services (i.e. YouTube.)
-                </p>
-                <ul class="ml-4">
-                    <li>CPU: AMD EPYC 7402P 2.8GHz (2 vCPUs)</li>
-                    <li>RAM: 5GB</li>
-                    <li>STORAGE: 60GB SSD</li>
-                    <li>NETWORK: 750Mbps Unmetered (during congestion, this can go as low as 2.5Mbps)</li>
-                    <li>HOST: Torando VPS</li>
-                    <li>LOCATION: Silicon Valley</li>
-                    <li>COST: $20 per month</li>
-                </ul>
-                <p>
-                    POL-1 is a standard VPS hosted in <s>femboy land</s> Warsaw, Poland. As our Europe server, it's
-                    specced out to be fast and stable enough for all our <s>femboys</s> europeans.
-                </p>
-                <ul class="ml-4">
-                    <li>CPU: Intel(R) Xeon(R) Silver 4114 (4 vCPUs)</li>
-                    <li>RAM: 4GB</li>
-                    <li>STORAGE: 144GB SSD</li>
-                    <li>NETWORK: 1Gbps 60TB monthly cap</li>
-                    <li>HOST: Skhron</li>
-                    <li>LOCATION: Warsaw</li>
-                    <li>COST: €42.87 per month (roughly $47 a month)</li>
-                </ul>
-            </details>
-            <details>
-                <summary>Donations</summary>
-                <p>
-                    As you can tell, running these all isn't cheap. I am currently paying over $100 out of pocket,
-                    solely for the sake of others to use these. If you want to help out, you can donate to me at
-                    <a href="https://liberapay.com/ggtyler">Liberapay.</a>
-                    <br/><br/>
-                    To be 100% crystal clear - <b><i>Donations will never be required for this service to run.</i></b>
-                    Unless I get fired from my job for whatever reason and can't find a new one in time to pay for this,
-                    I will always be paying the remaining cost out of pocket. This is merely set up if you or someone else
-                    wants to help support me, and by extension, the frontend developers who make these.
-                </p>
-            </details>
-            <details>
-                <summary>URL Shortener</summary>
-                <p>
-                    We have a basic URL shortener system set up for these services. You can access it at <a href="https://ggt.bz">ggt.bz</a>.
-                    Just replace the <code>ggtyler.dev</code> part of the URL with <code>ggt.bz</code> and you're good to go.
-                    <br/><br/>
-                    Have a specific server location you like to use? Go to <a href="https://ggt.bz">ggt.bz</a> first,
-                    select the location you prefer, and now any link you visit through that will use that location.
-                    (The exception being including the location in the URL itself.)
-                </p>
-            </details>
-        </section>
-        <section>
-            <h1 class="text-3xl text-center onest mb-4">PLEASE <prlgm><span>READ</span></prlgm> BEFORE COMMENTING!</h1>
-            <p>
-                If you're commenting about a service not working, then check the service notice up top! It's very likely
-                that it's a known issue. If you're commenting about me making a frontend, please remember that <b><i>I do not
-                make anything listed here - </i></b> I merely host it for the public to use.
+        <span class="flex flex-col items-center justify-center m-auto h-72">
+            <h1 class="text-3xl onest">Frontend hosting stopped on September 17th, 2025.</h1>
+            <p class="mt-4">
+                All server-sided user data has been wiped. Thank you for using this service. Please stay tuned for future
+                projects.
             </p>
-            <p>
-                Comments are approved manually - please be patient. If you do not see your comment immediately, <b><i>don't spam it.</i></b>
-                Please have some common sense here too. These are still human beings, so no racism, sexism, homophobia, transphobia, etc. No NSFW either.
+        </span>
+        {(Astro.url.hostname === "www.ggtyler.dev" || iv.includes(Astro.url.hostname)) && <section>
+            <h1 class="text-xl onest"><prlgm><span>Invidious</span></prlgm></h1>
+            <p class="mt-4">
+                All data for Invidious is server-sided. If you have not previously backed up your data, you are
+                unfortunately unable to access it now. For other hosts, please see
+                <a href="https://docs.invidious.io/instances/">this list.</a>
             </p>
-        </section>
-        <section id="isso-thread">
-            <noscript>JavaScript needs to be activated to view comments.</noscript>
-        </section>
+        </section>}
+        {(Astro.url.hostname === "www.ggtyler.dev" || pi.includes(Astro.url.hostname)) && <section>
+            <h1 class="text-xl onest"><prlgm><span>Piped</span></prlgm></h1>
+            <p class="mt-4">
+                Some data for Piped, such as playlists and history, is client-sided and therefore can be retrieved.
+                Open up the dev tools (<code>Ctrl+Shift+I</code> on most browsers, go to application (storage on any
+                FF-based browsers,) and go to IndexedDB. You can then copy these values to
+                <a href="https://github.com/TeamPiped/documentation/blob/main/content/docs/public-instances/index.md">
+                    any Piped instance.
+                </a>
+                If you are not confident using dev tools, you can also use any browser extension that allows you to
+                see/edit IndexedDB.
+            </p>
+        </section>}
+        {(Astro.url.hostname === "www.ggtyler.dev" || hp.includes(Astro.url.hostname)) && <section>
+            <h1 class="text-xl onest"><prlgm><span>Hyperpipe</span></prlgm></h1>
+            <p class="mt-4">
+                Some data for Hyperpipe, such as playlists, is client-sided and therefore can be retrieved.
+                Open up the dev tools (<code>Ctrl+Shift+I</code> on most browsers, go to application (storage on any
+                FF-based browsers,) and go to IndexedDB. You can then copy these values to
+                <a href="https://codeberg.org/Hyperpipe/pages/src/branch/main/INSTANCES.md">any Hyperpipe instance.</a>
+                If you are not confident using dev tools, you can also use any browser extension that allows you to
+                see/edit IndexedDB.
+            </p>
+        </section>}
+        {(Astro.url.hostname === "www.ggtyler.dev" || poke.includes(Astro.url.hostname)) && <section>
+            <h1 class="text-xl onest"><prlgm><span>Poke</span></prlgm></h1>
+            <p class="mt-4">
+                Poke does not store any user data. Please refer to
+                <a href="https://codeberg.org/ashley/poke/src/branch/main/instances.json">this list</a> for other hosts.
+            </p>
+        </section>}
+        {(Astro.url.hostname === "www.ggtyler.dev" || lr.includes(Astro.url.hostname)) && <section>
+            <h1 class="text-xl onest"><prlgm><span>RedLib</span></prlgm></h1>
+            <p class="mt-4">
+                Since data on RedLib is client-sided, if you haven't backed it up yet, you can still get your
+                preferences. Open up the dev tools (<code>Ctrl+Shift+I</code> on most browsers,) go to application (storage on
+                FF-based browsers,) and go to cookies. You can then copy these cookies to
+                <a href="https://github.com/redlib-org/redlib-instances/blob/main/instances.md">any RedLib instance.</a>
+                If you are not confident using dev tools, you can also use any browser extension that allows you to
+                see/edit cookies.
+            </p>
+        </section>}
+        {(Astro.url.hostname === "www.ggtyler.dev" || st.includes(Astro.url.hostname)) && <section>
+            <h1 class="text-xl onest"><prlgm><span>SafeTwitch</span></prlgm></h1>
+            <p class="mt-4">
+                Since data on SafeTwitch is client-sided, if you haven't backed it up yet, you can still get your
+                preferences. Open up the dev tools (<code>Ctrl+Shift+I</code> on most browsers,) go to application (storage on
+                FF-based browsers,) and go to local storage. You can then copy these values to
+                <a href="https://codeberg.org/safetwitch/safetwitch#clearnet">any SafeTwitch instance.</a>
+                If you are not confident using dev tools, you can also use any browser extension that allows you to
+                see/edit local storage.
+            </p>
+        </section>}
+        {(Astro.url.hostname === "www.ggtyler.dev" || dm.includes(Astro.url.hostname)) && <section>
+            <h1 class="text-xl onest"><prlgm><span>Dumb</span></prlgm></h1>
+            <p class="mt-4">
+                Dumb does not store any user data. Please refer to
+                <a href="https://github.com/rramiachraf/dumb?tab=readme-ov-file#public-instances">this list</a> for
+                other hosts.
+            </p>
+        </section>}
+        {(Astro.url.hostname === "www.ggtyler.dev" || breeze.includes(Astro.url.hostname)) && <section>
+            <h1 class="text-xl onest"><prlgm><span>Breezewiki</span></prlgm></h1>
+            <p class="mt-4">
+                Breezewiki does not store any user data. Please refer to
+                <a href="https://docs.breezewiki.com/Links.html#(part._.Mirrors)">this list</a> for
+                other hosts.
+            </p>
+        </section>}
+        {(Astro.url.hostname === "www.ggtyler.dev" || sx.includes(Astro.url.hostname)) && <section>
+            <h1 class="text-xl onest"><prlgm><span>SearXNG</span></prlgm></h1>
+            <p class="mt-4">
+                Since data on SearXNG is client-sided, if you haven't backed it up yet, you can still get your
+                preferences. Open up the dev tools (<code>Ctrl+Shift+I</code> on most browsers,) go to application (storage on
+                FF-based browsers,) and go to cookies. You can then copy these cookies to <a href="http://searx.space/">
+                any SearXNG instance.</a> If you are not confident using dev tools, you can also use any browser
+                extension that allows you to see/edit cookies.
+            </p>
+        </section>}
+        {(Astro.url.hostname === "www.ggtyler.dev" || ly.includes(Astro.url.hostname)) && <section>
+            <h1 class="text-xl onest"><prlgm><span>LibreY</span></prlgm></h1>
+            <p class="mt-4">
+                Since data on LibreY is client-sided, if you haven't backed it up yet, you can still get your
+                preferences. Open up the dev tools (<code>Ctrl+Shift+I</code> on most browsers,) go to application (storage on
+                FF-based browsers,) and go to cookies. You can then copy these cookies to
+                <a href="https://github.com/Ahwxorg/librey/?tab=readme-ov-file#instances">any LibreY instance.</a>
+                If you are not confident using dev tools, you can also use any browser extension that allows you to
+                see/edit cookies.
+            </p>
+        </section>}
+        {(Astro.url.hostname === "www.ggtyler.dev" || sptl.includes(Astro.url.hostname)) && <section>
+            <h1 class="text-xl onest"><prlgm><span>SimplyTranslate</span></prlgm></h1>
+            <p class="mt-4">
+                SimplyTranslate does not store any user data. Please refer to
+                <a href="https://codeberg.org/ManeraKai/simplytranslate/src/branch/main/instances.json">this list</a>
+                for other hosts.
+            </p>
+        </section>}
+        {(Astro.url.hostname === "www.ggtyler.dev" || lbtl.includes(Astro.url.hostname)) && <section>
+            <h1 class="text-xl onest"><prlgm><span>LibreTranslate</span></prlgm></h1>
+            <p class="mt-4">
+                LibreTranslate does not store any user data. Please use the
+                <a href="https://libretranslate.com">official host.</a>
+            </p>
+        </section>}
+        {(Astro.url.hostname === "www.ggtyler.dev" || lv.includes(Astro.url.hostname)) && <section>
+            <h1 class="text-xl onest"><prlgm><span>Lingva</span></prlgm></h1>
+            <p class="mt-4">
+                Lingva does not store any user data. Please refer to
+                <a href="https://github.com/TheDavidDelta/lingva-translate?tab=readme-ov-file#instances">this list</a>
+                for other hosts.
+            </p>
+        </section>}
+        {(Astro.url.hostname === "www.ggtyler.dev" || mz.includes(Astro.url.hostname)) && <section>
+            <h1 class="text-xl onest"><prlgm><span>Mozhi</span></prlgm></h1>
+            <p class="mt-4">
+                Mozhi does not store any user data. Please refer to
+                <a href="https://codeberg.org/aryak/mozhi#instances">this list</a> for other hosts.
+            </p>
+        </section>}
         <Footer />
     </body>
 </html>
